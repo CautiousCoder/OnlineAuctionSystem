@@ -43,6 +43,7 @@
           </tr>
         </thead>
         <tbody>
+          @if ($categories->count() > 0)
           @foreach ($categories as $cat)
           <tr>
             <td>{{ $cat->id }}.</td>
@@ -50,16 +51,25 @@
             <td>{{ $cat->slug }}</td>
             <td>{{ $cat->description }}</td>
             <td class="d-flex">
-              <a href="{{ route('category.edit',[$cat->id]) }}" class="btn btn-sm btn-info mr-1"><i class="far fa-edit"></i></a>
+              <a href="{{ route('category.edit',[$cat->id]) }}" class="btn btn-sm btn-info mr-1"><i
+                  class="far fa-edit"></i></a>
               <form action="{{ route('category.destroy',[$cat->id]) }}" method="POST" class="mr-1">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
               </form>
-              <a href="{{ route('category.show',[$cat->id]) }}" class="btn btn-sm btn-primary mr-1"><i class="far fa-eye"></i></a>
+              <a href="{{ route('category.show',[$cat->id]) }}" class="btn btn-sm btn-primary mr-1"><i
+                  class="far fa-eye"></i></a>
             </td>
           </tr>
           @endforeach
+          @else
+          <tr>
+            <td colspan="5">
+              <h2 class="text-center">No Category Found..!</h2>
+            </td>
+          </tr>
+          @endif
         </tbody>
       </table>
       <!-- /.Table -->

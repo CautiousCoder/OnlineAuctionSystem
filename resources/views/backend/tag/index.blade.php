@@ -43,6 +43,7 @@
           </tr>
         </thead>
         <tbody>
+          @if ($tags->count() > 0)
           @foreach ($tags as $tag)
           <tr>
             <td>{{ $tag->id }}.</td>
@@ -50,16 +51,25 @@
             <td>{{ $tag->slug }}</td>
             <td>{{ $tag->description }}</td>
             <td class="d-flex">
-              <a href="{{ route('tag.edit',[$tag->id]) }}" class="btn btn-sm btn-info mr-1"><i class="far fa-edit"></i></a>
+              <a href="{{ route('tag.edit',[$tag->id]) }}" class="btn btn-sm btn-info mr-1"><i
+                  class="far fa-edit"></i></a>
               <form action="{{ route('tag.destroy',[$tag->id]) }}" method="POST" class="mr-1">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
               </form>
-              <a href="{{ route('tag.show',[$tag->id]) }}" class="btn btn-sm btn-primary mr-1"><i class="far fa-eye"></i></a>
+              <a href="{{ route('tag.show',[$tag->id]) }}" class="btn btn-sm btn-primary mr-1"><i
+                  class="far fa-eye"></i></a>
             </td>
           </tr>
           @endforeach
+          @else
+          <tr>
+            <td colspan="5">
+              <h2 class="text-center">No Tags Found..!</h2>
+            </td>
+          </tr>
+          @endif
         </tbody>
       </table>
       <!-- /.Table -->
