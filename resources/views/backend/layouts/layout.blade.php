@@ -241,6 +241,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <p>Categories</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="{{ route('tag.index') }}" class="nav-link">
+                <i class="far fa-tags nav-icon"></i>
+                <p>Tags</p>
+              </a>
+            </li>
           </ul>
         </li>
           </ul>

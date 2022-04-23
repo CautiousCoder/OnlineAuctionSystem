@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
-class CategoryController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('created_at', 'DESC')->paginate(15);
-        return view('backend.category.index', compact('categories'));
+        //
+        $tags = Tag::orderBy('created_at', 'DESC')->paginate(15);
+        return view('backend.tag.index', compact('tags'));
     }
 
     /**
@@ -31,7 +32,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('backend.category.create');
+        return view('backend.tag.create');
     }
 
     /**
@@ -46,14 +47,14 @@ class CategoryController extends Controller
         $this->validate($request, [
             'name' => 'required|unique:categories,name|max:255',
         ]);
-        $category = Category::create([
+        $tag = tag::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name, '-'),
             'description' => $request->des,
         ]);
-        $category->save();
-        Session()->flash('success', 'Category Created Successfully.!');
-        return Redirect::to(route('category.create'))->withInput();
+        $tag->save();
+        Session()->flash('success', 'Tag Created Successfully.!');
+        return Redirect::to(route('tag.create'))->withInput();
         
         //dd($request->all());
     }
@@ -61,10 +62,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Tag $tag)
     {
         //
     }
@@ -72,50 +73,51 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Tag $tag)
     {
         //
-        return view('backend.category.edit', compact('category'));
+        return view('backend.tag.edit', compact('tag'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Tag $tag)
     {
+        //
         $this->validate($request, [
             'name' => "required|unique:categories,name|max:255,$request->name",
         ]);
-        $category->name = $request->name;
-        $category->slug = Str::slug($request->name, '-');
-        $category->description = $request->des;
-        $category->save();
-        Session()->flash('success', 'Category Updated Successfully.!');
-        return Redirect::to(route('category.index'))->withInput();
+        $tag->name = $request->name;
+        $tag->slug = Str::slug($request->name, '-');
+        $tag->description = $request->des;
+        $tag->save();
+        Session()->flash('success', 'Tag Updated Successfully.!');
+        return Redirect::to(route('tag.index'))->withInput();
        // dd($request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Tag $tag)
     {
         //
-        if($category){
-            $category->delete();
+        if($tag){
+            $tag->delete();
 
-            Session()->flash('success', 'Category Deleted Successfully.!');
-            return Redirect::to(route('category.index'))->withInput();
+            Session()->flash('success', 'Tag Deleted Successfully.!');
+            return Redirect::to(route('tag.index'))->withInput();
         }
     }
 }
