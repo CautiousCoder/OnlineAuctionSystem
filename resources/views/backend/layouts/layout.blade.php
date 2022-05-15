@@ -18,6 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/custom.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -200,7 +201,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <ul id="sidebar-id" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
@@ -236,6 +237,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
+              <a href="edit.php" class="menu-top" aria-haspopup="true">
+                <div class="side-icon">
+                  <div></div>
+                </div>
+                <div class="side-icons" aria-hidden="true"><br></div>
+                <div class="side-name">Posts</div>
+              </a>
+              <ul class="side-submenu">
+                <li class="side-submenu-name" aria-hidden="true">Posts</li>
+                <li class="first-item"><a href="edit.php" class="first-item">All Posts</a></li>
+                <li><a href="post-new.php">Add New</a></li>
+                <li><a href="edit-tags.php?taxonomy=category">Categories</a></li>
+                <li><a href="edit-tags.php?taxonomy=post_tag">Tags</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
               <a href="{{ route('post.index') }}" class="nav-link">
                 <i class="far fa-tags nav-icon"></i>
                 <p>Posts</p>
@@ -254,7 +271,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
           </ul>
-        </li>
+          </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
