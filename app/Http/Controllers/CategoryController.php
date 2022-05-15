@@ -20,7 +20,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('created_at', 'DESC')->paginate(15);
-        return view('backend.category.index', compact('categories'));
+        return view('posts.category.index', compact('categories'));
     }
 
     /**
@@ -31,7 +31,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return view('backend.category.create');
+        return view('posts.category.create');
     }
 
     /**
@@ -78,7 +78,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         //
-        return view('backend.category.edit', compact('category'));
+        return view('posts.category.edit', compact('category'));
     }
 
     /**

@@ -21,7 +21,7 @@ class PostController extends Controller
     {
         //
         $posts = Post::orderBy('created_at','DESC')->paginate(20);
-        return view('backend.post.index', compact('posts'));
+        return view('posts.post.index', compact('posts'));
     }
 
     /**
@@ -33,7 +33,7 @@ class PostController extends Controller
     {
         //
         $categories = Category::all();
-        return view('backend.post.create', compact('categories'));
+        return view('posts.post.create', compact('categories'));
     }
 
     /**
@@ -97,7 +97,7 @@ class PostController extends Controller
     {
         //
         $categories = Category::all();
-        return view('backend.post.edit', compact(['post','categories']));
+        return view('posts.post.edit', compact(['post','categories']));
 
     }
 
