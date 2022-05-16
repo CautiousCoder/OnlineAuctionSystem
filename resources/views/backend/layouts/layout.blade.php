@@ -201,7 +201,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-          <ul id="sidebar-id" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <ul id="sidebar-id" class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+            data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
@@ -318,11 +319,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="{{ asset('backEnd') }}/dist/js/adminlte.min.js"></script>
   <!-- Toaster Notification -->
   <script src="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  <script>
+  @yield('scriptArea')
+
     @if(Session::has('success'))
-  toastr.success("{{ Session::has('success') }}");
-  @endif
-  </script>
+    toastr.success("{{ Session::has('success') }}");
+    @endif
 </body>
 
 </html>

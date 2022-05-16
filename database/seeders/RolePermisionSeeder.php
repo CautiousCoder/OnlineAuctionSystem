@@ -22,31 +22,51 @@ class RolePermisionSeeder extends Seeder
         $roleEditor = Role::create(['name' => 'Editor']);
 
         $permissions = [
+            
             //Admin permission
-            'admin.create',
-            'admin.edit',
-            'admin.show',
-            'admin.delete',
+            [
+                'group_name' => 'Admin',
+                'permission' => [
+                    'admin.create',
+                    'admin.edit',
+                    'admin.show',
+                    'admin.delete',
+                ]
+            ],
+            
 
             //user permission
-            'user.create',
-            'user.edit',
-            'user.show',
-            'user.delete',
+            [
+                'group_name' => 'User',
+                'permission' => [
+                    'user.create',
+                    'user.edit',
+                    'user.show',
+                    'user.delete',
+                ]
+            ],
             
             //editor permission
-            'editor.create',
-            'editor.edit',
-            'editor.show',
-            'editor.delete',
+            [
+                'group_name' => 'Editor',
+                'permission' => [
+                    'editor.create',
+                    'editor.edit',
+                    'editor.show',
+                    'editor.delete',
+                ]
+            ],
         ];
 
         //create and asign permission
 
-        for ($i=0; $i < count($permissions); $i++) { 
-            $permission = Permission::create(['name' => $permissions[$i]]);
-            $roleAdmin->givePermissionTo($permission);
-            $permission->assignRole($roleAdmin);
+        for ($i=0; $i < count($permissions); $i++) { //All permission
+            $groupPermission = $permissions[$i]['group_name']; //find group name
+            for ($j=0; $j < count($permissions[$i]['permission']); $j++) { 
+                $permission = Permission::create(['name' => $permissions[$i]['permission'][$j], 'group_name' => $groupPermission]);
+                $roleAdmin->givePermissionTo($permission);
+                $permission->assignRole($roleAdmin);
+            }
         }
 
     }
