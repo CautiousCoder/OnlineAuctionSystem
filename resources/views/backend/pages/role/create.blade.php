@@ -51,21 +51,34 @@
               <hr>
 
               <div class="form-group">
+                @php $i = 1; @endphp
                 @foreach ($permissions_group as $item)
-                <div class="form-check col-6">
-                  <input name="permissions[]" id="checkbox{{$item->name}}" class="form-check-input" type="checkbox" value="{{$item->name}}">
-                  <label for="checkbox{{$item->name}}" class="form-check-label">{{$item->name}}</label>
+                <div class="row">
+                  <div class="col-3">
+                    <div class="form-check">
+                      <input name="permission" id="checkbox{{$item->name}}" class="form-check-input" type="checkbox"
+                        value="{{$item->name}}" onclick="checkPermissionByGroup('role-{{ $i }}-management-checkbox', this)">
+                      <label for="checkbox{{$item->name}}" class="form-check-label">{{$item->name}}</label>
+                    </div>
+                  </div>
+                  <div class="col-9 role-{{ $i }}-management-checkbox">
+                    @php
+                        $permissions = App\Models\User::getpermissionsByGroupName($item->name);
+                        $j = 1;
+                    @endphp
+                    @foreach ($permissions as $p)
+                    <div class="form-check col-6">
+                      <input name="permissions[]" id="checkbox{{$p->id}}" class="form-check-input" type="checkbox"
+                        value="{{$p->name}}">
+                      <label for="checkbox{{$p->id}}" class="form-check-label">{{$p->name}}</label>
+                    </div>
+                    @php $j++; @endphp
+                    @endforeach
+                  </div>
                 </div>
+                @php $i++; @endphp
                 @endforeach
               </div>
-              {{-- <div class="row">
-                @foreach ($permissions as $p)
-                <div class="form-check col-6">
-                  <input name="permissions[]" id="checkbox{{$p->id}}" class="form-check-input" type="checkbox" value="{{$p->name}}">
-                  <label for="checkbox{{$p->id}}" class="form-check-label">{{$p->name}}</label>
-                </div>
-                @endforeach
-              </div> --}}
 
               {{-- <div class="form-check">
                 <input class="form-check-input" type="checkbox" checked="">
@@ -91,14 +104,25 @@
 @endsection
 
 @section('scriptArea')
-    <script>
-      $("#checkboxall").click(function(){
-        if ($(this).is(':checked')) {
+<script>
+  $("#checkboxall").click(function(){
+      if ($(this).is(':checked')) {
         // All checkbox checked
         $('input[type=checkbox]').prop('checked', true);
       }else {
+        // All checkbox unchecked
         $('input[type=checkbox]').prop('checked', false);
       }
-      });
-    </script>
+  });
+  function checkPermissionByGroup(className, checkThis){ //checkThis = find permission_group
+    const classIdName = $('#'+checkThis.id); //find permission_group Id
+    const classCheckBox = $("."+className+" input"); //className = role-{{ $i }}-management-checkbox then select inner input
+    if (classIdName.is(':checked')) {
+        // className checkbox checked
+        classCheckBox.prop('checked', true);
+      }else {
+        classCheckBox.prop('checked', false);
+      }
+  }
+</script>
 @endsection
