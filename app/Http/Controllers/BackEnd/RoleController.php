@@ -97,17 +97,21 @@ class RoleController extends Controller
     {
         //
         $this->validate($request, [
-            'name' => 'required|max:100',
+            'name' => 'required|max:100|unique:roles,name,'.$id,
         ],[
             'name.required' => 'The Role name is required.',
             'name.unique' => 'Already exists this Role.',
         ]);
 
-        $roleAdmin = Role::findById($id);
+        $role = Role::findById($id);
         $permissions = $request->input('permissions');
+        $role->name = $request->name;
         if ($permissions) {
-            $roleAdmin->syncPermissions($permissions);
+            $role->syncPermissions($permissions);
         }
+        $role->save();
+
+        Session()->flash('success', 'Role Deleted Successfully.!');
         return redirect()->back();
     }
 
@@ -125,6 +129,6 @@ class RoleController extends Controller
             $role->delete();
         }
         Session()->flash('success', 'Role Deleted Successfully.!');
-        return Redirect::back();
+        return redirect()->back();
     }
 }

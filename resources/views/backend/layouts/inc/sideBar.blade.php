@@ -9,7 +9,7 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+    <div class="user-panel py-3 d-flex">
       <div class="image">
         <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
@@ -17,24 +17,20 @@
         <a href="#" class="d-block">Alexander Pierce</a>
       </div>
     </div>
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="image">
-        <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-      </div>
-      <div class="info">
-        <ul class="list-group">
-          <li class="active"><a href=""
-              class="d-block">Dashboard</a>
-            <ul class="list-group d-none">
-              <li class="list-group-item active" aria-current="true">An active item</li>
-              <li class="list-group-item">A second item</li>
-              <li class="list-group-item">A third item</li>
-              <li class="list-group-item">A fourth item</li>
-              <li class="list-group-item">And a fifth one</li>
+    <div class="side-menu">
+      <ul class="list-group user-panel d-block">
+        <li class="active"><a class="py-3 d-block" href="#" class="d-block">Dashboard</a>
+          <div class="list-group side-sub-menu">
+            <ul class="list-group">
+              <li class="list-group-item active" aria-current="true"><a href="#">An active item</a></li>
+              <li class="list-group-item"><a href="#">An active item</a></li>
+              <li class="list-group-item"><a href="#">An active item</a></li>
+              <li class="list-group-item"><a href="#">An active item</a></li>
+              <li class="list-group-item"><a href="#">An active item</a></li>
             </ul>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+      </ul>
     </div>
 
     <!-- SidebarSearch Form -->

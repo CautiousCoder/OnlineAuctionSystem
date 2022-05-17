@@ -1,4 +1,38 @@
-#sidebar-id li.menu-top {
+/* ======================================================================================
+    Side-bar-nav style
+   ====================================================================================== */
+.side-menu ul{
+    display: block;
+    position: relative;
+}
+
+
+.side-sub-menu {
+	position: fixed;
+	left: 19%;
+	top: 10%;
+	z-index: 999;
+	display: none;
+	overflow: visible !important;
+}
+.side-menu:hover div.side-sub-menu,
+.side-menu:focus div.side-sub-menu,
+.side-menu:active div.side-sub-menu {
+    display: block !important;     
+}
+.side-menu:hover .side-sub-menu li {
+    width: 250px;
+    padding: 0.1rem 0.25rem;
+}
+.side-menu:hover .side-sub-menu li a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/* #sidebar-id li.menu-top {
     border: none;
     min-height: 34px;
     position: relative;
@@ -141,4 +175,4 @@ a {
 #sidebar-id a:hover,
 #sidebar-id li.menu-top>a:focus {
     color: #72aee6;
-}
+} */
