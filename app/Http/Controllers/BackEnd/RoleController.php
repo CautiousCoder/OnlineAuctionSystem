@@ -30,9 +30,9 @@ class RoleController extends Controller
     public function create()
     {
         //
-        $permissions = Permission::all();
+        $all_permissions = Permission::all();
         $permissions_group = User::getPermissionNames();
-        return view('backend.pages.role.create', compact(['permissions', 'permissions_group']));
+        return view('backend.pages.role.create', compact(['all_permissions', 'permissions_group']));
     }
 
     /**
@@ -45,7 +45,7 @@ class RoleController extends Controller
     {
         //
         $this->validate($request, [
-            'name' => 'required|unique:roles,name',
+            'name' => 'required|max:100|unique:roles,name',
         ],[
             'name.required' => 'The Role name is required.',
             'name.unique' => 'Already exists this Role.',
@@ -79,6 +79,10 @@ class RoleController extends Controller
     public function edit($id)
     {
         //
+        $role = Role::findById($id);
+        $all_permissions = Permission::all();
+        $permissions_group = User::getPermissionNames();
+        return view('backend.pages.role.edit', compact(['role', 'all_permissions', 'permissions_group']));
     }
 
     /**
@@ -91,6 +95,19 @@ class RoleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'name' => 'required|max:100',
+        ],[
+            'name.required' => 'The Role name is required.',
+            'name.unique' => 'Already exists this Role.',
+        ]);
+
+        $roleAdmin = Role::findById($id);
+        $permissions = $request->input('permissions');
+        if ($permissions) {
+            $roleAdmin->syncPermissions($permissions);
+        }
+        return redirect()->back();
     }
 
     /**

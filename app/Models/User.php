@@ -54,7 +54,7 @@ class User extends Authenticatable
 
         return $permission_group;
     }
-
+    //find permission under a group name
     public static function getpermissionsByGroupName($group_name)
     {
         $permissions = DB::table('permissions')->select('name', 'id')->where('group_name', $group_name)->get();
@@ -62,5 +62,16 @@ class User extends Authenticatable
 
     }
 
+    //check all permissions are checked or not under a group
+    public static function groupPermission($role, $permissions){
+        $haspermission = true;
+        foreach($permissions as $p){
+            if (!$role->hasPermissionTo($p->name)) {
+                $haspermission = false;
+                return $haspermission;
+            }
+        }
+        return $haspermission;
+    }
 
 }
