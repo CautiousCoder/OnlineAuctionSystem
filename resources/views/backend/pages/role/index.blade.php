@@ -35,28 +35,30 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th style="width: 10px">No.</th>
-            <th>Name</th>
-            <th>Permission</th>
-            <th>Action</th>
+            <th style="width: 6% !important">No.</th>
+            <th style="width: 15% !important">Name</th>
+            <th style="width: 64% !important">Permission</th>
+            <th style="width: 15% !important">Action</th>
           </tr>
         </thead>
         <tbody>
           @if ($roles->count() > 0)
           @foreach ($roles as $Role)
           <tr>
-            <td>{{ $Role->id }}.</td>
+            <td>{{ $loop->index+1 }}.</td>
             <td>{{ $Role->name }}</td>
-            <td>{{ $Role->description }}</td>
+            <td style="width: 60% !important">@foreach ($Role->permissions as $item)
+                <span class="badge badge-info mr-1">{{$item->name}}</span>
+            @endforeach</td>
             <td class="d-flex">
-              <a href="{{ route('admin.role.edit',[$Role->id]) }}" class="btn btn-sm btn-info mr-1"><i
+              <a href="{{ route('admin.role.edit',[$Role->id]) }}" class="btn btn-sm btn-info mr-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i
                   class="far fa-edit"></i></a>
               <form action="{{ route('admin.role.destroy',[$Role->id]) }}" method="POST" class="mr-1">
                 @method('DELETE')
                 @csrf
-                <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete"></i></button>
               </form>
-              <a href="{{ route('admin.role.show',[$Role->id]) }}" class="btn btn-sm btn-primary mr-1"><i
+              <a href="{{ route('admin.role.show',[$Role->id]) }}" class="btn btn-sm btn-primary mr-1 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Show"><i
                   class="far fa-eye"></i></a>
             </td>
           </tr>

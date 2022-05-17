@@ -5,6 +5,7 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -119,5 +120,11 @@ class RoleController extends Controller
     public function destroy($id)
     {
         //
+        if ($id) {
+            $role = Role::findById($id);
+            $role->delete();
+        }
+        Session()->flash('success', 'Role Deleted Successfully.!');
+        return Redirect::back();
     }
 }
