@@ -43,18 +43,18 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::middleware('guest:admin')->group(function(){
         //Route::post('/store', [AdminController::class, 'store'])->name('store');
         //Admin Login
-        Route::post('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
+        Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
         Route::post('/login/submit', [AdminLoginController::class, 'login'])->name('login.submit');
     });
     Route::middleware('auth:admin')->group(function(){
         //Admin Dashboard
-        Route::view('/dashboard', 'backend.admin.dashboard')->name('dashboard');
+        Route::view('/dashboard', 'backend.pages.admin.dashboard')->name('dashboard');
 
         //Admin Logout
         Route::post('/logout', [AdminLoginController::class, 'logout'])->name('logout.submit');
 
         //Admin Reset Password
-        Route::post('/password/reste', [AdminResetPasswordController::class, 'showResetForm'])->name('password.request');
+        Route::get('/password/reste', [AdminResetPasswordController::class, 'showResetForm'])->name('password.request');
         Route::post('/password/reset/submit', [AdminResetPasswordController::class, 'resetPassword'])->name('password.update');
    
         //

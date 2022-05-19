@@ -8,17 +8,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Starter</title>
-  <!-- Toaster Notification -->
-  <link rel="stylesheet" href="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/custom.css">
+  <title>@yield('title')</title>
+  {{-- Style link here --}}
+  @include('backend.layouts.inc.style')
+  {{-- Additionals Style link here to add on ather pages --}}
   @yield('styleArea')
 </head>
 
@@ -63,14 +56,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- REQUIRED SCRIPTS -->
 
-  <!-- jQuery -->
-  <script src="{{ asset('backEnd') }}/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="{{ asset('backEnd') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="{{ asset('backEnd') }}/dist/js/adminlte.min.js"></script>
-  <!-- Toaster Notification -->
-  <script src="cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+   <!-- script link -->
+   @include('backend.layouts.inc.scripts')
+   <!-- Additional script link here -->
   @yield('scriptArea')
 
     @if(Session::has('success'))
