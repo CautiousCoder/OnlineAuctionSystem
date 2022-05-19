@@ -91,6 +91,11 @@
       'guard' => 'web',
       'passwords' => 'users',
     ),
+    'admin' => 
+    array (
+      'driver' => 'eloquent',
+      'model' => 'App\\Models\\Admin',
+    ),
     'guards' => 
     array (
       'web' => 
@@ -99,6 +104,17 @@
         'provider' => 'users',
       ),
       'api' => 
+      array (
+        'driver' => 'token',
+        'provider' => 'users',
+        'hash' => false,
+      ),
+      'admin' => 
+      array (
+        'driver' => 'session',
+        'provider' => 'admins',
+      ),
+      'admin_api' => 
       array (
         'driver' => 'token',
         'provider' => 'users',
@@ -117,6 +133,11 @@
         'driver' => 'eloquent',
         'model' => 'App\\Models\\User',
       ),
+      'admins' => 
+      array (
+        'driver' => 'eloquent',
+        'model' => 'App\\Models\\Admin',
+      ),
     ),
     'passwords' => 
     array (
@@ -126,6 +147,11 @@
         'table' => 'password_resets',
         'expire' => 60,
         'throttle' => 60,
+      ),
+      'admin' => 
+      array (
+        'driver' => 'eloquent',
+        'model' => 'App\\Models\\Admin',
       ),
     ),
     'password_timeout' => 10800,

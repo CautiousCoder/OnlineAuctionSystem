@@ -37,7 +37,7 @@ class RolePermisionSeeder extends Seeder
 
             //user permission
             [
-                'group_name' => 'User',
+                'group_name' => 'GuestUser',
                 'permission' => [
                     'user.create',
                     'user.edit',
