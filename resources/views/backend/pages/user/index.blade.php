@@ -37,7 +37,8 @@
           <tr>
             <th style="width: 6% !important">No.</th>
             <th style="width: 15% !important">Name</th>
-            <th style="width: 64% !important">Permission</th>
+            <th style="width: 19% !important">Email</th>
+            <th style="width: 45% !important">Roles</th>
             <th style="width: 15% !important">Action</th>
           </tr>
         </thead>
@@ -47,7 +48,8 @@
           <tr>
             <td>{{ $loop->index+1 }}.</td>
             <td>{{ $user->name }}</td>
-            <td style="width: 60% !important">@foreach ($user->permissions as $item)
+            <td>{{ $user->email }}</td>
+            <td style="width: 60% !important">@foreach ($user->roles as $item)
                 <span class="badge badge-info mr-1">{{$item->name}}</span>
             @endforeach</td>
             <td class="d-flex">

@@ -53,7 +53,47 @@ class UserController extends Controller
         
     }
 
+    public function edit(User $user){
+        $roles = Role::all();
+        return view('backend.pages.user.edit', compact(['user','roles']));
+    }
 
+    public function update(Request $request, User $user){
+        $request->validate([
+            'name' => 'nullable',
+            'email' => 'nullable|unique:users,email',
+            'password' => 'nullable|min:6|max:15',
+            'cpassword' => 'nullable|same:password',
+        ],[
+            'cpassword.same' => 'The Confirm Password and Password must match.'
+        ]);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->password) {
+            $user->password = Hash::make($request->password);
+        }
+        $user->roles()->detach();
+        if ($request->roles) {
+            $user->assignRole($request->roles);
+        }
+
+        $data = $user->save();
+
+        if($data){
+            return redirect()->back()->with('success', 'User created Successfully.');
+        }else {
+            return redirect()->back()->with('error', 'User created Failed.');
+        }
+    }
+
+    public function destroy(User $user){
+        if($user){
+            $user->delete();
+        }
+        Session()->flash('success', 'User Deleted Successfully.!');
+        return redirect()->back();
+    }
 
 
     // user signin or register

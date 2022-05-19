@@ -6,13 +6,13 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">Edid Role</h1>
+        <h1 class="m-0">Edit User - {{$user->name}}</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('admin.role.index') }}">Role List</a></li>
-          <li class="breadcrumb-item active">Edit Role</li>
+          <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">User List</a></li>
+          <li class="breadcrumb-item active">Edit User</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -26,68 +26,66 @@
   <div class="card">
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
-        <h2 class="card-title">Edit Role</h2>
-        <a href="{{ route('admin.role.index') }}" class="btn btn-lg btn-primary">All Roles</a>
+        <h2 class="card-title">Edit User - {{$user->name}}</h2>
+        <a href="{{ route('admin.user.index') }}" class="btn btn-lg btn-primary">Back</a>
       </div>
     </div>
 
     {{-- <div class="card-body p-0"> --}}
       <!-- form start -->
       <div class="col-12 col-lg-6 col-md-8 offset-lg-3 offset-md-2">
-        <form action="{{ route('admin.role.update', [$role->id]) }}" method="POST">
+        <form action="{{ route('admin.user.update',[$user->id]) }}" method="POST">
           @method('PUT')
           @csrf
           <div class="card-body">
             @include('backend.inc.error')
             <div class="form-group">
-              <label for="name">Role Name</label>
-              <input type="text" name="name" class="form-control" id="name" value="{{$role->name}}" placeholder="Enter tag Name">
+              <label for="name">Name</label>
+              <input type="text" name="name" class="form-control" id="name" value="{{$user->name}}" placeholder="Enter Full Name">
             </div>
             <div class="form-group">
-              <label class="d-block" for="Permission">Permissions</label>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkboxall" value="1" {{ App\Models\User::groupPermission($role, $all_permissions) ? "checked" : ''}}>
-                <label class="form-check-label" for="checkboxall">All</label>
-              </div>
-              <hr>
+              <label for="email">Email</label>
+              <input type="email" name="email" class="form-control" id="email" value="{{$user->email}}" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" class="form-control" id="password"
+                placeholder="Enter New Password">
+            </div>
+            <div class="form-group">
+              <label for="cpassword">Confirm Password</label>
+              <input type="password" name="cpassword" class="form-control" id="cpassword"
+                placeholder="Enter Conform Password">
+            </div>
+            <div class="form-group">
 
-              <div class="form-group">
-                @php $i = 1; @endphp
-                @foreach ($permissions_group as $item)
-                <div class="row">
-                  @php
-                      $permissions = App\Models\User::getpermissionsByGroupName($item->name);
-                      $j = 1;
-                  @endphp
-                  <div class="col-3">
-                    <div class="form-check">
-                      <input name="permission" id="checkbox{{$item->name}}" class="form-check-input" type="checkbox"
-                        value="{{$item->name}}" onclick="checkPermissionByGroup('role-{{ $i }}-management-checkbox', this)"
-                        {{ App\Models\User::groupPermission($role, $permissions) ? "checked" : ''}}>
-                      <label for="checkbox{{$item->name}}" class="form-check-label">{{$item->name}}</label>
-                    </div>
-                  </div>
-                  <div class="col-9 role-{{ $i }}-management-checkbox">
-                    @foreach ($permissions as $p)
-                    <div class="form-check col-6">
-                      <input name="permissions[]" id="checkbox{{$p->id}}" class="form-check-input" type="checkbox"
-                        value="{{$p->name}}" {{$role->hasPermissionTo($p->name) ? "checked" : ''}} onclick="checkSinglePermission('role-{{ $i }}-management-checkbox', 'checkbox{{$item->name}}',{{count($permissions)}})">
-                      <label for="checkbox{{$p->id}}" class="form-check-label">{{$p->name}}</label>
-                    </div>
-                    @php $j++; @endphp
-                    @endforeach
-                  </div>
-                </div>
-                @php $i++; @endphp
+              <label>Multiple</label>
+              <select class="select2 select2-hidden-accessible js-example-basic-multiple" name="roles[]" multiple="multiple" data-placeholder="Select Roles"
+                style="width: 100%;" data-select2-id="7" tabindex="-1" aria-hidden="true">
+                @foreach ($roles as $role)
+                <option {{ $user->hasRole($role->name) ? "selected" : '' }} data-select2-id="7{{$role->id}}">{{$role->name}}</option>
                 @endforeach
-              </div>
-
-              {{-- <div class="form-check">
-                <input class="form-check-input" type="checkbox" checked="">
-                <label class="form-check-label">Checkbox checked</label>
-              </div> --}}
+                {{-- <option data-select2-id="71">Alaska</option>
+                <option data-select2-id="72">California</option>
+                <option data-select2-id="73">Delaware</option>
+                <option data-select2-id="74">Tennessee</option>
+                <option data-select2-id="75">Texas</option>
+                <option data-select2-id="76">Washington</option> --}}
+              </select><span class="select2 select2-container select2-container--default select2-container--above"
+                dir="ltr" data-select2-id="8" style="width: 100%;"><span class="selection"><span
+                    class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="false"
+                    aria-expanded="false" tabindex="-1" aria-disabled="false">
+                    <ul class="select2-selection__rendered">
+                      <li class="select2-search select2-search--inline"><input class="select2-search__field"
+                        type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none"
+                        spellcheck="false" role="searchbox" aria-autocomplete="list" placeholder="Select Roles"
+                        style="width: 474px;"></li>
+                    </ul>
+                  </span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
 
             </div>
+
+
           </div>
           <!-- /.card-body -->
 
@@ -104,9 +102,16 @@
 </div>
 <!-- /.content -->
 @endsection
+@section('styleArea')
+<link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/select2/css/select2.min.css">
+@endsection
 
 @section('scriptArea')
+<!-- select2 -->
+<script src="{{ asset('backEnd') }}/plugins/select2/js/select2.full.min.js"></script>
+<script src="{{ asset('backEnd') }}/plugins/select2/js/select2.min.js"></script>
 <script>
- @include('backend.inc.checkPermission')
+  $('.js-example-basic-multiple').select2();
 </script>
+
 @endsection

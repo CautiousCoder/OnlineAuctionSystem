@@ -32,6 +32,20 @@
 }
 
 
+
+
+
+/* ======================================================================================
+    Side-bar-nav style
+   ====================================================================================== */
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+	background-color: #007bff !important;
+	border-color: #006fe6 !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+	color: #fff !important;
+}
+
 /* #sidebar-id li.menu-top {
     border: none;
     min-height: 34px;
