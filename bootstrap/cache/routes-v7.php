@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::fzi0mIvrgx55fNe8',
+            '_route' => 'generated::HFJhQKSF98A05zD9',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::UAm9j1uVmyR6e8S0',
+            '_route' => 'generated::r8sydYyqyQwIQEIX',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::jJ0Tn6Croq50UTKN',
+            '_route' => 'generated::Zs8DTIITpDtjvgb4',
           ),
           1 => NULL,
           2 => 
@@ -293,6 +293,62 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'admin.role.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/user' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/user/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.create',
           ),
           1 => NULL,
           2 => 
@@ -497,11 +553,11 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/role/([^/]++)(?|(*:30)|/edit(*:42)|(*:49))|/category/([^/]++)(?|(*:78)|/edit(*:90)|(*:97))|/tag/([^/]++)(?|(*:121)|/edit(*:134)|(*:142))|/post/([^/]++)(?|(*:168)|/edit(*:181)|(*:189)))/?$}sDu',
+      0 => '{^(?|/admin/(?|role/([^/]++)(?|(*:33)|/edit(*:45)|(*:52))|user/([^/]++)(?|(*:76)|/edit(*:88)|(*:95)))|/category/([^/]++)(?|(*:125)|/edit(*:138)|(*:146))|/tag/([^/]++)(?|(*:171)|/edit(*:184)|(*:192))|/post/([^/]++)(?|(*:218)|/edit(*:231)|(*:239)))/?$}sDu',
     ),
     3 => 
     array (
-      30 => 
+      33 => 
       array (
         0 => 
         array (
@@ -524,7 +580,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      42 => 
+      45 => 
       array (
         0 => 
         array (
@@ -547,7 +603,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      49 => 
+      52 => 
       array (
         0 => 
         array (
@@ -589,7 +645,95 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      78 => 
+      76 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.show',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      88 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.edit',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      95 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.update',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.user.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'user',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      125 => 
       array (
         0 => 
         array (
@@ -612,7 +756,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      90 => 
+      138 => 
       array (
         0 => 
         array (
@@ -635,7 +779,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      97 => 
+      146 => 
       array (
         0 => 
         array (
@@ -677,7 +821,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      121 => 
+      171 => 
       array (
         0 => 
         array (
@@ -700,7 +844,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      134 => 
+      184 => 
       array (
         0 => 
         array (
@@ -723,7 +867,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      142 => 
+      192 => 
       array (
         0 => 
         array (
@@ -765,7 +909,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      168 => 
+      218 => 
       array (
         0 => 
         array (
@@ -788,7 +932,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      181 => 
+      231 => 
       array (
         0 => 
         array (
@@ -811,7 +955,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      189 => 
+      239 => 
       array (
         0 => 
         array (
@@ -868,7 +1012,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::fzi0mIvrgx55fNe8' => 
+    'generated::HFJhQKSF98A05zD9' => 
     array (
       'methods' => 
       array (
@@ -889,7 +1033,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::fzi0mIvrgx55fNe8',
+        'as' => 'generated::HFJhQKSF98A05zD9',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1014,7 +1158,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::UAm9j1uVmyR6e8S0' => 
+    'generated::r8sydYyqyQwIQEIX' => 
     array (
       'methods' => 
       array (
@@ -1037,7 +1181,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::UAm9j1uVmyR6e8S0',
+        'as' => 'generated::r8sydYyqyQwIQEIX',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1053,7 +1197,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::jJ0Tn6Croq50UTKN' => 
+    'generated::Zs8DTIITpDtjvgb4' => 
     array (
       'methods' => 
       array (
@@ -1075,7 +1219,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::jJ0Tn6Croq50UTKN',
+        'as' => 'generated::Zs8DTIITpDtjvgb4',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1197,8 +1341,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'guest:web',
         ),
-        'uses' => 'App\\Http\\Controllers\\User\\UserController@store',
-        'controller' => 'App\\Http\\Controllers\\User\\UserController@store',
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@dostore',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@dostore',
         'as' => 'user.store',
         'namespace' => NULL,
         'prefix' => '/user',
@@ -1577,6 +1721,263 @@ app('router')->setCompiledRoutes(
         'as' => 'admin.role.destroy',
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@destroy',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\RoleController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'admin.user.index',
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@index',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@index',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'admin.user.create',
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@create',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@create',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/user',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'admin.user.store',
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@store',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@store',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'admin.user.show',
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@show',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@show',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/user/{user}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'admin.user.edit',
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@edit',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@edit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'admin/user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'admin.user.update',
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@update',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.user.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'admin/user/{user}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'as' => 'admin.user.destroy',
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@destroy',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@destroy',
         'namespace' => NULL,
         'prefix' => '/admin',
         'where' => 

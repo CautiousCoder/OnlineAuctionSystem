@@ -28,7 +28,7 @@ Route::prefix('user')->name('user.')->group(function(){
     Route::middleware('guest:web')->group(function(){
         Route::view('/login', 'backend.user.login')->name('login');
         Route::view('/register', 'backend.user.register')->name('register');
-        Route::post('/store', [UserController::class, 'store'])->name('store');
+        Route::post('/store', [UserController::class, 'dostore'])->name('store');
         Route::post('/login', [UserController::class, 'dologin'])->name('dologin');
     });
     Route::middleware('auth:web')->group(function(){
@@ -49,6 +49,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     //     Route::post('/logout', [AdminController::class, 'dologout'])->name('dologout');
     // });
     Route::resource('role', RoleController::class);
+    Route::resource('user', UserController::class);
 
 });
 
