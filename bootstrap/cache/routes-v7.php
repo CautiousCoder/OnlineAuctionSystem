@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::u9F0AZlBJomjJcm0',
+            '_route' => 'generated::1bnnVqr15LsL2OKz',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Xa9J1Mc1DaNvXIls',
+            '_route' => 'generated::hrBv0Lcq9GKX6gvE',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::xEDIZ8zcXvjAJX9t',
+            '_route' => 'generated::jKlTBhwlHMqhHU4g',
           ),
           1 => NULL,
           2 => 
@@ -238,6 +238,121 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'user.dologout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/login' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.login',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/login/submit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.login.submit',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/dashboard' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.dashboard',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/logout' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.logout.submit',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/password/reste' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.password.request',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/password/reset/submit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.password.update',
           ),
           1 => NULL,
           2 => 
@@ -1012,7 +1127,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::u9F0AZlBJomjJcm0' => 
+    'generated::1bnnVqr15LsL2OKz' => 
     array (
       'methods' => 
       array (
@@ -1033,7 +1148,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::u9F0AZlBJomjJcm0',
+        'as' => 'generated::1bnnVqr15LsL2OKz',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1158,7 +1273,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Xa9J1Mc1DaNvXIls' => 
+    'generated::hrBv0Lcq9GKX6gvE' => 
     array (
       'methods' => 
       array (
@@ -1181,7 +1296,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Xa9J1Mc1DaNvXIls',
+        'as' => 'generated::hrBv0Lcq9GKX6gvE',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1197,7 +1312,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::xEDIZ8zcXvjAJX9t' => 
+    'generated::jKlTBhwlHMqhHU4g' => 
     array (
       'methods' => 
       array (
@@ -1219,7 +1334,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::xEDIZ8zcXvjAJX9t',
+        'as' => 'generated::jKlTBhwlHMqhHU4g',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1484,6 +1599,237 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'admin.login' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/login',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@showLoginForm',
+        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@showLoginForm',
+        'as' => 'admin.login',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.login.submit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/login/submit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@login',
+        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@login',
+        'as' => 'admin.login.submit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.dashboard' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/dashboard',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
+        'controller' => '\\Illuminate\\Routing\\ViewController',
+        'as' => 'admin.dashboard',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+        'view' => 'backend.admin.dashboard',
+        'data' => 
+        array (
+        ),
+        'status' => 200,
+        'headers' => 
+        array (
+        ),
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.logout.submit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/logout',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@logout',
+        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@logout',
+        'as' => 'admin.logout.submit',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.password.request' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/password/reste',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@showResetForm',
+        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@showResetForm',
+        'as' => 'admin.password.request',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.password.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'admin/password/reset/submit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@resetPassword',
+        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@resetPassword',
+        'as' => 'admin.password.update',
+        'namespace' => NULL,
+        'prefix' => '/admin',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'admin.role.index' => 
     array (
       'methods' => 
@@ -1497,6 +1843,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.role.index',
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@index',
@@ -1534,6 +1881,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.role.create',
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@create',
@@ -1570,6 +1918,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.role.store',
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@store',
@@ -1607,6 +1956,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.role.show',
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@show',
@@ -1644,6 +1994,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.role.edit',
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@edit',
@@ -1681,6 +2032,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.role.update',
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@update',
@@ -1717,6 +2069,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.role.destroy',
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@destroy',
@@ -1754,6 +2107,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.user.index',
         'uses' => 'App\\Http\\Controllers\\User\\UserController@index',
@@ -1791,6 +2145,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.user.create',
         'uses' => 'App\\Http\\Controllers\\User\\UserController@create',
@@ -1827,6 +2182,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.user.store',
         'uses' => 'App\\Http\\Controllers\\User\\UserController@store',
@@ -1864,6 +2220,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.user.show',
         'uses' => 'App\\Http\\Controllers\\User\\UserController@show',
@@ -1901,6 +2258,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.user.edit',
         'uses' => 'App\\Http\\Controllers\\User\\UserController@edit',
@@ -1938,6 +2296,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.user.update',
         'uses' => 'App\\Http\\Controllers\\User\\UserController@update',
@@ -1974,6 +2333,7 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
+          1 => 'auth:admin',
         ),
         'as' => 'admin.user.destroy',
         'uses' => 'App\\Http\\Controllers\\User\\UserController@destroy',

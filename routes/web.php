@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\BackEnd\RoleController;
+use App\Http\Controllers\BackEnd\Auth\AdminLoginController;
+use App\Http\Controllers\BackEnd\Auth\AdminResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,19 +40,27 @@ Route::prefix('user')->name('user.')->group(function(){
 });
 
 Route::prefix('admin')->name('admin.')->group(function(){
-    // Route::middleware('guest:admin')->group(function(){
-    //     Route::view('/login', 'backend.admin.login')->name('login');
-    //     // Route::view('/register', 'backend.admin.register')->name('register');
-    //     Route::post('/store', [AdminController::class, 'store'])->name('store');
-    //     Route::post('/login', [AdminController::class, 'dologin'])->name('dologin');
-    // });
-    // Route::middleware('auth:admin')->group(function(){
-    //     Route::view('/dashboard', 'backend.admin.dashboard')->name('dashboard');
-    //     Route::post('/logout', [AdminController::class, 'dologout'])->name('dologout');
-    // });
-    Route::resource('role', RoleController::class);
-    Route::resource('user', UserController::class);
+    Route::middleware('guest:admin')->group(function(){
+        //Route::post('/store', [AdminController::class, 'store'])->name('store');
+        //Admin Login
+        Route::post('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
+        Route::post('/login/submit', [AdminLoginController::class, 'login'])->name('login.submit');
+    });
+    Route::middleware('auth:admin')->group(function(){
+        //Admin Dashboard
+        Route::view('/dashboard', 'backend.admin.dashboard')->name('dashboard');
 
+        //Admin Logout
+        Route::post('/logout', [AdminLoginController::class, 'logout'])->name('logout.submit');
+
+        //Admin Reset Password
+        Route::post('/password/reste', [AdminResetPasswordController::class, 'showResetForm'])->name('password.request');
+        Route::post('/password/reset/submit', [AdminResetPasswordController::class, 'resetPassword'])->name('password.update');
+   
+        //
+        Route::resource('role', RoleController::class);
+        Route::resource('user', UserController::class);
+    });
 });
 
 
