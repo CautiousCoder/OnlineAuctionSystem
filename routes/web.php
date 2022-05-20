@@ -57,9 +57,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('/password/reste', [AdminResetPasswordController::class, 'showResetForm'])->name('password.request');
         Route::post('/password/reset/submit', [AdminResetPasswordController::class, 'resetPassword'])->name('password.update');
    
-        //
+        //Resource Route
         Route::resource('role', RoleController::class);
         Route::resource('user', UserController::class);
+        Route::resource('admin', AdminController::class);
     });
 });
 

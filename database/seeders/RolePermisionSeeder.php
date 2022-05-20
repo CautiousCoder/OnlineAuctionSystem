@@ -18,8 +18,9 @@ class RolePermisionSeeder extends Seeder
     {
         //
         $roleAdmin = Role::create(['name' => 'Admin']);
-        $roleUser = Role::create(['name' => 'GuestUser']);
-        $roleEditor = Role::create(['name' => 'Editor']);
+        $roleUser = Role::create(['name' => 'User']);
+        $roleBuyer = Role::create(['name' => 'Buyer']);
+        $roleSeller = Role::create(['name' => 'Seller']);
 
         $permissions = [
             
@@ -31,29 +32,41 @@ class RolePermisionSeeder extends Seeder
                     'admin.edit',
                     'admin.show',
                     'admin.delete',
+                    'admin.dashboard',
                 ]
             ],
             
 
             //user permission
             [
-                'group_name' => 'GuestUser',
+                'group_name' => 'User',
                 'permission' => [
                     'user.create',
                     'user.edit',
                     'user.show',
                     'user.delete',
+                    'user.dashboard',
                 ]
             ],
             
-            //editor permission
+            //buyer permission
             [
-                'group_name' => 'Editor',
+                'group_name' => 'Buyer',
                 'permission' => [
-                    'editor.create',
-                    'editor.edit',
-                    'editor.show',
-                    'editor.delete',
+                    'buyer.create',
+                    'buyer.edit',
+                    'buyer.show',
+                    'buyer.delete',
+                ]
+            ],
+            //seller permission
+            [
+                'group_name' => 'Seller',
+                'permission' => [
+                    'seller.create',
+                    'seller.edit',
+                    'seller.show',
+                    'seller.delete',
                 ]
             ],
         ];
