@@ -80,7 +80,7 @@ class RoleController extends Controller
     public function edit($id)
     {
         //
-        $role = Role::findById($id, $guardName = 'admin');
+        $role = Role::findById($id, 'admin');
         $all_permissions = Permission::all();
         $permissions_group = User::getPermissionNames();
         return view('backend.pages.role.edit', compact(['role', 'all_permissions', 'permissions_group']));
@@ -103,7 +103,7 @@ class RoleController extends Controller
             'name.unique' => 'Already exists this Role.',
         ]);
 
-        $role = Role::findById($id, $guardName = 'admin');
+        $role = Role::findById($id, 'admin');
         $permissions = $request->input('permissions');
         $role->name = $request->name;
         if ($permissions) {
@@ -125,7 +125,7 @@ class RoleController extends Controller
     {
         //
         if ($id) {
-            $role = Role::findById($id, $guardName = 'admin');
+            $role = Role::findById($id, 'admin');
             $role->delete();
         }
         Session()->flash('success', 'Role Deleted Successfully.!');

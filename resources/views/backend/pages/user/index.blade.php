@@ -1,5 +1,18 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    User | Index page
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.navbar')
+@endsection
+
+<!-- Main Content (Page content) -->
+
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
