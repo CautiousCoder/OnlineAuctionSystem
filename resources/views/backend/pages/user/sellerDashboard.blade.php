@@ -2,17 +2,17 @@
 
 <!-- Title (Page title) -->
 @section('title')
-    Admin | Dashboard
+    Buyer | Dashboard
 @endsection
 
 <!-- Navbar (Page navbar) -->
 @section('navbar')
-@include('backend.layouts.inc.navbar')
+@include('backend.layouts.inc.buyerNavbar')
 @endsection
 
 <!-- Side Bar (Page sidebar) -->
 @section('navbarSection')
-@include('backend.layouts.inc.sideBar')
+@include('backend.layouts.inc.buyerSideBar')
 @endsection
 
 <!-- Main Content (Page content) -->
@@ -24,7 +24,7 @@
     <div class="row mb-2">
       <div class="d-flex justify-content-between text-center">
         <h1 class="">Dashboard</h1>
-        <form action="{{ route('admin.logout.submit') }}" id="admin-logout" method="POST">
+        <form action="{{ route('user.dologout') }}" id="user-logout" method="POST">
           @csrf <button class="btn btn-sm btn-primary" type="submit">Logout</button> </form>
       </div><!-- /.col -->
     </div><!-- /.row -->

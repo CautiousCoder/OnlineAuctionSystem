@@ -34,7 +34,7 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::post('/login', [UserController::class, 'dologin'])->name('dologin');
     });
     Route::middleware('auth:web')->group(function(){
-        Route::view('/dashboard', 'backend.user.dashboard')->name('dashboard');
+        Route::view('/dashboard', 'backend.user.buyerDashboard')->name('dashboard');
         Route::post('/logout', [UserController::class, 'dologout'])->name('dologout');
     });
 });

@@ -1,5 +1,21 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    Role | index page
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.navbar')
+@endsection
+
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.sideBar')
+@endsection
+
+<!-- Main Content (Page content) -->
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -47,6 +63,7 @@
           <tr>
             <td>{{ $loop->index+1 }}.</td>
             <td>{{ $Role->name }}</td>
+            {{-- Role permission --}}
             <td style="width: 60% !important">@foreach ($Role->permissions as $item)
                 <span class="badge badge-info mr-1">{{$item->name}}</span>
             @endforeach</td>

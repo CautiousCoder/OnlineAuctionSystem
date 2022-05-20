@@ -1,5 +1,22 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    Buyer | Dashboard
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.buyerNavbar')
+@endsection
+
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.buyerSideBar')
+@endsection
+
+<!-- Main Content (Page content) -->
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">

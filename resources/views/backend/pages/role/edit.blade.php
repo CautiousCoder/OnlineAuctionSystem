@@ -1,5 +1,22 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    Role | edit page
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.navbar')
+@endsection
+
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.sideBar')
+@endsection
+
+<!-- Main Content (Page content) -->
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -38,6 +55,7 @@
           @method('PUT')
           @csrf
           <div class="card-body">
+            {{-- include error page --}}
             @include('backend.inc.error')
             <div class="form-group">
               <label for="name">Role Name</label>
@@ -46,7 +64,7 @@
             <div class="form-group">
               <label class="d-block" for="Permission">Permissions</label>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkboxall" value="1" {{ App\Models\User::groupPermission($role, $all_permissions) ? "checked" : ''}}>
+                <input class="form-check-input" type="checkbox" id="checkboxall" value="1" {{ App\Models\User::groupPermission($role, $all_permissions) ? "checked" : ''}}> {{-- group permission or not --}}
                 <label class="form-check-label" for="checkboxall">All</label>
               </div>
               <hr>
@@ -56,7 +74,7 @@
                 @foreach ($permissions_group as $item)
                 <div class="row">
                   @php
-                      $permissions = App\Models\User::getpermissionsByGroupName($item->name);
+                      $permissions = App\Models\User::getpermissionsByGroupName($item->name); //get all permission under this group name
                       $j = 1;
                   @endphp
                   <div class="col-3">
@@ -68,6 +86,7 @@
                     </div>
                   </div>
                   <div class="col-9 role-{{ $i }}-management-checkbox">
+                    {{-- individual permission --}}
                     @foreach ($permissions as $p)
                     <div class="form-check col-6">
                       <input name="permissions[]" id="checkbox{{$p->id}}" class="form-check-input" type="checkbox"
@@ -76,10 +95,12 @@
                     </div>
                     @php $j++; @endphp
                     @endforeach
+                    {{-- end individual permission --}}
                   </div>
                 </div>
                 @php $i++; @endphp
                 @endforeach
+                {{-- end all permission --}}
               </div>
 
               {{-- <div class="form-check">

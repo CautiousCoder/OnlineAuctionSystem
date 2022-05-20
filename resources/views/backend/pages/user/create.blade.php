@@ -1,5 +1,22 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    User | create page
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.navbar')
+@endsection
+
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.sideBar')
+@endsection
+
+<!-- Main Content (Page content) -->
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -64,12 +81,6 @@
                 @foreach ($roles as $role)
                 <option data-select2-id="7{{$role->id}}">{{$role->name}}</option>
                 @endforeach
-                {{-- <option data-select2-id="71">Alaska</option>
-                <option data-select2-id="72">California</option>
-                <option data-select2-id="73">Delaware</option>
-                <option data-select2-id="74">Tennessee</option>
-                <option data-select2-id="75">Texas</option>
-                <option data-select2-id="76">Washington</option> --}}
               </select><span class="select2 select2-container select2-container--default select2-container--above"
                 dir="ltr" data-select2-id="8" style="width: 100%;"><span class="selection"><span
                     class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="false"
