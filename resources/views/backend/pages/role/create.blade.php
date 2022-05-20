@@ -2,7 +2,7 @@
 
 <!-- Title (Page title) -->
 @section('title')
-    Role | create page
+Role | create page
 @endsection
 
 <!-- Navbar (Page navbar) -->
@@ -35,7 +35,9 @@
 <!-- Main content -->
 <div class="tagindex p-2">
   <!-- Card content -->
-  <div class="card">
+
+  <div class="col-12 col-md-8 offset-md-2">
+    <div class="card">
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
         <h2 class="card-title">Add Role</h2>
@@ -45,7 +47,6 @@
 
     {{-- <div class="card-body p-0"> --}}
       <!-- form start -->
-      <div class="col-12 col-lg-6 col-md-8 offset-lg-3 offset-md-2">
         <form action="{{ route('admin.role.store') }}" method="POST">
           @csrf
           <div class="card-body">
@@ -53,7 +54,7 @@
             @include('backend.inc.error')
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" class="form-control" id="name" placeholder="Enter tag Name">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Enter Role Name">
             </div>
             <div class="form-group">
               <label class="d-block" for="Permission">Permissions</label>
@@ -71,20 +72,22 @@
                   <div class="col-3">
                     <div class="form-check">
                       <input name="permission" id="checkbox{{$item->name}}" class="form-check-input" type="checkbox"
-                        value="{{$item->name}}" onclick="checkPermissionByGroup('role-{{ $i }}-management-checkbox', this)">
+                        value="{{$item->name}}"
+                        onclick="checkPermissionByGroup('role-{{ $i }}-management-checkbox', this)">
                       <label for="checkbox{{$item->name}}" class="form-check-label">{{$item->name}}</label>
                     </div>
                   </div>
                   <div class="col-9 role-{{ $i }}-management-checkbox"> {{-- for identify different class --}}
                     @php
-                        $permissions = App\Models\User::getpermissionsByGroupName($item->name); //get all permission under this group name
-                        $j = 1;
+                    $permissions = App\Models\User::getpermissionsByGroupName($item->name); //get all permission under this group name
+                    $j = 1;
                     @endphp
                     {{-- individual permission --}}
                     @foreach ($permissions as $p)
                     <div class="form-check col-6">
                       <input name="permissions[]" id="checkbox{{$p->id}}" class="form-check-input" type="checkbox"
-                        value="{{$p->name}}" onclick="checkSinglePermission('role-{{ $i }}-management-checkbox', 'checkbox{{$item->name}}',{{count($permissions)}})">
+                        value="{{$p->name}}"
+                        onclick="checkSinglePermission('role-{{ $i }}-management-checkbox', 'checkbox{{$item->name}}',{{count($permissions)}})">
                       <label for="checkbox{{$p->id}}" class="form-check-label">{{$p->name}}</label>
                     </div>
                     @php $j++; @endphp
@@ -118,5 +121,5 @@
 @section('scriptArea')
 <script>
   @include('backend.inc.checkPermission')
- </script>
+</script>
 @endsection

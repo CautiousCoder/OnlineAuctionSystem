@@ -37,7 +37,9 @@
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
         <h2 class="card-title">Role List</h2>
+        @if (Auth::guard('admin')->user()->can('role.create'))
         <a href="{{ route('admin.role.create') }}" class="btn btn-lg btn-primary">Create Role</a>
+        @endif
       </div>
     </div>
 
@@ -46,10 +48,10 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th style="width: 6% !important">No.</th>
-            <th style="width: 15% !important">Name</th>
-            <th style="width: 64% !important">Permission</th>
-            <th style="width: 15% !important">Action</th>
+            <th style="width: 5% !important">No.</th>
+            <th>Name</th>
+            <th style="width: 70% !important">Permission</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -63,15 +65,24 @@
                 <span class="badge badge-info mr-1">{{$item->name}}</span>
             @endforeach</td>
             <td class="d-flex">
+              {{-- checking whether you have permission or not to access role edit --}}
+              @if (Auth::guard('admin')->user()->can('role.edit'))
               <a href="{{ route('admin.role.edit',[$Role->id]) }}" class="btn btn-sm btn-info mr-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit"><i
-                  class="far fa-edit"></i></a>
+                class="far fa-edit"></i></a>
+              @endif
+              {{-- checking whether you have permission or not to access role delete --}}
+              @if (Auth::guard('admin')->user()->can('role.delete'))
               <form action="{{ route('admin.role.destroy',[$Role->id]) }}" method="POST" class="mr-1">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete"></i></button>
               </form>
+              @endif
+              {{-- checking whether you have permission or not to access role show --}}
+              @if (Auth::guard('admin')->user()->can('role.show'))
               <a href="{{ route('admin.role.show',[$Role->id]) }}" class="btn btn-sm btn-primary mr-1 " data-bs-toggle="tooltip" data-bs-placement="bottom" title="Show"><i
-                  class="far fa-eye"></i></a>
+                class="far fa-eye"></i></a>
+              @endif
             </td>
           </tr>
           @endforeach

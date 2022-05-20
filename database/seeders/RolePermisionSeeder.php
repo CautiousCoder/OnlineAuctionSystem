@@ -17,10 +17,10 @@ class RolePermisionSeeder extends Seeder
     public function run()
     {
         //
-        $roleAdmin = Role::create(['name' => 'Admin']);
-        $roleUser = Role::create(['name' => 'User']);
-        $roleBuyer = Role::create(['name' => 'Buyer']);
-        $roleSeller = Role::create(['name' => 'Seller']);
+        $roleAdmin = Role::create(['guard_name' => 'admin', 'name' => 'SupperAdmin']);
+        $roleUser = Role::create(['guard_name' => 'admin', 'name' => 'User']);
+        $roleBuyer = Role::create(['guard_name' => 'admin', 'name' => 'Buyer']);
+        $roleSeller = Role::create(['guard_name' => 'admin', 'name' => 'Seller']);
 
         $permissions = [
             
@@ -48,6 +48,19 @@ class RolePermisionSeeder extends Seeder
                     'user.dashboard',
                 ]
             ],
+
+            //role permission
+            [
+                'group_name' => 'Role',
+                'permission' => [
+                    'role.create',
+                    'role.edit',
+                    'role.show',
+                    'role.delete',
+                    'role.index',
+                    'role.store',
+                ]
+            ],
             
             //buyer permission
             [
@@ -57,6 +70,7 @@ class RolePermisionSeeder extends Seeder
                     'buyer.edit',
                     'buyer.show',
                     'buyer.delete',
+                    'buyer.dashboard',
                 ]
             ],
             //seller permission
@@ -67,6 +81,7 @@ class RolePermisionSeeder extends Seeder
                     'seller.edit',
                     'seller.show',
                     'seller.delete',
+                    'seller.dashboard',
                 ]
             ],
         ];
@@ -76,7 +91,7 @@ class RolePermisionSeeder extends Seeder
         for ($i=0; $i < count($permissions); $i++) { //All permission
             $groupPermission = $permissions[$i]['group_name']; //find group name
             for ($j=0; $j < count($permissions[$i]['permission']); $j++) { 
-                $permission = Permission::create(['name' => $permissions[$i]['permission'][$j], 'group_name' => $groupPermission]);
+                $permission = Permission::create(['guard_name' => 'admin', 'name' => $permissions[$i]['permission'][$j], 'group_name' => $groupPermission]);
                 $roleAdmin->givePermissionTo($permission);
                 $permission->assignRole($roleAdmin);
             }

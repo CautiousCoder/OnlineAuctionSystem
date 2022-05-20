@@ -29,7 +29,7 @@ class AdminController extends Controller
             'name' => 'required',
             'email' => 'required|unique:admins,email',
             'username' => 'required|unique:admins,username',
-            'phone' => 'number|max:15|min:8',
+            'phone' => 'nullable|max:15|min:8',
             'password' => 'required|min:6|max:15',
             'cpassword' => 'required|same:password',
         ],[
@@ -68,15 +68,14 @@ class AdminController extends Controller
     public function update(Request $request, Admin $admin){
         $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:admins,email',$admin->id,
-            'password' => 'required|min:6|max:15',
-            'username' => 'required|unique:admins,username',$admin->id,
-            'phone' => 'number|max:15|min:8',
+            'email' => 'required|unique:admins,email,'. $admin->id,
+            'password' => 'nullable|min:6|max:15',
+            'username' => 'required|unique:admins,username,'. $admin->id,
+            'phone' => 'nullable|max:15|min:8',
             'cpassword' => 'nullable|same:password',
         ],[
             'username.required' => 'Please Choose your UserName.',
             'username.unique' => 'Already Exists. Please try again.',
-            'cpassword.required' => 'The Confirm Password field is required.',
             'cpassword.same' => 'The Confirm Password and Password must match.',
         ]);
 

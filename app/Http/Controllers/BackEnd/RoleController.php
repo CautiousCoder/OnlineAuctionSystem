@@ -5,12 +5,23 @@ namespace App\Http\Controllers\BackEnd;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
+    //
+    public $usr;
+
+    public function __construct()
+    {
+        $this->middleware(function($request, $next){
+            $this->usr = Auth::guard('admin')->user();
+            return $next($request);
+        });
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +29,10 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        //checking whether you have permission or not to access this route
+        if (is_null($this->usr || !$this->usr->can('role.index'))) {
+            abort(403, 'Unauthorized action.');
+        }
         $roles = Role::orderBy('created_at','DESC')->paginate(20);
         return view('backend.pages.role.index', compact('roles'));
     }
@@ -30,7 +44,10 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        //checking whether you have permission or not to access this route
+        if (is_null($this->usr || !$this->usr->can('role.create'))) {
+            abort(403, 'Unauthorized action.');
+        }
         $all_permissions = Permission::all();
         $permissions_group = User::getPermissionNames();
         return view('backend.pages.role.create', compact(['all_permissions', 'permissions_group']));
@@ -44,7 +61,11 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //checking whether you have permission or not to access this route
+        if (is_null($this->usr || !$this->usr->can('role.store'))) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $this->validate($request, [
             'name' => 'required|max:100|unique:roles,name',
         ],[
@@ -52,7 +73,7 @@ class RoleController extends Controller
             'name.unique' => 'Already exists this Role.',
         ]);
 
-        $roleAdmin = Role::create(['name' => $request->name]);
+        $roleAdmin = Role::create(['guard_name' => 'admin', 'name' => $request->name]);
         $permissions = $request->input('permissions');
         if ($permissions) {
             $roleAdmin->syncPermissions($permissions);
@@ -69,6 +90,10 @@ class RoleController extends Controller
     public function show($id)
     {
         //
+        //checking whether you have permission or not to access this route
+        if (is_null($this->usr || !$this->usr->can('role.show'))) {
+            abort(403, 'Unauthorized action.');
+        }
     }
 
     /**
@@ -79,7 +104,11 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        //checking whether you have permission or not to access this route
+        if (is_null($this->usr || !$this->usr->can('role.edit'))) {
+            abort(403, 'Unauthorized action.');
+        }
+        
         $role = Role::findById($id, 'admin');
         $all_permissions = Permission::all();
         $permissions_group = User::getPermissionNames();
@@ -95,7 +124,11 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //checking whether you have permission or not to access this route
+        if (is_null($this->usr || !$this->usr->can('role.uptate'))) {
+            abort(403, 'Unauthorized action.');
+        }
+
         $this->validate($request, [
             'name' => 'required|max:100|unique:roles,name,'.$id,
         ],[
@@ -123,7 +156,11 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //checking whether you have permission or not to access this route
+        if (is_null($this->usr || !$this->usr->can('role.delete'))) {
+            abort(403, 'Unauthorized action.');
+        }
+
         if ($id) {
             $role = Role::findById($id, 'admin');
             $role->delete();

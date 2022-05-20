@@ -24,7 +24,7 @@
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
           <li class="breadcrumb-item"><a href="{{ route('admin.role.index') }}">Role List</a></li>
-          <li class="breadcrumb-item active">Edit Role</li>
+          <li class="breadcrumb-item active">Edit Role - {{ $role->name}}</li>
         </ol>
       </div><!-- /.col -->
     </div><!-- /.row -->
@@ -35,17 +35,17 @@
 <!-- Main content -->
 <div class="tagindex p-2">
   <!-- Card content -->
-  <div class="card">
+  <div class="col-12 col-md-8 offset-md-2">
+    <div class="card">
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
-        <h2 class="card-title">Edit Role</h2>
+        <h2 class="card-title">Edit Role - {{ $role->name}}</h2>
         <a href="{{ route('admin.role.index') }}" class="btn btn-lg btn-primary">All Roles</a>
       </div>
     </div>
 
     {{-- <div class="card-body p-0"> --}}
       <!-- form start -->
-      <div class="col-12 col-lg-6 col-md-8 offset-lg-3 offset-md-2">
         <form action="{{ route('admin.role.update', [$role->id]) }}" method="POST">
           @method('PUT')
           @csrf

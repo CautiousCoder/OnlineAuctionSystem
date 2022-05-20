@@ -59,7 +59,7 @@ Admin | create page
               </div>
               <div class="form-group col-md-6">
                 <label for="username">Username</label>
-                <input type="text" name="username" class="form-control" id="username" value="{{$admin->username}}" placeholder="@username">
+                <input type="text" name="username" class="form-control" id="username" value="{{$admin->username}}" placeholder="username">
               </div>
               <div class="form-group col-md-6">
                 <label for="email">Email</label>
@@ -68,7 +68,7 @@ Admin | create page
               </div>
               <div class="form-group col-md-6">
                 <label for="phone">Phone</label>
-                <input type="number" name="phone" class="form-control" id="phone" value="{{$admin->phone}}" placeholder="Enter Phone Number">
+                <input type="text" name="phone" class="form-control" id="phone" value="{{$admin->phone}}" placeholder="Enter Phone Number">
               </div>
               <div class="form-group col-md-6">
                 <label for="password">Password</label>
