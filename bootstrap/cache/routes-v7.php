@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::pP3KMEiKtYyPcovj',
+            '_route' => 'generated::vQDghSgzExbzwTIU',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::y1g4crqhEinKnODn',
+            '_route' => 'generated::5CLzo0XvisEaFOM9',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::vZ7CdYmymEMrXOs6',
+            '_route' => 'generated::dX5PAw6Gxysjivpj',
           ),
           1 => NULL,
           2 => 
@@ -250,7 +250,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/login' => 
+      '/users/login' => 
       array (
         0 => 
         array (
@@ -270,7 +270,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/login/submit' => 
+      '/users/login/submit' => 
       array (
         0 => 
         array (
@@ -289,7 +289,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/dashboard' => 
+      '/users/dashboard' => 
       array (
         0 => 
         array (
@@ -309,7 +309,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/logout' => 
+      '/users/logout' => 
       array (
         0 => 
         array (
@@ -328,7 +328,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/password/reste' => 
+      '/users/password/reste' => 
       array (
         0 => 
         array (
@@ -348,7 +348,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/password/reset/submit' => 
+      '/users/password/reset/submit' => 
       array (
         0 => 
         array (
@@ -367,7 +367,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/role' => 
+      '/users/role' => 
       array (
         0 => 
         array (
@@ -403,7 +403,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/role/create' => 
+      '/users/role/create' => 
       array (
         0 => 
         array (
@@ -423,7 +423,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/user' => 
+      '/users/user' => 
       array (
         0 => 
         array (
@@ -459,7 +459,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/user/create' => 
+      '/users/user/create' => 
       array (
         0 => 
         array (
@@ -479,7 +479,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/admin' => 
+      '/users/admin' => 
       array (
         0 => 
         array (
@@ -515,7 +515,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/admin/admin/create' => 
+      '/users/admin/create' => 
       array (
         0 => 
         array (
@@ -726,7 +726,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/admin/(?|role/([^/]++)(?|(*:33)|/edit(*:45)|(*:52))|user/([^/]++)(?|(*:76)|/edit(*:88)|(*:95))|admin/([^/]++)(?|(*:120)|/edit(*:133)|(*:141)))|/category/([^/]++)(?|(*:172)|/edit(*:185)|(*:193))|/tag/([^/]++)(?|(*:218)|/edit(*:231)|(*:239))|/post/([^/]++)(?|(*:265)|/edit(*:278)|(*:286)))/?$}sDu',
+      0 => '{^(?|/users/(?|role/([^/]++)(?|(*:33)|/edit(*:45)|(*:52))|user/([^/]++)(?|(*:76)|/edit(*:88)|(*:95))|admin/([^/]++)(?|(*:120)|/edit(*:133)|(*:141)))|/category/([^/]++)(?|(*:172)|/edit(*:185)|(*:193))|/tag/([^/]++)(?|(*:218)|/edit(*:231)|(*:239))|/post/([^/]++)(?|(*:265)|/edit(*:278)|(*:286)))/?$}sDu',
     ),
     3 => 
     array (
@@ -1273,7 +1273,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::pP3KMEiKtYyPcovj' => 
+    'generated::vQDghSgzExbzwTIU' => 
     array (
       'methods' => 
       array (
@@ -1294,7 +1294,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::pP3KMEiKtYyPcovj',
+        'as' => 'generated::vQDghSgzExbzwTIU',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1419,7 +1419,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::y1g4crqhEinKnODn' => 
+    'generated::5CLzo0XvisEaFOM9' => 
     array (
       'methods' => 
       array (
@@ -1442,7 +1442,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::y1g4crqhEinKnODn',
+        'as' => 'generated::5CLzo0XvisEaFOM9',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1458,7 +1458,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::vZ7CdYmymEMrXOs6' => 
+    'generated::dX5PAw6Gxysjivpj' => 
     array (
       'methods' => 
       array (
@@ -1480,7 +1480,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::vZ7CdYmymEMrXOs6',
+        'as' => 'generated::dX5PAw6Gxysjivpj',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1752,7 +1752,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/login',
+      'uri' => 'users/login',
       'action' => 
       array (
         'middleware' => 
@@ -1764,7 +1764,7 @@ app('router')->setCompiledRoutes(
         'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@showLoginForm',
         'as' => 'admin.login',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -1789,7 +1789,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'admin/login/submit',
+      'uri' => 'users/login/submit',
       'action' => 
       array (
         'middleware' => 
@@ -1801,7 +1801,7 @@ app('router')->setCompiledRoutes(
         'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@login',
         'as' => 'admin.login.submit',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -1827,7 +1827,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/dashboard',
+      'uri' => 'users/dashboard',
       'action' => 
       array (
         'middleware' => 
@@ -1839,7 +1839,7 @@ app('router')->setCompiledRoutes(
         'controller' => '\\Illuminate\\Routing\\ViewController',
         'as' => 'admin.dashboard',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -1872,7 +1872,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'admin/logout',
+      'uri' => 'users/logout',
       'action' => 
       array (
         'middleware' => 
@@ -1884,7 +1884,7 @@ app('router')->setCompiledRoutes(
         'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@logout',
         'as' => 'admin.logout.submit',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -1910,7 +1910,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/password/reste',
+      'uri' => 'users/password/reste',
       'action' => 
       array (
         'middleware' => 
@@ -1922,7 +1922,7 @@ app('router')->setCompiledRoutes(
         'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@showResetForm',
         'as' => 'admin.password.request',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -1947,7 +1947,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'admin/password/reset/submit',
+      'uri' => 'users/password/reset/submit',
       'action' => 
       array (
         'middleware' => 
@@ -1959,7 +1959,7 @@ app('router')->setCompiledRoutes(
         'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@resetPassword',
         'as' => 'admin.password.update',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -1985,7 +1985,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/role',
+      'uri' => 'users/role',
       'action' => 
       array (
         'middleware' => 
@@ -1997,7 +1997,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@index',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\RoleController@index',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2023,7 +2023,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/role/create',
+      'uri' => 'users/role/create',
       'action' => 
       array (
         'middleware' => 
@@ -2035,7 +2035,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@create',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\RoleController@create',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2060,7 +2060,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'admin/role',
+      'uri' => 'users/role',
       'action' => 
       array (
         'middleware' => 
@@ -2072,7 +2072,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@store',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\RoleController@store',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2098,7 +2098,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/role/{role}',
+      'uri' => 'users/role/{role}',
       'action' => 
       array (
         'middleware' => 
@@ -2110,7 +2110,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@show',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\RoleController@show',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2136,7 +2136,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/role/{role}/edit',
+      'uri' => 'users/role/{role}/edit',
       'action' => 
       array (
         'middleware' => 
@@ -2148,7 +2148,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@edit',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\RoleController@edit',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2174,7 +2174,7 @@ app('router')->setCompiledRoutes(
         0 => 'PUT',
         1 => 'PATCH',
       ),
-      'uri' => 'admin/role/{role}',
+      'uri' => 'users/role/{role}',
       'action' => 
       array (
         'middleware' => 
@@ -2186,7 +2186,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@update',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\RoleController@update',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2211,7 +2211,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'DELETE',
       ),
-      'uri' => 'admin/role/{role}',
+      'uri' => 'users/role/{role}',
       'action' => 
       array (
         'middleware' => 
@@ -2223,7 +2223,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\BackEnd\\RoleController@destroy',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\RoleController@destroy',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2249,7 +2249,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/user',
+      'uri' => 'users/user',
       'action' => 
       array (
         'middleware' => 
@@ -2261,7 +2261,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@index',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@index',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2287,7 +2287,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/user/create',
+      'uri' => 'users/user/create',
       'action' => 
       array (
         'middleware' => 
@@ -2299,7 +2299,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@create',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@create',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2324,7 +2324,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'admin/user',
+      'uri' => 'users/user',
       'action' => 
       array (
         'middleware' => 
@@ -2336,7 +2336,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@store',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@store',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2362,7 +2362,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/user/{user}',
+      'uri' => 'users/user/{user}',
       'action' => 
       array (
         'middleware' => 
@@ -2374,7 +2374,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@show',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@show',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2400,7 +2400,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/user/{user}/edit',
+      'uri' => 'users/user/{user}/edit',
       'action' => 
       array (
         'middleware' => 
@@ -2412,7 +2412,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@edit',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@edit',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2438,7 +2438,7 @@ app('router')->setCompiledRoutes(
         0 => 'PUT',
         1 => 'PATCH',
       ),
-      'uri' => 'admin/user/{user}',
+      'uri' => 'users/user/{user}',
       'action' => 
       array (
         'middleware' => 
@@ -2450,7 +2450,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@update',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@update',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2475,7 +2475,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'DELETE',
       ),
-      'uri' => 'admin/user/{user}',
+      'uri' => 'users/user/{user}',
       'action' => 
       array (
         'middleware' => 
@@ -2487,7 +2487,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@destroy',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@destroy',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2513,7 +2513,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/admin',
+      'uri' => 'users/admin',
       'action' => 
       array (
         'middleware' => 
@@ -2525,7 +2525,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\AdminController@index',
         'controller' => 'App\\Http\\Controllers\\Admin\\AdminController@index',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2551,7 +2551,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/admin/create',
+      'uri' => 'users/admin/create',
       'action' => 
       array (
         'middleware' => 
@@ -2563,7 +2563,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\AdminController@create',
         'controller' => 'App\\Http\\Controllers\\Admin\\AdminController@create',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2588,7 +2588,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'POST',
       ),
-      'uri' => 'admin/admin',
+      'uri' => 'users/admin',
       'action' => 
       array (
         'middleware' => 
@@ -2600,7 +2600,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\AdminController@store',
         'controller' => 'App\\Http\\Controllers\\Admin\\AdminController@store',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2626,7 +2626,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/admin/{admin}',
+      'uri' => 'users/admin/{admin}',
       'action' => 
       array (
         'middleware' => 
@@ -2638,7 +2638,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\AdminController@show',
         'controller' => 'App\\Http\\Controllers\\Admin\\AdminController@show',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2664,7 +2664,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/admin/{admin}/edit',
+      'uri' => 'users/admin/{admin}/edit',
       'action' => 
       array (
         'middleware' => 
@@ -2676,7 +2676,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\AdminController@edit',
         'controller' => 'App\\Http\\Controllers\\Admin\\AdminController@edit',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2702,7 +2702,7 @@ app('router')->setCompiledRoutes(
         0 => 'PUT',
         1 => 'PATCH',
       ),
-      'uri' => 'admin/admin/{admin}',
+      'uri' => 'users/admin/{admin}',
       'action' => 
       array (
         'middleware' => 
@@ -2714,7 +2714,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\AdminController@update',
         'controller' => 'App\\Http\\Controllers\\Admin\\AdminController@update',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),
@@ -2739,7 +2739,7 @@ app('router')->setCompiledRoutes(
       array (
         0 => 'DELETE',
       ),
-      'uri' => 'admin/admin/{admin}',
+      'uri' => 'users/admin/{admin}',
       'action' => 
       array (
         'middleware' => 
@@ -2751,7 +2751,7 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Admin\\AdminController@destroy',
         'controller' => 'App\\Http\\Controllers\\Admin\\AdminController@destroy',
         'namespace' => NULL,
-        'prefix' => '/admin',
+        'prefix' => '/users',
         'where' => 
         array (
         ),

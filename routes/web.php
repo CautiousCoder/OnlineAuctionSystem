@@ -39,7 +39,7 @@ Route::prefix('user')->name('user.')->group(function(){
     });
 });
 
-Route::prefix('admin')->name('admin.')->group(function(){
+Route::prefix('users')->name('admin.')->group(function(){
     Route::middleware('guest:admin')->group(function(){
         //Route::post('/store', [AdminController::class, 'store'])->name('store');
         //Admin Login

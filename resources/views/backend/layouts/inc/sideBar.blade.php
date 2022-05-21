@@ -17,9 +17,9 @@
         <a href="#" class="d-block">Alexander Pierce</a>
       </div>
     </div>
-    <div class="side-menu">
+    {{-- <div class="side-menu">
       <ul class="list-group user-panel d-block">
-        <li class="active"><a class="py-3 d-block" href="#" class="d-block">Dashboard</a>
+        <li class="active"><a class="py-3 d-block" href="#">Dashboard</a>
           <div class="list-group side-sub-menu">
             <ul class="list-group">
               <li class="list-group-item active" aria-current="true"><a href="#">An active item</a></li>
@@ -31,7 +31,8 @@
           </div>
         </li>
       </ul>
-    </div>
+    </div> --}}
+
 
     <!-- SidebarSearch Form -->
     <div class="form-inline">
@@ -51,7 +52,7 @@
         data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
+        {{-- <li class="nav-item menu-open side-menu">
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
@@ -59,14 +60,14 @@
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
+          <ul class="nav nav-treeview d-block d-block">
+            <li class="nav-item list-group-item">
               <a href="#" class="nav-link active">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Active Page</p>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item list-group-item">
               <a href="#" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Inactive Page</p>
@@ -82,24 +83,190 @@
               <span class="right badge badge-danger">New</span>
             </p>
           </a>
-        </li>
-        <li class="nav-item">
-          <a href="{{ route('post.index') }}" class="nav-link">
-            <i class="far fa-tags nav-icon"></i>
-            <p>Posts</p>
+        </li> --}}
+        {{-- checking whether you have permission or not to access admin --}}
+        @if (Auth::guard('admin')->user()->can('admin.only'))
+        <li class="nav-item menu-open list">
+          <a href="{{ route('admin.admin.index')}}"
+            class="nav-link {{ Route::is('admin.admin.create') || Route::is('admin.admin.index') || Route::is('admin.admin.edit') ? 'active' : '' }}">
+            <p>
+              Supper Admin
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
+          <ul class="nav nav-treeview sidemenu">
+            <li class="nav-item mt-2">
+              <a href="{{ route('admin.admin.index')}}"
+                class="nav-link {{ Route::is('admin.admin.index') ? 'active' : '' }}">
+                <p>All Admin</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.admin.create')}}"
+                class="nav-link {{ Route::is('admin.admin.create') ? 'active' : '' }}">
+                <p>Add New</p>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a href="{{ route('category.index') }}" class="nav-link">
-            <i class="far fa-tags nav-icon"></i>
-            <p>Categories</p>
+        @endif
+
+        {{-- checking whether admin have permission or not to access --}}
+        @if (Auth::guard('admin')->user()->can('admin.show'))
+        <li class="nav-item menu-open list">
+          <a href="{{ route('admin.admin.index')}}"
+            class="nav-link {{ Route::is('admin.admin.create') || Route::is('admin.admin.index') || Route::is('admin.admin.edit') || Route::is('admin.role.index') || Route::is('admin.role.create') || Route::is('admin.role.edit') ? 'active' : '' }}">
+            <p>
+              Admin
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
+          <ul class="nav nav-treeview sidemenu">
+            <li class="nav-item mt-2">
+              <a href="{{ route('admin.admin.index')}}"
+                class="nav-link {{ Route::is('admin.admin.index') ? 'active' : '' }}">
+                <p>All Admin</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.admin.create')}}"
+                class="nav-link {{ Route::is('admin.admin.create') ? 'active' : '' }}">
+                <p>Add New</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.role.index')}}"
+                class="nav-link {{ Route::is('admin.role.index') || Route::is('admin.role.create') || Route::is('admin.role.edit') ? 'active' : '' }}">
+                <p>Roles</p>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a href="{{ route('tag.index') }}" class="nav-link">
-            <i class="far fa-tags nav-icon"></i>
-            <p>Tags</p>
+        @endif
+
+        {{-- checking whether user have permission or not to access --}}
+        @if (Auth::guard('admin')->user()->can('user.show'))
+        <li class="nav-item menu-open list">
+          <a href="{{ route('admin.user.index')}}"
+            class="nav-link {{ Route::is('admin.user.create') || Route::is('admin.user.index') || Route::is('admin.user.edit') || Route::is('admin.role.index') || Route::is('admin.role.create') || Route::is('admin.role.edit') ? 'active' : '' }}">
+            <p>
+              User
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
+          <ul class="nav nav-treeview sidemenu">
+            <li class="nav-item mt-2">
+              <a href="{{ route('admin.user.index')}}"
+                class="nav-link {{ Route::is('admin.user.index') ? 'active' : '' }}">
+                <p>All User</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.user.create')}}"
+                class="nav-link {{ Route::is('admin.user.create') ? 'active' : '' }}">
+                <p>Add New</p>
+              </a>
+            </li>
+            {{-- checking whether user have permission or not to access role --}}
+            @if (Auth::guard('admin')->user()->can('role.index'))
+            <li class="nav-item">
+              <a href="{{ route('admin.role.index')}}"
+                class="nav-link {{ Route::is('admin.role.index') || Route::is('admin.role.create') || Route::is('admin.role.edit') ? 'active' : '' }}">
+                <p>Roles</p>
+              </a>
+            </li>
+            @endif
+          </ul>
+        </li>
+        @endif
+
+        {{-- checking whether you have permission or not to access user --}}
+        {{-- @if (Auth::guard('admin')->user()->can('buyer.show'))
+        <li class="nav-item menu-open list">
+          <a href="{{ route('admin.buyer.index')}}"
+            class="nav-link {{ Route::is('admin.buyer.create') || Route::is('admin.buyer.index') || Route::is('admin.buyer.edit') ? 'active' : '' }}">
+            <p>
+              Buyer
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview sidemenu">
+            <li class="nav-item mt-2">
+              <a href="{{ route('admin.buyer.index')}}"
+                class="nav-link {{ Route::is('admin.buyer.index') ? 'active' : '' }}">
+                <p>All Buyer</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.buyer.create')}}"
+                class="nav-link {{ Route::is('admin.buyer.index') ? 'active' : '' }}">
+                <p>Add New</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        @endif --}}
+
+        {{-- checking whether you have permission or not to access user --}}
+        {{-- @if (Auth::guard('admin')->user()->can('seller.show'))
+        <li class="nav-item menu-open list">
+          <a href="{{ route('admin.seller.index')}}"
+            class="nav-link {{ Route::is('admin.seller.create') || Route::is('admin.seller.index') || Route::is('admin.seller.edit') ? 'active' : '' }}">
+            <p>
+              Seller
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview sidemenu">
+            <li class="nav-item mt-2">
+              <a href="{{ route('admin.seller.index')}}"
+                class="nav-link {{ Route::is('admin.seller.index') ? 'active' : '' }}">
+                <p>All User</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('admin.seller.create')}}"
+                class="nav-link {{ Route::is('admin.seller.index') ? 'active' : '' }}">
+                <p>Add New</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        @endif --}}
+
+        {{-- post route views all user --}}
+        <li class="nav-item menu-open list">
+          <a href="{{ route('post.index')}}"
+            class="nav-link {{ Route::is('post.create') || Route::is('post.index') || Route::is('post.edit') || Route::is('category.index') ||Route::is('category.create') || Route::is('category.edit') || Route::is('tag.index') ||Route::is('tag.create') || Route::is('tag.edit') ? 'active' : '' }}">
+            <p>
+              Posts
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview sidemenu">
+            <li class="nav-item mt-2">
+              <a href="{{ route('post.index')}}" class="nav-link {{ Route::is('post.index') ? 'active' : '' }}">
+                <p>All Posts</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('post.create')}}" class="nav-link {{ Route::is('post.index') ? 'active' : '' }}">
+                <p>Add New Post</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('category.index')}}"
+                class="nav-link {{ Route::is('category.index') ||Route::is('category.create') || Route::is('category.edit') ? 'active' : '' }}">
+                <p>Categories</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('tag.index')}}"
+                class="nav-link {{ Route::is('tag.index') ||Route::is('tag.create') || Route::is('tag.edit') ? 'active' : '' }}">
+                <p>Tags</p>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
       </li>

@@ -1,38 +1,46 @@
 /* ======================================================================================
     Side-bar-nav style
    ====================================================================================== */
-.side-menu ul{
-    display: block;
-    position: relative;
+
+.nav.nav-treeview {
+	width: 85% !important;
+	float: right;
+	border: 1px solid #fff;
+	overflow: hidden;
+	padding: 2px !important;
+	margin-top: -2px !important;
+	border-radius: 5px;
+	background: #ffffff85 !important;
+}
+.nav.nav-treeview li a {
+    width: 95% !important;
+    margin: 0 5px;
+}
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active, [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:focus, [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:hover {
+	background-color: rgba(255,255,255,0.7) !important;
+	color: #232323;
+}
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link:focus, [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link:hover {
+	background-color: #007bff !important;
+}
+.nav-sidebar .nav-link p {
+	color: #232323;
 }
 
-
-.side-sub-menu {
-	position: fixed;
-	left: 19%;
-	top: 10%;
-	z-index: 999;
-	display: none;
-	overflow: visible !important;
+.sidemenu {
+    display: none !important;
 }
-.side-menu:hover div.side-sub-menu,
-.side-menu:focus div.side-sub-menu,
-.side-menu:active div.side-sub-menu {
-    display: block !important;     
+.list:hover .sidemenu,
+.list:focus .sidemenu {
+    display: block !important;
 }
-.side-menu:hover .side-sub-menu li {
-    width: 250px;
-    padding: 0.1rem 0.25rem;
+.list > .active {
+	background-color: #007bff !important;
+	color: #fff;
 }
-.side-menu:hover .side-sub-menu li a {
-    display: block;
-    padding: 15px;
-    color: #fff;
-    font-size: 16px;
+.nav.nav-treeview .nav-link:active .sidemenu {
+    display: block !important;
 }
-
-
-
 
 
 /* ======================================================================================
