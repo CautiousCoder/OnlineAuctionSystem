@@ -9,32 +9,39 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
-    <div class="user-panel py-3 d-flex">
+    {{-- checking whether you have permission or not to access admin Dashboard --}}
+    @if (Auth::guard('admin')->user()->can('admin.dashboard'))
+    <div class="user-panel py-3 d-flex active">
       <div class="image">
         <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        {{-- checking whether you have permission or not to access admin --}}
-        @if (Auth::guard('admin')->user()->can('admin.dashboard'))
-          <a href="{{ route('admin.dashboard')}}" class="d-block">Admin Dashboard</a>
-        @endif
+        <a href="{{ route('admin.dashboard')}}" class="d-block">Admin Dashboard</a>
       </div>
     </div>
-    {{-- <div class="side-menu">
-      <ul class="list-group user-panel d-block">
-        <li class="active"><a class="py-3 d-block" href="#">Dashboard</a>
-          <div class="list-group side-sub-menu">
-            <ul class="list-group">
-              <li class="list-group-item active" aria-current="true"><a href="#">An active item</a></li>
-              <li class="list-group-item"><a href="#">An active item</a></li>
-              <li class="list-group-item"><a href="#">An active item</a></li>
-              <li class="list-group-item"><a href="#">An active item</a></li>
-              <li class="list-group-item"><a href="#">An active item</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div> --}}
+    @endif
+     {{-- checking whether you have permission or not to access admin Dashboard --}}
+     @if (Auth::guard('admin')->user()->can('buyer.dashboard'))
+     <div class="user-panel py-3 d-flex active">
+       <div class="image">
+         <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+       </div>
+       <div class="info">
+         <a href="{{ route('admin.dashboard')}}" class="d-block">Buyer Dashboard</a>
+       </div>
+     </div>
+     @endif
+      {{-- checking whether you have permission or not to access admin Dashboard --}}
+    @if (Auth::guard('admin')->user()->can('seller.dashboard'))
+    <div class="user-panel py-3 d-flex active">
+      <div class="image">
+        <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+      </div>
+      <div class="info">
+        <a href="{{ route('admin.dashboard')}}" class="d-block">Seller Dashboard</a>
+      </div>
+    </div>
+    @endif
 
 
     <!-- SidebarSearch Form -->
