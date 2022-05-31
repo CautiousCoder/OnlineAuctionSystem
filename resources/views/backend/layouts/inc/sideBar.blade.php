@@ -14,7 +14,10 @@
         <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        {{-- checking whether you have permission or not to access admin --}}
+        @if (Auth::guard('admin')->user()->can('admin.dashboard'))
+          <a href="{{ route('admin.dashboard')}}" class="d-block">Admin Dashboard</a>
+        @endif
       </div>
     </div>
     {{-- <div class="side-menu">
