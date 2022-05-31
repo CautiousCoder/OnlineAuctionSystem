@@ -524,11 +524,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'mailhog',
-        'port' => '1025',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'host' => 'smtp.gmail.com',
+        'port' => '587',
+        'encryption' => 't1s',
+        'username' => 'cautious.coder0@gmail.com',
+        'password' => 'Cautious@coder0',
         'timeout' => NULL,
       ),
       'ses' => 
@@ -569,7 +569,7 @@
     ),
     'from' => 
     array (
-      'address' => 'hello@example.com',
+      'address' => 'cautious.coder0@gmail.com',
       'name' => 'Laravel',
     ),
     'markdown' => 
