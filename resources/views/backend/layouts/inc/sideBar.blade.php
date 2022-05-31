@@ -7,41 +7,99 @@
   </a>
 
   <!-- Sidebar -->
-  <div class="sidebar">
-    <!-- Sidebar user panel (optional) -->
-    {{-- checking whether you have permission or not to access admin Dashboard --}}
-    @if (Auth::guard('admin')->user()->can('admin.dashboard'))
-    <div class="user-panel py-3 d-flex active">
-      <div class="image">
-        <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-      </div>
-      <div class="info">
-        <a href="{{ route('admin.dashboard')}}" class="d-block">Admin Dashboard</a>
-      </div>
-    </div>
-    @endif
-     {{-- checking whether you have permission or not to access admin Dashboard --}}
-     @if (Auth::guard('admin')->user()->can('buyer.dashboard'))
-     <div class="user-panel py-3 d-flex active">
-       <div class="image">
-         <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-       </div>
-       <div class="info">
-         <a href="{{ route('admin.dashboard')}}" class="d-block">Buyer Dashboard</a>
-       </div>
-     </div>
-     @endif
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <ul class="dash-pro">
       {{-- checking whether you have permission or not to access admin Dashboard --}}
-    @if (Auth::guard('admin')->user()->can('seller.dashboard'))
-    <div class="user-panel py-3 d-flex active">
-      <div class="image">
-        <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-      </div>
-      <div class="info">
-        <a href="{{ route('admin.dashboard')}}" class="d-block">Seller Dashboard</a>
-      </div>
-    </div>
-    @endif
+      @if (Auth::guard('admin')->user()->can('admin.dashboard'))
+      <li class="list">
+        <div class="user-panel py-3 d-flex active">
+          <div class="image">
+            <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="{{ route('admin.dashboard')}}" class="d-block">Admin Dashboard</a>
+          </div>
+        </div>
+        <ul class="nav nav-treeview sidemenu">
+          <li class="nav-item mt-2">
+            <a href="{{ route('admin.admin.index')}}"
+              class="nav-link">
+              <p class="pstyle">Profile</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link">
+              <form action="{{ route('admin.logout.submit') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-logout"><p class="pstyle">Logout</p></button>
+              </form>
+            </div>
+          </li>
+        </ul>
+    </li>
+      @endif
+
+      {{-- checking whether you have permission or not to access admin Dashboard --}}
+      @if (Auth::guard('admin')->user()->can('buyer.dashboard'))
+      <li class="list">
+        <div class="user-panel py-3 d-flex active">
+          <div class="image">
+            <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="{{ route('admin.dashboard')}}" class="d-block">Admin Dashboard</a>
+          </div>
+        </div>
+        <ul class="nav nav-treeview sidemenu">
+          <li class="nav-item mt-2">
+            <a href="{{ route('admin.admin.index')}}"
+              class="nav-link">
+              <p class="pstyle">Profile</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link">
+              <form action="{{ route('admin.logout.submit') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-logout"><p class="pstyle">Logout</p></button>
+              </form>
+            </div>
+          </li>
+        </ul>
+    </li>
+      @endif
+
+      {{-- checking whether you have permission or not to access admin Dashboard --}}
+      @if (Auth::guard('admin')->user()->can('seller.dashboard'))
+      <li class="list">
+        <div class="user-panel py-3 d-flex active">
+          <div class="image">
+            <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="{{ route('admin.dashboard')}}" class="d-block">Admin Dashboard</a>
+          </div>
+        </div>
+        <ul class="nav nav-treeview sidemenu">
+          <li class="nav-item mt-2">
+            <a href="{{ route('admin.admin.index')}}"
+              class="nav-link">
+              <p class="pstyle">Profile</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link">
+              <form action="{{ route('admin.logout.submit') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-logout"><p class="pstyle">Logout</p></button>
+              </form>
+            </div>
+          </li>
+        </ul>
+    </li>
+      @endif
+  </ul>
 
 
     <!-- SidebarSearch Form -->

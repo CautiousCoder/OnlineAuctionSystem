@@ -526,7 +526,7 @@
         'transport' => 'smtp',
         'host' => 'smtp.gmail.com',
         'port' => '587',
-        'encryption' => 't1s',
+        'encryption' => 'tls',
         'username' => 'cautious.coder0@gmail.com',
         'password' => 'Cautious@coder0',
         'timeout' => NULL,

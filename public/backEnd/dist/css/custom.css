@@ -41,6 +41,50 @@
 .nav.nav-treeview .nav-link:active .sidemenu {
     display: block !important;
 }
+.dash-pro {
+    margin: 2px 0 30px 0 !important;
+    z-index: 99999;
+    padding: 0;
+    position: relative;
+}
+.dash-pro .nav.nav-treeview {
+	width: 95% !important;
+	float: right;
+	border: 1px solid #fff;
+	padding: 2px !important;
+	margin-top: -2px !important;
+	border-radius: 5px;
+	background: #ff04c7 !important;
+}
+.dash-pro .nav.nav-treeview li a {
+    width: 95% !important;
+    margin: 0 5px;
+}
+.dash-pro .pstyle {
+	color: #000 !important;
+    font-size: 18px;
+}
+
+.dash-pro .sidemenu {
+    display: none !important;
+    position: absolute;
+    left: 5%;
+    top: 95%;
+}
+.dash-pro .list:hover .sidemenu,
+.dash-pro .list:focus .sidemenu {
+    display: block !important;
+}
+.dash-pro .list > .active {
+	background-color: #007bff !important;
+	color: #fff;
+}
+.dash-pro .list:active,
+.dash-pro .list:focus,
+.dash-pro .list:hover {
+    background-color: #007bff !important;
+	color: #fff;
+}
 
 
 /* ======================================================================================

@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::JSwi55GvTzzlV6QJ',
+            '_route' => 'generated::2sdQlRUrNfAy5CNV',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::fHp9qwVs07f4lPtY',
+            '_route' => 'generated::fwAkUs1pCCumwwma',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::yweal8aeYipqLzSV',
+            '_route' => 'generated::uDWGNpme8zm3iKya',
           ),
           1 => NULL,
           2 => 
@@ -195,45 +195,6 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/users/admins/dashboard' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.dashboard',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/users/admins/logout' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'admin.logout.submit',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/users/admins/password/reste' => 
       array (
         0 => 
@@ -261,6 +222,45 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'admin.password.update',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/admins/dashboard' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.dashboard',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/admins/logout' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.logout.submit',
           ),
           1 => NULL,
           2 => 
@@ -616,6 +616,26 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'home',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/send-mail' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'generated::f8oKrw4Te2IRHAox',
           ),
           1 => NULL,
           2 => 
@@ -1179,7 +1199,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::JSwi55GvTzzlV6QJ' => 
+    'generated::2sdQlRUrNfAy5CNV' => 
     array (
       'methods' => 
       array (
@@ -1200,7 +1220,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::JSwi55GvTzzlV6QJ',
+        'as' => 'generated::2sdQlRUrNfAy5CNV',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1325,7 +1345,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::fHp9qwVs07f4lPtY' => 
+    'generated::fwAkUs1pCCumwwma' => 
     array (
       'methods' => 
       array (
@@ -1348,7 +1368,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::fHp9qwVs07f4lPtY',
+        'as' => 'generated::fwAkUs1pCCumwwma',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1364,7 +1384,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::yweal8aeYipqLzSV' => 
+    'generated::uDWGNpme8zm3iKya' => 
     array (
       'methods' => 
       array (
@@ -1386,7 +1406,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::yweal8aeYipqLzSV',
+        'as' => 'generated::uDWGNpme8zm3iKya',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1517,6 +1537,81 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'admin.password.request' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/admins/password/reste',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@showResetForm',
+        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@showResetForm',
+        'as' => 'admin.password.request',
+        'namespace' => NULL,
+        'prefix' => '/users/admins',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.password.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/admins/password/reset/submit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:admin',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@resetPassword',
+        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@resetPassword',
+        'as' => 'admin.password.update',
+        'namespace' => NULL,
+        'prefix' => '/users/admins',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'admin.dashboard' => 
     array (
       'methods' => 
@@ -1580,81 +1675,6 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@logout',
         'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminLoginController@logout',
         'as' => 'admin.logout.submit',
-        'namespace' => NULL,
-        'prefix' => '/users/admins',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.password.request' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'users/admins/password/reste',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:admin',
-        ),
-        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@showResetForm',
-        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@showResetForm',
-        'as' => 'admin.password.request',
-        'namespace' => NULL,
-        'prefix' => '/users/admins',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'admin.password.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'users/admins/password/reset/submit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:admin',
-        ),
-        'uses' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@resetPassword',
-        'controller' => 'App\\Http\\Controllers\\BackEnd\\Auth\\AdminResetPasswordController@resetPassword',
-        'as' => 'admin.password.update',
         'namespace' => NULL,
         'prefix' => '/users/admins',
         'where' => 
@@ -3260,6 +3280,43 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'home',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::f8oKrw4Te2IRHAox' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'send-mail',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\MailController@index',
+        'controller' => 'App\\Http\\Controllers\\MailController@index',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'generated::f8oKrw4Te2IRHAox',
       ),
       'fallback' => false,
       'defaults' => 

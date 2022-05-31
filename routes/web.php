@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\BackEnd\RoleController;
 use App\Http\Controllers\BackEnd\Auth\AdminLoginController;
 use App\Http\Controllers\BackEnd\Auth\AdminResetPasswordController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,11 @@ Route::prefix('users/admins')->name('admin.')->group(function(){
         //Admin Login
         Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
         Route::post('/login/submit', [AdminLoginController::class, 'login'])->name('login.submit');
+
+        //Admin Reset Password
+        Route::get('/password/reste', [AdminResetPasswordController::class, 'showResetForm'])->name('password.request');
+        Route::post('/password/reset/submit', [AdminResetPasswordController::class, 'resetPassword'])->name('password.update');
+   
     });
     Route::middleware('auth:admin')->group(function(){
         //Admin Dashboard
@@ -56,10 +62,7 @@ Route::prefix('users/admins')->name('admin.')->group(function(){
         //Admin Logout
         Route::post('/logout', [AdminLoginController::class, 'logout'])->name('logout.submit');
 
-        //Admin Reset Password
-        Route::get('/password/reste', [AdminResetPasswordController::class, 'showResetForm'])->name('password.request');
-        Route::post('/password/reset/submit', [AdminResetPasswordController::class, 'resetPassword'])->name('password.update');
-   
+        
         //Resource Route
         Route::resource('role', RoleController::class);
         Route::resource('user', UserController::class);
@@ -80,3 +83,16 @@ Route::prefix('users/admins')->name('admin.')->group(function(){
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('send-mail', function () {
+   
+//     $details = [
+//         'title' => 'Mail from Online Web Tutor',
+//         'body' => 'Test mail sent by Laravel 9 using SMTP.'
+//     ];
+   
+//     Mail::to('zahidul.cse.brur@gmail.com')->send(new mailTemplate($details));
+   
+//     dd("Email is Sent, please check your inbox.");
+//   });
+Route::get('send-mail', [MailController::class, 'index']);
