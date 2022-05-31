@@ -12,7 +12,7 @@ use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, HasRoles, Notifiable;
 

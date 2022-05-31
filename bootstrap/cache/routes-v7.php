@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::dKfgBLZSFL8oyPTy',
+            '_route' => 'generated::IzeEy8PkcGWJkRQl',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ahXlVDjpSETUota6',
+            '_route' => 'generated::4O3vFNHKrDGHj5f9',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::lEePptBamutMJbNg',
+            '_route' => 'generated::O74I2AqyM9gTwZXq',
           ),
           1 => NULL,
           2 => 
@@ -136,113 +136,19 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/user/login' => 
+      '/dashboard' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'user.login',
+            '_route' => 'dashboard',
           ),
           1 => NULL,
           2 => 
           array (
             'GET' => 0,
             'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'user.dologin',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/user/register' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'user.register',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/user/store' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'user.store',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/user/dashboard' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'user.dashboard',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/user/logout' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'user.dologout',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -1273,7 +1179,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::dKfgBLZSFL8oyPTy' => 
+    'generated::IzeEy8PkcGWJkRQl' => 
     array (
       'methods' => 
       array (
@@ -1294,7 +1200,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::dKfgBLZSFL8oyPTy',
+        'as' => 'generated::IzeEy8PkcGWJkRQl',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1419,7 +1325,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ahXlVDjpSETUota6' => 
+    'generated::4O3vFNHKrDGHj5f9' => 
     array (
       'methods' => 
       array (
@@ -1442,7 +1348,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ahXlVDjpSETUota6',
+        'as' => 'generated::4O3vFNHKrDGHj5f9',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1458,7 +1364,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::lEePptBamutMJbNg' => 
+    'generated::O74I2AqyM9gTwZXq' => 
     array (
       'methods' => 
       array (
@@ -1480,7 +1386,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::lEePptBamutMJbNg',
+        'as' => 'generated::O74I2AqyM9gTwZXq',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1496,240 +1402,31 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'user.login' => 
+    'dashboard' => 
     array (
       'methods' => 
       array (
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'user/login',
+      'uri' => 'dashboard',
       'action' => 
       array (
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'guest:web',
+          1 => 'auth:admin',
+          2 => 'verified',
         ),
-        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
-        'controller' => '\\Illuminate\\Routing\\ViewController',
-        'as' => 'user.login',
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:284:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:66:"function () {
+    return \\view(\'backend.pages.admin.dashboard\');
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004820000000000000000";}";s:4:"hash";s:44:"O4Z5SVIH0rWY6WEdq/Ys1YQZF+SZr4L6u1CRHacKGNA=";}}',
         'namespace' => NULL,
-        'prefix' => '/user',
+        'prefix' => '',
         'where' => 
         array (
         ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-        'view' => 'backend.user.login',
-        'data' => 
-        array (
-        ),
-        'status' => 200,
-        'headers' => 
-        array (
-        ),
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'user.register' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'user/register',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'guest:web',
-        ),
-        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
-        'controller' => '\\Illuminate\\Routing\\ViewController',
-        'as' => 'user.register',
-        'namespace' => NULL,
-        'prefix' => '/user',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-        'view' => 'backend.user.register',
-        'data' => 
-        array (
-        ),
-        'status' => 200,
-        'headers' => 
-        array (
-        ),
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'user.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'user/store',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'guest:web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\User\\UserController@dostore',
-        'controller' => 'App\\Http\\Controllers\\User\\UserController@dostore',
-        'as' => 'user.store',
-        'namespace' => NULL,
-        'prefix' => '/user',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'user.dologin' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'user/login',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'guest:web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\User\\UserController@dologin',
-        'controller' => 'App\\Http\\Controllers\\User\\UserController@dologin',
-        'as' => 'user.dologin',
-        'namespace' => NULL,
-        'prefix' => '/user',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'user.dashboard' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'user/dashboard',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:web',
-        ),
-        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
-        'controller' => '\\Illuminate\\Routing\\ViewController',
-        'as' => 'user.dashboard',
-        'namespace' => NULL,
-        'prefix' => '/user',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-        'view' => 'backend.user.buyerDashboard',
-        'data' => 
-        array (
-        ),
-        'status' => 200,
-        'headers' => 
-        array (
-        ),
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'user.dologout' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'user/logout',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-          1 => 'auth:web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\User\\UserController@dologout',
-        'controller' => 'App\\Http\\Controllers\\User\\UserController@dologout',
-        'as' => 'user.dologout',
-        'namespace' => NULL,
-        'prefix' => '/user',
-        'where' => 
-        array (
-        ),
+        'as' => 'dashboard',
       ),
       'fallback' => false,
       'defaults' => 

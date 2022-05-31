@@ -24,20 +24,23 @@ use App\Http\Controllers\BackEnd\Auth\AdminResetPasswordController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function () {
+    return view('backend.pages.admin.dashboard');
+})->middleware(['auth:admin','verified'])->name('dashboard');
 
 
-Route::prefix('user')->name('user.')->group(function(){
-    Route::middleware('guest:web')->group(function(){
-        Route::view('/login', 'backend.user.login')->name('login');
-        Route::view('/register', 'backend.user.register')->name('register');
-        Route::post('/store', [UserController::class, 'dostore'])->name('store');
-        Route::post('/login', [UserController::class, 'dologin'])->name('dologin');
-    });
-    Route::middleware('auth:web')->group(function(){
-        Route::view('/dashboard', 'backend.user.buyerDashboard')->name('dashboard');
-        Route::post('/logout', [UserController::class, 'dologout'])->name('dologout');
-    });
-});
+// Route::prefix('user')->name('user.')->group(function(){
+//     Route::middleware('guest:web')->group(function(){
+//         Route::view('/login', 'backend.user.login')->name('login');
+//         Route::view('/register', 'backend.user.register')->name('register');
+//         Route::post('/store', [UserController::class, 'dostore'])->name('store');
+//         Route::post('/login', [UserController::class, 'dologin'])->name('dologin');
+//     });
+//     Route::middleware('auth:web')->group(function(){
+//         Route::view('/dashboard', 'backend.user.buyerDashboard')->name('dashboard');
+//         Route::post('/logout', [UserController::class, 'dologout'])->name('dologout');
+//     });
+// });
 
 Route::prefix('users/admins')->name('admin.')->group(function(){
     Route::middleware('guest:admin')->group(function(){
