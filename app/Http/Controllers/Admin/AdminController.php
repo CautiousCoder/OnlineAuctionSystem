@@ -45,6 +45,12 @@ class AdminController extends Controller
         $admin->username = $request->username;
         $admin->phone = $request->phone;
         $admin->password = Hash::make($request->password);
+        $admin->role_name = $request->role_name;
+        $admin->license_number = $request->license_number;
+        $admin->nid_number = $request->nid_number;
+
+        //user profile image
+        $admin->image_name = 'image.jpg';
 
         if ($request->roles) {
             $admin->assignRole($request->roles);
@@ -84,6 +90,13 @@ class AdminController extends Controller
         if ($request->password) {
             $admin->password = Hash::make($request->password);
         }
+        $admin->role_name = $request->role_name;
+        $admin->license_number = $request->license_number;
+        $admin->nid_number = $request->nid_number;
+
+        //user profile image
+        $admin->image_name = 'image.jpg';
+
         $admin->roles()->detach();
         if ($request->roles) {
             $admin->assignRole($request->roles);

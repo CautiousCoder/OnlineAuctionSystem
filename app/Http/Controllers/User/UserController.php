@@ -27,17 +27,29 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users,email',
+            'username' => 'required|unique:users,username',
+            'phone' => 'nullable|max:15|min:8',
             'password' => 'required|min:6|max:15',
             'cpassword' => 'required|same:password',
         ],[
             'cpassword.required' => 'The Confirm Password field is required.',
+            'username.unique' => 'Already Exists. Please try again.',
+            'username.required' => 'The Username field is required.',
             'cpassword.same' => 'The Confirm Password and Password must match.'
         ]);
 
         $user = new User();
         $user->name = $request->name;
+        $user->username = $request->username;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->phone = $request->phone;
+        $user->role_name = $request->role_name;
+        $user->license_number = $request->license_number;
+        $user->nid_number = $request->nid_number;
+
+        //user profile image
+        $user->image_name = 'image.jpg';
 
         if ($request->roles) {
             $user->assignRole($request->roles);
@@ -62,6 +74,8 @@ class UserController extends Controller
         $request->validate([
             'name' => 'nullable',
             'email' => 'nullable|unique:users,email',
+            'username' => 'nullable|unique:users,username',
+            'phone' => 'nullable|max:15|min:8',
             'password' => 'nullable|min:6|max:15',
             'cpassword' => 'nullable|same:password',
         ],[
@@ -69,7 +83,12 @@ class UserController extends Controller
         ]);
 
         $user->name = $request->name;
+        $user->username = $request->username;
         $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->role_name = $request->role_name;
+        $user->license_number = $request->license_number;
+        $user->nid_number = $request->nid_number;
         if ($request->password) {
             $user->password = Hash::make($request->password);
         }
@@ -77,6 +96,8 @@ class UserController extends Controller
         if ($request->roles) {
             $user->assignRole($request->roles);
         }
+        //user profile image
+        $user->image_name = 'image.jpg';
 
         $data = $user->save();
 
