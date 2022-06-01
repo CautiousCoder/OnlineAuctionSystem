@@ -44,4 +44,20 @@ class Admin extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+     //Find permission group name
+     public static function getPermissionNames()
+     {
+         $permission_group = DB::table('permissions')->select('group_name as name') // after use name
+         ->groupBy('group_name')->get();
+ 
+         return $permission_group;
+     }
+     //find permission under a group name
+     public static function getpermissionsByGroupName($group_name)
+     {
+         $permissions = DB::table('permissions')->select('name', 'id')->where('group_name', $group_name)->get();
+         return $permissions;
+ 
+     }
 }
