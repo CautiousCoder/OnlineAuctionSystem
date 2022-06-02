@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Buyer Login') }}</div>
+                <div class="card-header">{{ __('Seller Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('buyer.login') }}">
+                    <form method="POST" action="{{ route('seller.login') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -64,7 +64,7 @@
                                 @endif
                             </div>
                             <div class="col-12 col-md-8 offset-md-4"> {{ __("Haven't Account..!") }}
-                                <a class="btn btn-link" href="{{ route('buyer.buyerregister') }}">
+                                <a class="btn btn-link" href="{{ route('seller.sellerregister') }}">
                                     {{ __("Create here ") }}
                                 </a>
                             </div>

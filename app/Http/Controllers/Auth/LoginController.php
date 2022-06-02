@@ -39,13 +39,17 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    //show login form
-    public function sellerloginshow(){
+    //show buyer login form
+    public function buyerloginshow(){
         return view('auth.login');
+    }
+    //show sellerl ogin form
+    public function sellerloginshow(){
+        return view('auth.sellerlogin');
     }
 
      //login function
-     public function sellerloginsubmit(Request $request){
+     public function buyerloginsubmit(Request $request){
         // validate data
 
         $this->validate($request,[
@@ -60,15 +64,45 @@ class LoginController extends Controller
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // Authentication passed...
             Session()->flash('success', 'LogIn Successfully.!');
-            return redirect()->intended(route('seller.dashboard'));
+            return redirect()->intended(route('buyer.buyerDashboard'));
         }else{
             Session()->flash('error', 'LogIn Failed.! Please Correct Email and Password.');
             return back();
         }
     }
 
+    //login function
+    public function sellerloginsubmit(Request $request){
+        // validate data
+
+        $this->validate($request,[
+            'email' => 'required|email|max:100',
+            'password' => 'required|max:16|min:8',
+        ],[
+            'email.required' => 'Please enter an email address.',
+            'password.required' => 'Please enter a current password.',
+        ]);
+
+        //attemp to login
+        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            // Authentication passed...
+            Session()->flash('success', 'LogIn Successfully.!');
+            return redirect()->intended(route('seller.sellerDashboard'));
+        }else{
+            Session()->flash('error', 'LogIn Failed.! Please Correct Email and Password.');
+            return back();
+        }
+    }
+
+
     //logout
-    public function sellerlogout(){
+    public function buyerlogout(){
+        Auth::guard('web')->logout();
+        return redirect()->route('buyer.buyerlogout');
+    }
+
+     //logout
+     public function sellerlogout(){
         Auth::guard('web')->logout();
         return redirect()->route('seller.sellerloginshow');
     }

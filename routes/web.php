@@ -101,3 +101,16 @@ Route::prefix('users/seller')->name('seller.')->group(function(){
 });
 
 
+//route for Buyer
+Route::prefix('users/buyer')->name('buyer.')->group(function(){
+    Route::middleware('guest:web')->group(function(){
+        Route::get('/register', [RegisterController::class, 'buyerregister'])->name('buyerregister');
+        Route::get('/login', [LoginController::class, 'buyerloginshow'])->name('buyerloginshow');
+        Route::post('/store', [RegisterController::class, 'buyerstore'])->name('register');
+        Route::post('/login/submit', [LoginController::class, 'buyerloginsubmit'])->name('login');
+    });
+    Route::middleware('auth:web')->group(function(){
+        Route::view('/dashboard', 'backend.user.buyerDashboard')->name('buyerDashboard');
+        Route::post('/logout', [UserController::class, 'buyerlogout'])->name('buyerlogout');
+    });
+});

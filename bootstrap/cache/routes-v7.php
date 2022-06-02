@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::JmA93aAgfKvaXLOI',
+            '_route' => 'generated::Bm4GBV3Yxbv8dxwz',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::41d5q8QEKiIb6nfj',
+            '_route' => 'generated::fmEseLYm7s5zhFVP',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::v8PS1sNa9Vt39DaD',
+            '_route' => 'generated::wZb7MAInK9P7VYoD',
           ),
           1 => NULL,
           2 => 
@@ -635,7 +635,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::vkWslZTFAkucy82N',
+            '_route' => 'generated::AEumaJxvhdrHIQLT',
           ),
           1 => NULL,
           2 => 
@@ -754,6 +754,123 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'seller.sellerlogout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/register' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.buyerregister',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/login' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.buyerloginshow',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.register',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/login/submit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.login',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/dashboard' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.buyerDashboard',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/logout' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.buyerlogout',
           ),
           1 => NULL,
           2 => 
@@ -1316,7 +1433,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::JmA93aAgfKvaXLOI' => 
+    'generated::Bm4GBV3Yxbv8dxwz' => 
     array (
       'methods' => 
       array (
@@ -1337,7 +1454,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::JmA93aAgfKvaXLOI',
+        'as' => 'generated::Bm4GBV3Yxbv8dxwz',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1462,7 +1579,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::41d5q8QEKiIb6nfj' => 
+    'generated::fmEseLYm7s5zhFVP' => 
     array (
       'methods' => 
       array (
@@ -1485,7 +1602,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::41d5q8QEKiIb6nfj',
+        'as' => 'generated::fmEseLYm7s5zhFVP',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1501,7 +1618,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::v8PS1sNa9Vt39DaD' => 
+    'generated::wZb7MAInK9P7VYoD' => 
     array (
       'methods' => 
       array (
@@ -1523,7 +1640,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::v8PS1sNa9Vt39DaD',
+        'as' => 'generated::wZb7MAInK9P7VYoD',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3412,7 +3529,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::vkWslZTFAkucy82N' => 
+    'generated::AEumaJxvhdrHIQLT' => 
     array (
       'methods' => 
       array (
@@ -3433,7 +3550,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::vkWslZTFAkucy82N',
+        'as' => 'generated::AEumaJxvhdrHIQLT',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3664,6 +3781,239 @@ app('router')->setCompiledRoutes(
         'as' => 'seller.sellerlogout',
         'namespace' => NULL,
         'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.buyerregister' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/register',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@buyerregister',
+        'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@buyerregister',
+        'as' => 'buyer.buyerregister',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.buyerloginshow' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/login',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@buyerloginshow',
+        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@buyerloginshow',
+        'as' => 'buyer.buyerloginshow',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.register' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/buyer/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@buyerstore',
+        'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@buyerstore',
+        'as' => 'buyer.register',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.login' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/buyer/login/submit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@buyerloginsubmit',
+        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@buyerloginsubmit',
+        'as' => 'buyer.login',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.buyerDashboard' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/dashboard',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:web',
+        ),
+        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
+        'controller' => '\\Illuminate\\Routing\\ViewController',
+        'as' => 'buyer.buyerDashboard',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+        'view' => 'backend.user.buyerDashboard',
+        'data' => 
+        array (
+        ),
+        'status' => 200,
+        'headers' => 
+        array (
+        ),
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.buyerlogout' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/buyer/logout',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@buyerlogout',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@buyerlogout',
+        'as' => 'buyer.buyerlogout',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
         'where' => 
         array (
         ),

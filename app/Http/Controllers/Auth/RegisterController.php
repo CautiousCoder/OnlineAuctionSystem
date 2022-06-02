@@ -52,10 +52,55 @@ class RegisterController extends Controller
      */
 
 
-     //show register form
-     public function sellerregister(){
+     //show buyer register form
+     public function buyerregister(){
         return view('auth.register');
     }
+
+     //show register form
+     public function sellerregister(){
+        return view('auth.sellerregister');
+    }
+    //seller store
+    public function buyerstore(Request $request){
+        // validate data
+
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required|email|max:100',
+            'username' => 'required|max:50|min:4|unique:users,username',
+            'password' => 'required|max:16|min:8',
+            'password_confirmation' => 'required|same:password',
+        ],[
+            'email.required' => 'Please enter an email address.',
+            'password.required' => 'Please enter a current password.',
+            'password_confirmation.same' => 'The Confirm Password and Password must match.'
+        ]);
+        
+        $user = new User();
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role_name = 'Buyer';
+
+        //user profile image
+        $user->image_name = 'image.jpg';
+        //user role assign
+        $roles = 'Buyer';
+        $role_r = Role::where('name', '=', $roles)->firstOrFail();
+        $user->assignRole($role_r);
+        $data = $user->save();
+        
+        if($data){
+            return redirect()->route('home')->with('success', 'Account created Successfully.');
+        }else {
+            return back()->with('error', 'Account create Failed.');
+        }
+
+    }
+
+    //seller store
     public function sellerstore(Request $request){
         // validate data
 
