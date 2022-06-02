@@ -95,8 +95,8 @@ Route::prefix('users/seller')->name('seller.')->group(function(){
         Route::post('/login/submit', [LoginController::class, 'sellerloginsubmit'])->name('login');
     });
     Route::middleware('auth:web')->group(function(){
-        Route::view('/dashboard', 'backend.user.sellerDashboard')->name('sellerDashboard');
-        Route::post('/logout', [UserController::class, 'sellerlogout'])->name('sellerlogout');
+        Route::view('/dashboard', 'backend.pages.user.sellerDashboard')->name('sellerDashboard');
+        Route::post('/logout', [LoginController::class, 'sellerlogout'])->name('sellerlogout');
     });
 });
 
@@ -110,7 +110,7 @@ Route::prefix('users/buyer')->name('buyer.')->group(function(){
         Route::post('/login/submit', [LoginController::class, 'buyerloginsubmit'])->name('login');
     });
     Route::middleware('auth:web')->group(function(){
-        Route::view('/dashboard', 'backend.user.buyerDashboard')->name('buyerDashboard');
-        Route::post('/logout', [UserController::class, 'buyerlogout'])->name('buyerlogout');
+        Route::view('/dashboard', 'backend.pages.user.buyerDashboard')->name('buyerDashboard');
+        Route::post('/logout', [LoginController::class, 'buyerlogout'])->name('buyerlogout');
     });
 });

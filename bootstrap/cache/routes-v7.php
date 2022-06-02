@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Bm4GBV3Yxbv8dxwz',
+            '_route' => 'generated::rZZ39LM6qIDc7YBl',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::fmEseLYm7s5zhFVP',
+            '_route' => 'generated::LMpoWvBSl7MDu52Y',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::wZb7MAInK9P7VYoD',
+            '_route' => 'generated::08xKG8WdFoT9WHLS',
           ),
           1 => NULL,
           2 => 
@@ -635,7 +635,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::AEumaJxvhdrHIQLT',
+            '_route' => 'generated::NdUdEausmDIvXEog',
           ),
           1 => NULL,
           2 => 
@@ -1433,7 +1433,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::Bm4GBV3Yxbv8dxwz' => 
+    'generated::rZZ39LM6qIDc7YBl' => 
     array (
       'methods' => 
       array (
@@ -1454,7 +1454,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::Bm4GBV3Yxbv8dxwz',
+        'as' => 'generated::rZZ39LM6qIDc7YBl',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1579,7 +1579,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::fmEseLYm7s5zhFVP' => 
+    'generated::LMpoWvBSl7MDu52Y' => 
     array (
       'methods' => 
       array (
@@ -1602,7 +1602,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::fmEseLYm7s5zhFVP',
+        'as' => 'generated::LMpoWvBSl7MDu52Y',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1618,7 +1618,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::wZb7MAInK9P7VYoD' => 
+    'generated::08xKG8WdFoT9WHLS' => 
     array (
       'methods' => 
       array (
@@ -1640,7 +1640,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::wZb7MAInK9P7VYoD',
+        'as' => 'generated::08xKG8WdFoT9WHLS',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3529,7 +3529,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::AEumaJxvhdrHIQLT' => 
+    'generated::NdUdEausmDIvXEog' => 
     array (
       'methods' => 
       array (
@@ -3550,7 +3550,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::AEumaJxvhdrHIQLT',
+        'as' => 'generated::NdUdEausmDIvXEog',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3743,7 +3743,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'backend.user.sellerDashboard',
+        'view' => 'backend.pages.user.sellerDashboard',
         'data' => 
         array (
         ),
@@ -3776,8 +3776,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth:web',
         ),
-        'uses' => 'App\\Http\\Controllers\\User\\UserController@sellerlogout',
-        'controller' => 'App\\Http\\Controllers\\User\\UserController@sellerlogout',
+        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerlogout',
+        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerlogout',
         'as' => 'seller.sellerlogout',
         'namespace' => NULL,
         'prefix' => '/users/seller',
@@ -3976,7 +3976,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'backend.user.buyerDashboard',
+        'view' => 'backend.pages.user.buyerDashboard',
         'data' => 
         array (
         ),
@@ -4009,8 +4009,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'auth:web',
         ),
-        'uses' => 'App\\Http\\Controllers\\User\\UserController@buyerlogout',
-        'controller' => 'App\\Http\\Controllers\\User\\UserController@buyerlogout',
+        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@buyerlogout',
+        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@buyerlogout',
         'as' => 'buyer.buyerlogout',
         'namespace' => NULL,
         'prefix' => '/users/buyer',

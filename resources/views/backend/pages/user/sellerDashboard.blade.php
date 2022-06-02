@@ -2,7 +2,7 @@
 
 <!-- Title (Page title) -->
 @section('title')
-    Buyer | Dashboard
+    Seller | Dashboard
 @endsection
 
 <!-- Navbar (Page navbar) -->
@@ -12,7 +12,7 @@
 
 <!-- Side Bar (Page sidebar) -->
 @section('navbarSection')
-@include('backend.layouts.inc.buyerSideBar')
+@include('backend.layouts.inc.buyersideBar')
 @endsection
 
 <!-- Main Content (Page content) -->

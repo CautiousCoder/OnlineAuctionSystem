@@ -12,24 +12,21 @@
 
 <!-- Side Bar (Page sidebar) -->
 @section('navbarSection')
-@include('backend.layouts.inc.buyerSideBar')
+@include('backend.layouts.inc.buyersideBar')
 @endsection
 
 <!-- Main Content (Page content) -->
 
 @section('content')
 <!-- Content Header (Page header) -->
-<div class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="d-flex justify-content-between text-center">
-        <h1 class="">Dashboard</h1>
-        <form action="{{ route('user.dologout') }}" id="user-logout" method="POST">
-          @csrf <button class="btn btn-sm btn-primary" type="submit">Logout</button> </form>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
-</div>
+{{-- checking whether admin have permission or not to access --}}
+@if (Auth::guard('web')->user()->can('buyer.dashboard'))
+@include('backend.layouts.inc.buyerDashboard')
+@endif
+{{-- checking whether admin have permission or not to access --}}
+@if (Auth::guard('web')->user()->can('seller.dashboard'))
+@include('backend.layouts.inc.sellerDashboard')
+@endif
 <!-- /.content-header -->
 
 <!-- Main content -->

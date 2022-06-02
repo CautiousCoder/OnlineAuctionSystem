@@ -95,13 +95,13 @@ class LoginController extends Controller
     }
 
 
-    //logout
+    //Buyer logout
     public function buyerlogout(){
         Auth::guard('web')->logout();
         return redirect()->route('buyer.buyerlogout');
     }
 
-     //logout
+     //Seller logout
      public function sellerlogout(){
         Auth::guard('web')->logout();
         return redirect()->route('seller.sellerloginshow');

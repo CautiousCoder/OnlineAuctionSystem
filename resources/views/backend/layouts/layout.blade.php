@@ -23,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    @include('backend.layouts.inc.sideBar')
+    @yield('navbarSection')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">

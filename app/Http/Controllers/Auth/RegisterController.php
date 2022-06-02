@@ -32,7 +32,26 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::SELLER_DASHBOARD;
+
+    public function redirectTo(){
+
+        // User role
+        $role = Auth::user()->role->name; 
+    
+        // Check user role
+        switch ($role) {
+            case 'Buyer':
+                    return '/users/buyer/dashboard';
+                break;
+            case 'Seller':
+                    return '/users/seller/dashboard';
+                break; 
+            default:
+                    return '/users/buyer/login'; 
+                break;
+        }
+    }
 
     /**
      * Create a new controller instance.
@@ -87,13 +106,15 @@ class RegisterController extends Controller
         //user profile image
         $user->image_name = 'image.jpg';
         //user role assign
+        $permissions = ['buyer.dashboard','buyer.profile','buyer.post'];
         $roles = 'Buyer';
         $role_r = Role::where('name', '=', $roles)->firstOrFail();
+        $role_r->givePermissionTo($permissions);
         $user->assignRole($role_r);
         $data = $user->save();
         
         if($data){
-            return redirect()->route('home')->with('success', 'Account created Successfully.');
+            return redirect()->route('buyer.buyerDashboard')->with('success', 'Account created Successfully.');
         }else {
             return back()->with('error', 'Account create Failed.');
         }
@@ -132,7 +153,7 @@ class RegisterController extends Controller
         $data = $user->save();
         
         if($data){
-            return redirect()->route('home')->with('success', 'Account created Successfully.');
+            return redirect()->route('seller.sellerDashboard')->with('success', 'Account created Successfully.');
         }else {
             return back()->with('error', 'Account create Failed.');
         }
