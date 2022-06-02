@@ -86,16 +86,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //   });
 Route::get('send-mail', [MailController::class, 'index']);
 
-
+//route for seller
 Route::prefix('users/seller')->name('seller.')->group(function(){
     Route::middleware('guest:web')->group(function(){
         Route::get('/register', [RegisterController::class, 'sellerregister'])->name('sellerregister');
-        Route::get('/login', [RegisterController::class, 'sellerloginshow'])->name('sellerloginshow');
-        Route::post('/store', [RegisterController::class, 'sellerstore'])->name('sellerstore');
-        Route::post('/login/submit', [LoginController::class, 'sellerloginsubmit'])->name('sellerloginsubmit');
+        Route::get('/login', [LoginController::class, 'sellerloginshow'])->name('sellerloginshow');
+        Route::post('/store', [RegisterController::class, 'sellerstore'])->name('register');
+        Route::post('/login/submit', [LoginController::class, 'sellerloginsubmit'])->name('login');
     });
     Route::middleware('auth:web')->group(function(){
         Route::view('/dashboard', 'backend.user.sellerDashboard')->name('sellerDashboard');
         Route::post('/logout', [UserController::class, 'sellerlogout'])->name('sellerlogout');
     });
 });
+
+

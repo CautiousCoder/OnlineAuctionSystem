@@ -20,8 +20,8 @@ class RolePermisionSeeder extends Seeder
         $SuperAdmin = Role::create(['guard_name' => 'admin', 'name' => 'SupperAdmin']);
         $roleAdmin = Role::create(['guard_name' => 'admin', 'name' => 'Admin']);
         $roleUser = Role::create(['guard_name' => 'admin', 'name' => 'User']);
-        $roleBuyer = Role::create(['guard_name' => 'admin', 'name' => 'Buyer']);
-        $roleSeller = Role::create(['guard_name' => 'admin', 'name' => 'Seller']);
+        $roleBuyer = Role::create(['guard_name' => 'web', 'name' => 'Buyer']);
+        $roleSeller = Role::create(['guard_name' => 'web', 'name' => 'Seller']);
 
         $permissions = [
             
@@ -68,31 +68,29 @@ class RolePermisionSeeder extends Seeder
             
             //buyer permission
             [
-                'group_name' => 'Buyer',
+                'group_name' => 'Buyer(admin)',
                 'permission' => [
                     'buyer.index',
                     'buyer.create',
                     'buyer.edit',
                     'buyer.show',
                     'buyer.delete',
-                    'buyer.dashboard',
                 ]
             ],
             //seller permission
             [
-                'group_name' => 'Seller',
+                'group_name' => 'Seller(admin)',
                 'permission' => [
                     'seller.index',
                     'seller.create',
                     'seller.edit',
                     'seller.show',
                     'seller.delete',
-                    'seller.dashboard',
                 ]
             ],
         ];
 
-        //create and asign permission
+        //create and asign permission admin guard
 
         for ($i=0; $i < count($permissions); $i++) { //All permission
             $groupPermission = $permissions[$i]['group_name']; //find group name
@@ -102,6 +100,38 @@ class RolePermisionSeeder extends Seeder
                 $permission->assignRole($SuperAdmin);
             }
         }
+
+        //web guard permission
+        $permissions1 = [
+            //Buyer permission
+            [
+                'group_name' => 'Buyer(web)',
+                'permission' => [
+                    'buyer.dashboard',
+                    'buyer.profile',
+                    'buyer.post',
+                ]
+            ],
+            //Seller permission
+            [
+                'group_name' => 'Seller(web)',
+                'permission' => [
+                    'seller.dashboard',
+                    'seller.profile',
+                    'seller.post',
+                ]
+            ],
+        ];
+
+        //create and asign permission web guard
+
+        for ($i=0; $i < count($permissions1); $i++) { //All permission
+            $groupPermission1 = $permissions1[$i]['group_name']; //find group name
+            for ($j=0; $j < count($permissions1[$i]['permission']); $j++) { 
+                $permission = Permission::create(['guard_name' => 'web', 'name' => $permissions1[$i]['permission'][$j], 'group_name' => $groupPermission1]);
+            }
+        }
+
 
     }
 }

@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('seller.register') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -77,9 +77,14 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary px-4 text-center">
                                     {{ __('Register') }}
                                 </button>
+                            </div>
+                            <div class="col-12 col-md-8 offset-md-4"> {{ __("Already Account..!") }}
+                                <a class="btn btn-link" href="{{ route('seller.sellerloginshow') }}">
+                                    {{ __("Login here ") }}
+                                </a>
                             </div>
                         </div>
                     </form>

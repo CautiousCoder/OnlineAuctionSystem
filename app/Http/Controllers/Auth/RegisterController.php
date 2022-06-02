@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller
 {
@@ -55,7 +56,7 @@ class RegisterController extends Controller
      public function sellerregister(){
         return view('auth.register');
     }
-    public function sellerloginsubmit(Request $request){
+    public function sellerstore(Request $request){
         // validate data
 
         $this->validate($request,[
@@ -69,7 +70,7 @@ class RegisterController extends Controller
             'password.required' => 'Please enter a current password.',
             'password_confirmation.same' => 'The Confirm Password and Password must match.'
         ]);
-
+        
         $user = new User();
         $user->name = $request->name;
         $user->username = $request->username;
@@ -80,15 +81,15 @@ class RegisterController extends Controller
         //user profile image
         $user->image_name = 'image.jpg';
         //user role assign
-        $userPermission = $user->givePermissionTo(['seller.dashboard','seller.edit']);
-        $user->assignRole($userPermission);
-
+        $roles = 'Seller';
+        $role_r = Role::where('name', '=', $roles)->firstOrFail();
+        $user->assignRole($role_r);
         $data = $user->save();
-
+        
         if($data){
-            return redirect()->back()->with('success', 'Account created Successfully.');
+            return redirect()->route('home')->with('success', 'Account created Successfully.');
         }else {
-            return redirect()->back()->with('error', 'Account create Failed.');
+            return back()->with('error', 'Account create Failed.');
         }
 
     }

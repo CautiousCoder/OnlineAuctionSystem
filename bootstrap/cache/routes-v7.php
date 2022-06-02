@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::qciM6gj8dPq17nMV',
+            '_route' => 'generated::JmA93aAgfKvaXLOI',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::BKaDytkwTYG7d1ON',
+            '_route' => 'generated::41d5q8QEKiIb6nfj',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::QuULThxfNIOsxD68',
+            '_route' => 'generated::v8PS1sNa9Vt39DaD',
           ),
           1 => NULL,
           2 => 
@@ -635,7 +635,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::QHtJLriGv82YKlFh',
+            '_route' => 'generated::vkWslZTFAkucy82N',
           ),
           1 => NULL,
           2 => 
@@ -695,7 +695,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'seller.sellerstore',
+            '_route' => 'seller.register',
           ),
           1 => NULL,
           2 => 
@@ -714,7 +714,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'seller.sellerloginsubmit',
+            '_route' => 'seller.login',
           ),
           1 => NULL,
           2 => 
@@ -1316,7 +1316,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::qciM6gj8dPq17nMV' => 
+    'generated::JmA93aAgfKvaXLOI' => 
     array (
       'methods' => 
       array (
@@ -1337,7 +1337,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::qciM6gj8dPq17nMV',
+        'as' => 'generated::JmA93aAgfKvaXLOI',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1462,7 +1462,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::BKaDytkwTYG7d1ON' => 
+    'generated::41d5q8QEKiIb6nfj' => 
     array (
       'methods' => 
       array (
@@ -1485,7 +1485,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::BKaDytkwTYG7d1ON',
+        'as' => 'generated::41d5q8QEKiIb6nfj',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1501,7 +1501,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::QuULThxfNIOsxD68' => 
+    'generated::v8PS1sNa9Vt39DaD' => 
     array (
       'methods' => 
       array (
@@ -1523,7 +1523,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::QuULThxfNIOsxD68',
+        'as' => 'generated::v8PS1sNa9Vt39DaD',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3412,7 +3412,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::QHtJLriGv82YKlFh' => 
+    'generated::vkWslZTFAkucy82N' => 
     array (
       'methods' => 
       array (
@@ -3433,7 +3433,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::QHtJLriGv82YKlFh',
+        'as' => 'generated::vkWslZTFAkucy82N',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3502,8 +3502,8 @@ app('router')->setCompiledRoutes(
           0 => 'web',
           1 => 'guest:web',
         ),
-        'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerloginshow',
-        'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerloginshow',
+        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerloginshow',
+        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerloginshow',
         'as' => 'seller.sellerloginshow',
         'namespace' => NULL,
         'prefix' => '/users/seller',
@@ -3525,7 +3525,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'seller.sellerstore' => 
+    'seller.register' => 
     array (
       'methods' => 
       array (
@@ -3541,7 +3541,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerstore',
         'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerstore',
-        'as' => 'seller.sellerstore',
+        'as' => 'seller.register',
         'namespace' => NULL,
         'prefix' => '/users/seller',
         'where' => 
@@ -3562,7 +3562,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'seller.sellerloginsubmit' => 
+    'seller.login' => 
     array (
       'methods' => 
       array (
@@ -3578,7 +3578,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerloginsubmit',
         'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerloginsubmit',
-        'as' => 'seller.sellerloginsubmit',
+        'as' => 'seller.login',
         'namespace' => NULL,
         'prefix' => '/users/seller',
         'where' => 
