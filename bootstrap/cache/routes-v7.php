@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::URsf7R55c0j00sta',
+            '_route' => 'generated::qciM6gj8dPq17nMV',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::PshNUGz3QZpRWvJj',
+            '_route' => 'generated::BKaDytkwTYG7d1ON',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::UmrgDld5MNYhk3Az',
+            '_route' => 'generated::QuULThxfNIOsxD68',
           ),
           1 => NULL,
           2 => 
@@ -635,13 +635,130 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::6TghSlhK7UO0LxqQ',
+            '_route' => 'generated::QHtJLriGv82YKlFh',
           ),
           1 => NULL,
           2 => 
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/register' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.sellerregister',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/login' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.sellerloginshow',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.sellerstore',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/login/submit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.sellerloginsubmit',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/dashboard' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.sellerDashboard',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/logout' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.sellerlogout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -1199,7 +1316,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::URsf7R55c0j00sta' => 
+    'generated::qciM6gj8dPq17nMV' => 
     array (
       'methods' => 
       array (
@@ -1220,7 +1337,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::URsf7R55c0j00sta',
+        'as' => 'generated::qciM6gj8dPq17nMV',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1345,7 +1462,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::PshNUGz3QZpRWvJj' => 
+    'generated::BKaDytkwTYG7d1ON' => 
     array (
       'methods' => 
       array (
@@ -1368,7 +1485,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::PshNUGz3QZpRWvJj',
+        'as' => 'generated::BKaDytkwTYG7d1ON',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1384,7 +1501,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::UmrgDld5MNYhk3Az' => 
+    'generated::QuULThxfNIOsxD68' => 
     array (
       'methods' => 
       array (
@@ -1406,7 +1523,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::UmrgDld5MNYhk3Az',
+        'as' => 'generated::QuULThxfNIOsxD68',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3295,7 +3412,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::6TghSlhK7UO0LxqQ' => 
+    'generated::QHtJLriGv82YKlFh' => 
     array (
       'methods' => 
       array (
@@ -3316,7 +3433,240 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::6TghSlhK7UO0LxqQ',
+        'as' => 'generated::QHtJLriGv82YKlFh',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.sellerregister' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/register',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerregister',
+        'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerregister',
+        'as' => 'seller.sellerregister',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.sellerloginshow' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/login',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerloginshow',
+        'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerloginshow',
+        'as' => 'seller.sellerloginshow',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.sellerstore' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/seller/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerstore',
+        'controller' => 'App\\Http\\Controllers\\Auth\\RegisterController@sellerstore',
+        'as' => 'seller.sellerstore',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.sellerloginsubmit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/seller/login/submit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'guest:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerloginsubmit',
+        'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerloginsubmit',
+        'as' => 'seller.sellerloginsubmit',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.sellerDashboard' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/dashboard',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:web',
+        ),
+        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
+        'controller' => '\\Illuminate\\Routing\\ViewController',
+        'as' => 'seller.sellerDashboard',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+        'view' => 'backend.user.sellerDashboard',
+        'data' => 
+        array (
+        ),
+        'status' => 200,
+        'headers' => 
+        array (
+        ),
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.sellerlogout' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/seller/logout',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@sellerlogout',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@sellerlogout',
+        'as' => 'seller.sellerlogout',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
       ),
       'fallback' => false,
       'defaults' => 

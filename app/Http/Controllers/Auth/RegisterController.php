@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -47,15 +49,62 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string', 'max:255', 'unique:users,username'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+
+
+     //show register form
+     public function sellerregister(){
+        return view('auth.register');
     }
+    public function sellerloginsubmit(Request $request){
+        // validate data
+
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required|email|max:100',
+            'username' => 'required|max:50|min:4|unique:users,username',
+            'password' => 'required|max:16|min:8',
+            'password_confirmation' => 'required|same:password',
+        ],[
+            'email.required' => 'Please enter an email address.',
+            'password.required' => 'Please enter a current password.',
+            'password_confirmation.same' => 'The Confirm Password and Password must match.'
+        ]);
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role_name = 'Seller';
+
+        //user profile image
+        $user->image_name = 'image.jpg';
+        //user role assign
+        $userPermission = $user->givePermissionTo(['seller.dashboard','seller.edit']);
+        $user->assignRole($userPermission);
+
+        $data = $user->save();
+
+        if($data){
+            return redirect()->back()->with('success', 'Account created Successfully.');
+        }else {
+            return redirect()->back()->with('error', 'Account create Failed.');
+        }
+
+    }
+
+
+
+
+    // protected function validator(array $data)
+    // {
+    //     return Validator::make($data, [
+    //         'name' => ['required', 'string', 'max:255'],
+    //         'username' => ['required', 'string', 'max:255', 'unique:users,username'],
+    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+    //         'password' => ['required', 'string', 'min:8', 'confirmed'],
+    //     ]);
+    // }
 
     /**
      * Create a new user instance after a valid registration.
@@ -63,13 +112,13 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'username' => $data['username'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
+    // protected function create(array $data)
+    // {
+    //     return User::create([
+    //         'name' => $data['name'],
+    //         'username' => $data['username'],
+    //         'email' => $data['email'],
+    //         'password' => Hash::make($data['password']),
+    //     ]);
+    // }
 }

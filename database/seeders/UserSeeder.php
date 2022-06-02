@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             $user = new User();
             $user->name = 'Md. Zahidul Islam';
             $user->username = 'zahid';
-            $user->role_name = 'user';
+            $user->role_name = 'User';
             $user->email = 'zahidul@zahidul.com';
             $user->password = Hash::make('12345678');
             $user->save();
