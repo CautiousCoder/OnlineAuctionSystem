@@ -19,18 +19,10 @@
 
 @section('content')
 <!-- Content Header (Page header) -->
-<div class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="d-flex justify-content-between text-center">
-        <h1 class="">Dashboard</h1>
-        <form action="{{ route('user.dologout') }}" id="user-logout" method="POST">
-          @csrf <button class="btn btn-sm btn-primary" type="submit">Logout</button> </form>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
-</div>
-<!-- /.content-header -->
+{{-- checking whether seller have permission or not to access --}}
+@if (Auth::guard('web')->user()->can('seller.dashboard'))
+@include('backend.layouts.inc.sellerDashboard')
+@endif
 
 <!-- Main content -->
 

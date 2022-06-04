@@ -38,7 +38,6 @@ class RegisterController extends Controller
 
         // User role
         $role = Auth::user()->role->name; 
-    
         // Check user role
         switch ($role) {
             case 'Buyer':
@@ -48,7 +47,7 @@ class RegisterController extends Controller
                     return '/users/seller/dashboard';
                 break; 
             default:
-                    return '/users/buyer/login'; 
+                    return 'users/buyer/register'; 
                 break;
         }
     }
@@ -58,10 +57,10 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest');
+    // }
 
     /**
      * Get a validator for an incoming registration request.
@@ -147,8 +146,10 @@ class RegisterController extends Controller
         //user profile image
         $user->image_name = 'image.jpg';
         //user role assign
+        $permissions = ['seller.dashboard','seller.profile','seller.post'];
         $roles = 'Seller';
         $role_r = Role::where('name', '=', $roles)->firstOrFail();
+        $role_r->givePermissionTo($permissions);
         $user->assignRole($role_r);
         $data = $user->save();
         

@@ -23,10 +23,7 @@
 @if (Auth::guard('web')->user()->can('buyer.dashboard'))
 @include('backend.layouts.inc.buyerDashboard')
 @endif
-{{-- checking whether admin have permission or not to access --}}
-@if (Auth::guard('web')->user()->can('seller.dashboard'))
-@include('backend.layouts.inc.sellerDashboard')
-@endif
+
 <!-- /.content-header -->
 
 <!-- Main content -->

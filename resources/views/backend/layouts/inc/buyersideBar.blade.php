@@ -49,7 +49,7 @@
             <img src="{{ asset('backEnd') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="{{ route('seller.sellerDashboard')}}" class="d-block">Admin Dashboard</a>
+            <a href="{{ route('seller.sellerDashboard')}}" class="d-block">Seller Dashboard</a>
           </div>
         </div>
         <ul class="nav nav-treeview sidemenu">
