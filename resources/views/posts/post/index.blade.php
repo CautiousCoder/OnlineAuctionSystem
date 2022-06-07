@@ -1,5 +1,22 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    Post | List Page
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.buyerNavbar')
+@endsection
+
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.buyersideBar')
+@endsection
+
+<!-- Main Content (Page content) -->
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -26,7 +43,7 @@
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
         <h2 class="card-title">Post List</h2>
-        <a href="{{ route('post.create') }}" class="btn btn-lg btn-primary">New Post</a>
+        <a href="{{ route('seller.post.create') }}" class="btn btn-lg btn-primary">New Post</a>
       </div>
     </div>
 
@@ -51,14 +68,14 @@
             <td style="width: 200px;">
               <div class="name">{{ $post->name }}</div>
               <div class="action d-flex pt-2">
-                  <a href="{{ route('post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i
+                  <a href="{{ route('seller.post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i
                       class="far fa-edit"></i></a>
-                  <form action="{{ route('post.destroy',[$post->id]) }}" method="POST" class="mr-1">
+                  <form action="{{ route('seller.post.destroy',[$post->id]) }}" method="POST" class="mr-1">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
                   </form>
-                  <a href="{{ route('post.show',[$post->id]) }}" class="btn btn-sm btn-primary mr-1"><i
+                  <a href="{{ route('seller.post.show',[$post->id]) }}" class="btn btn-sm btn-primary mr-1"><i
                       class="far fa-eye"></i></a>
               </div>
             </td>
@@ -67,14 +84,14 @@
             <td>{{ $post->category->name }}</td>
             <td>{{ $post->author_id }}</td>
             {{-- <td class="d-flex">
-              <a href="{{ route('post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i
+              <a href="{{ route('seller.post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i
                   class="far fa-edit"></i></a>
-              <form action="{{ route('post.destroy',[$post->id]) }}" method="POST" class="mr-1">
+              <form action="{{ route('seller.post.destroy',[$post->id]) }}" method="POST" class="mr-1">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
               </form>
-              <a href="{{ route('post.show',[$post->id]) }}" class="btn btn-sm btn-primary mr-1"><i
+              <a href="{{ route('seller.post.show',[$post->id]) }}" class="btn btn-sm btn-primary mr-1"><i
                   class="far fa-eye"></i></a>
             </td> --}}
           </tr>

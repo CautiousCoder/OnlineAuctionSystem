@@ -39,5 +39,8 @@
 <!-- select2 -->
 <script src="{{ asset('backEnd') }}/plugins/chart.js/Chart.min.js"></script>
 <script src="{{ asset('backEnd') }}/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="{{ asset('backEnd') }}/dist/js/adminlte.min.js"></script>
+<script src="{{ asset('backEnd') }}/dist/js/demo.js"></script>
+<script src="{{ asset('backEnd') }}/dist/js/pages/dashboard.js"></script>
 
 @endsection

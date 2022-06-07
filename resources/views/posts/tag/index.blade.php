@@ -1,5 +1,22 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    Tags | List Page
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.buyerNavbar')
+@endsection
+
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.buyersideBar')
+@endsection
+
+<!-- Main Content (Page content) -->
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -26,7 +43,7 @@
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
         <h2 class="card-title">Tag List</h2>
-        <a href="{{ route('tag.create') }}" class="btn btn-lg btn-primary">Create Tag</a>
+        <a href="{{ route('seller.tag.create') }}" class="btn btn-lg btn-primary">Create Tag</a>
       </div>
     </div>
 
@@ -51,14 +68,14 @@
             <td>{{ $tag->slug }}</td>
             <td>{{ $tag->description }}</td>
             <td class="d-flex">
-              <a href="{{ route('tag.edit',[$tag->id]) }}" class="btn btn-sm btn-info mr-1"><i
+              <a href="{{ route('seller.tag.edit',[$tag->id]) }}" class="btn btn-sm btn-info mr-1"><i
                   class="far fa-edit"></i></a>
-              <form action="{{ route('tag.destroy',[$tag->id]) }}" method="POST" class="mr-1">
+              <form action="{{ route('seller.tag.destroy',[$tag->id]) }}" method="POST" class="mr-1">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
               </form>
-              <a href="{{ route('tag.show',[$tag->id]) }}" class="btn btn-sm btn-primary mr-1"><i
+              <a href="{{ route('seller.tag.show',[$tag->id]) }}" class="btn btn-sm btn-primary mr-1"><i
                   class="far fa-eye"></i></a>
             </td>
           </tr>

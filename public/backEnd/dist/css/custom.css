@@ -3,7 +3,7 @@
    ====================================================================================== */
 
 .nav.nav-treeview {
-	width: 85% !important;
+	width: 90% !important;
 	float: right;
 	border: 1px solid #fff;
 	overflow: hidden;
@@ -31,6 +31,7 @@
     display: none !important;
 }
 .list:hover .sidemenu,
+.list a:active .sidemenu,
 .list:focus .sidemenu {
     display: block !important;
 }
@@ -48,16 +49,17 @@
     position: relative;
 }
 .dash-pro .nav.nav-treeview {
-	width: 95% !important;
-	float: right;
+	width: 85% !important;
+	float: right !important;
 	border: 1px solid #fff;
 	padding: 2px !important;
-	margin-top: -2px !important;
+	margin-top: -30px !important;
+    margin-bottom: 5px;
 	border-radius: 5px;
 	background: #ff04c7 !important;
 }
 .dash-pro .nav.nav-treeview li a {
-    width: 95% !important;
+    width: 98% !important;
     margin: 0 5px;
 }
 .dash-pro .pstyle {
@@ -68,7 +70,7 @@
 .dash-pro .sidemenu {
     display: none !important;
     position: absolute;
-    left: 5%;
+    left: 15%;
     top: 95%;
 }
 .dash-pro .list:hover .sidemenu,

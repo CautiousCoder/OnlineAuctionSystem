@@ -1,5 +1,22 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    Post | Edit Page
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.buyerNavbar')
+@endsection
+
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.buyersideBar')
+@endsection
+
+<!-- Main Content (Page content) -->
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -11,7 +28,7 @@
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Post List</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('seller.post.index') }}">Post List</a></li>
           <li class="breadcrumb-item active">Edit Post</li>
         </ol>
       </div><!-- /.col -->
@@ -27,14 +44,14 @@
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
         <h2 class="card-title">Edit Post</h2>
-        <a href="{{ route('post.index') }}" class="btn btn-lg btn-primary">Back</a>
+        <a href="{{ route('seller.post.index') }}" class="btn btn-lg btn-primary">Back</a>
       </div>
     </div>
 
     {{-- <div class="card-body p-0"> --}}
       <!-- form start -->
       <div class="col-12 col-lg-6 col-md-8 offset-lg-3 offset-md-2">
-        <form action="{{ route('post.update', [$post->id]) }}" method="POST">
+        <form action="{{ route('seller.post.update', [$post->id]) }}" method="POST">
           @method('PUT')
           @csrf
           <div class="card-body">

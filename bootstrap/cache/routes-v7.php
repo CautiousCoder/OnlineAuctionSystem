@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::aX7p6PiGGWhI7GyP',
+            '_route' => 'generated::oYRjOqrhsx2CQZNN',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::PoYPE00fjLiFoVYp',
+            '_route' => 'generated::3DFKeC5pYsmUXM0T',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::RRhWEFjugNUolOD8',
+            '_route' => 'generated::ICDzItT0pFPdTYec',
           ),
           1 => NULL,
           2 => 
@@ -441,174 +441,6 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      '/category' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'category.index',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'category.store',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/category/create' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'category.create',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/tag' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'tag.index',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'tag.store',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/tag/create' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'tag.create',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/post' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'post.index',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'post.store',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'POST' => 0,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
-      '/post/create' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'post.create',
-          ),
-          1 => NULL,
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => false,
-          6 => NULL,
-        ),
-      ),
       '/home' => 
       array (
         0 => 
@@ -635,7 +467,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ePH3U8FX9oFhxVDA',
+            '_route' => 'generated::lURx9lQTboBxS97h',
           ),
           1 => NULL,
           2 => 
@@ -766,6 +598,174 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/users/seller/category' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.category.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.category.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/category/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.category.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/tag' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.tag.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.tag.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/tag/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.tag.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/post' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.post.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.post.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/post/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.post.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/users/buyer/register' => 
       array (
         0 => 
@@ -886,11 +886,11 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/users/admins/(?|role/([^/]++)(?|(*:40)|/edit(*:52)|(*:59))|user/([^/]++)(?|(*:83)|/edit(*:95)|(*:102))|admin/([^/]++)(?|(*:128)|/edit(*:141)|(*:149)))|/category/([^/]++)(?|(*:180)|/edit(*:193)|(*:201))|/tag/([^/]++)(?|(*:226)|/edit(*:239)|(*:247))|/post/([^/]++)(?|(*:273)|/edit(*:286)|(*:294)))/?$}sDu',
+      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))))/?$}sDu',
     ),
     3 => 
     array (
-      40 => 
+      43 => 
       array (
         0 => 
         array (
@@ -913,7 +913,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      52 => 
+      55 => 
       array (
         0 => 
         array (
@@ -936,7 +936,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      59 => 
+      62 => 
       array (
         0 => 
         array (
@@ -978,7 +978,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      83 => 
+      86 => 
       array (
         0 => 
         array (
@@ -1001,7 +1001,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      95 => 
+      98 => 
       array (
         0 => 
         array (
@@ -1024,7 +1024,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      102 => 
+      105 => 
       array (
         0 => 
         array (
@@ -1066,7 +1066,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      128 => 
+      131 => 
       array (
         0 => 
         array (
@@ -1089,7 +1089,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      141 => 
+      144 => 
       array (
         0 => 
         array (
@@ -1112,7 +1112,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      149 => 
+      152 => 
       array (
         0 => 
         array (
@@ -1154,13 +1154,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      180 => 
+      192 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'category.show',
+            '_route' => 'seller.category.show',
           ),
           1 => 
           array (
@@ -1177,13 +1177,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      193 => 
+      205 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'category.edit',
+            '_route' => 'seller.category.edit',
           ),
           1 => 
           array (
@@ -1200,13 +1200,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      201 => 
+      213 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'category.update',
+            '_route' => 'seller.category.update',
           ),
           1 => 
           array (
@@ -1226,7 +1226,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'category.destroy',
+            '_route' => 'seller.category.destroy',
           ),
           1 => 
           array (
@@ -1242,13 +1242,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      226 => 
+      237 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'tag.show',
+            '_route' => 'seller.tag.show',
           ),
           1 => 
           array (
@@ -1265,13 +1265,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      239 => 
+      250 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'tag.edit',
+            '_route' => 'seller.tag.edit',
           ),
           1 => 
           array (
@@ -1288,13 +1288,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      247 => 
+      258 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'tag.update',
+            '_route' => 'seller.tag.update',
           ),
           1 => 
           array (
@@ -1314,7 +1314,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'tag.destroy',
+            '_route' => 'seller.tag.destroy',
           ),
           1 => 
           array (
@@ -1330,13 +1330,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      273 => 
+      283 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'post.show',
+            '_route' => 'seller.post.show',
           ),
           1 => 
           array (
@@ -1353,13 +1353,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      286 => 
+      296 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'post.edit',
+            '_route' => 'seller.post.edit',
           ),
           1 => 
           array (
@@ -1376,13 +1376,13 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      294 => 
+      304 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'post.update',
+            '_route' => 'seller.post.update',
           ),
           1 => 
           array (
@@ -1402,7 +1402,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'post.destroy',
+            '_route' => 'seller.post.destroy',
           ),
           1 => 
           array (
@@ -1433,7 +1433,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::aX7p6PiGGWhI7GyP' => 
+    'generated::oYRjOqrhsx2CQZNN' => 
     array (
       'methods' => 
       array (
@@ -1454,7 +1454,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::aX7p6PiGGWhI7GyP',
+        'as' => 'generated::oYRjOqrhsx2CQZNN',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1579,7 +1579,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::PoYPE00fjLiFoVYp' => 
+    'generated::3DFKeC5pYsmUXM0T' => 
     array (
       'methods' => 
       array (
@@ -1602,7 +1602,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::PoYPE00fjLiFoVYp',
+        'as' => 'generated::3DFKeC5pYsmUXM0T',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1618,7 +1618,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::RRhWEFjugNUolOD8' => 
+    'generated::ICDzItT0pFPdTYec' => 
     array (
       'methods' => 
       array (
@@ -1640,7 +1640,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::RRhWEFjugNUolOD8',
+        'as' => 'generated::ICDzItT0pFPdTYec',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2721,777 +2721,6 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'category.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'category',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'category.index',
-        'uses' => 'App\\Http\\Controllers\\CategoryController@index',
-        'controller' => 'App\\Http\\Controllers\\CategoryController@index',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'category.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'category/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'category.create',
-        'uses' => 'App\\Http\\Controllers\\CategoryController@create',
-        'controller' => 'App\\Http\\Controllers\\CategoryController@create',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'category.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'category',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'category.store',
-        'uses' => 'App\\Http\\Controllers\\CategoryController@store',
-        'controller' => 'App\\Http\\Controllers\\CategoryController@store',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'category.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'category/{category}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'category.show',
-        'uses' => 'App\\Http\\Controllers\\CategoryController@show',
-        'controller' => 'App\\Http\\Controllers\\CategoryController@show',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'category.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'category/{category}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'category.edit',
-        'uses' => 'App\\Http\\Controllers\\CategoryController@edit',
-        'controller' => 'App\\Http\\Controllers\\CategoryController@edit',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'category.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'category/{category}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'category.update',
-        'uses' => 'App\\Http\\Controllers\\CategoryController@update',
-        'controller' => 'App\\Http\\Controllers\\CategoryController@update',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'category.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'category/{category}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'category.destroy',
-        'uses' => 'App\\Http\\Controllers\\CategoryController@destroy',
-        'controller' => 'App\\Http\\Controllers\\CategoryController@destroy',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'tag.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'tag',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'tag.index',
-        'uses' => 'App\\Http\\Controllers\\TagController@index',
-        'controller' => 'App\\Http\\Controllers\\TagController@index',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'tag.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'tag/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'tag.create',
-        'uses' => 'App\\Http\\Controllers\\TagController@create',
-        'controller' => 'App\\Http\\Controllers\\TagController@create',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'tag.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'tag',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'tag.store',
-        'uses' => 'App\\Http\\Controllers\\TagController@store',
-        'controller' => 'App\\Http\\Controllers\\TagController@store',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'tag.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'tag/{tag}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'tag.show',
-        'uses' => 'App\\Http\\Controllers\\TagController@show',
-        'controller' => 'App\\Http\\Controllers\\TagController@show',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'tag.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'tag/{tag}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'tag.edit',
-        'uses' => 'App\\Http\\Controllers\\TagController@edit',
-        'controller' => 'App\\Http\\Controllers\\TagController@edit',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'tag.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'tag/{tag}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'tag.update',
-        'uses' => 'App\\Http\\Controllers\\TagController@update',
-        'controller' => 'App\\Http\\Controllers\\TagController@update',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'tag.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'tag/{tag}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'tag.destroy',
-        'uses' => 'App\\Http\\Controllers\\TagController@destroy',
-        'controller' => 'App\\Http\\Controllers\\TagController@destroy',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'post.index' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'post',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'post.index',
-        'uses' => 'App\\Http\\Controllers\\PostController@index',
-        'controller' => 'App\\Http\\Controllers\\PostController@index',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'post.create' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'post/create',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'post.create',
-        'uses' => 'App\\Http\\Controllers\\PostController@create',
-        'controller' => 'App\\Http\\Controllers\\PostController@create',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'post.store' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'POST',
-      ),
-      'uri' => 'post',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'post.store',
-        'uses' => 'App\\Http\\Controllers\\PostController@store',
-        'controller' => 'App\\Http\\Controllers\\PostController@store',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'post.show' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'post/{post}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'post.show',
-        'uses' => 'App\\Http\\Controllers\\PostController@show',
-        'controller' => 'App\\Http\\Controllers\\PostController@show',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'post.edit' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'post/{post}/edit',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'post.edit',
-        'uses' => 'App\\Http\\Controllers\\PostController@edit',
-        'controller' => 'App\\Http\\Controllers\\PostController@edit',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'post.update' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'PUT',
-        1 => 'PATCH',
-      ),
-      'uri' => 'post/{post}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'post.update',
-        'uses' => 'App\\Http\\Controllers\\PostController@update',
-        'controller' => 'App\\Http\\Controllers\\PostController@update',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'post.destroy' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'DELETE',
-      ),
-      'uri' => 'post/{post}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'as' => 'post.destroy',
-        'uses' => 'App\\Http\\Controllers\\PostController@destroy',
-        'controller' => 'App\\Http\\Controllers\\PostController@destroy',
-        'namespace' => NULL,
-        'prefix' => '',
-        'where' => 
-        array (
-        ),
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
     'home' => 
     array (
       'methods' => 
@@ -3529,7 +2758,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ePH3U8FX9oFhxVDA' => 
+    'generated::lURx9lQTboBxS97h' => 
     array (
       'methods' => 
       array (
@@ -3550,7 +2779,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::ePH3U8FX9oFhxVDA',
+        'as' => 'generated::lURx9lQTboBxS97h',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3781,6 +3010,819 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerlogout',
         'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerlogout',
         'as' => 'seller.sellerlogout',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.category.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/category',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.category.index',
+        'uses' => 'App\\Http\\Controllers\\CategoryController@index',
+        'controller' => 'App\\Http\\Controllers\\CategoryController@index',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.category.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/category/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.category.create',
+        'uses' => 'App\\Http\\Controllers\\CategoryController@create',
+        'controller' => 'App\\Http\\Controllers\\CategoryController@create',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.category.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/seller/category',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.category.store',
+        'uses' => 'App\\Http\\Controllers\\CategoryController@store',
+        'controller' => 'App\\Http\\Controllers\\CategoryController@store',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.category.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/category/{category}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.category.show',
+        'uses' => 'App\\Http\\Controllers\\CategoryController@show',
+        'controller' => 'App\\Http\\Controllers\\CategoryController@show',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.category.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/category/{category}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.category.edit',
+        'uses' => 'App\\Http\\Controllers\\CategoryController@edit',
+        'controller' => 'App\\Http\\Controllers\\CategoryController@edit',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.category.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'users/seller/category/{category}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.category.update',
+        'uses' => 'App\\Http\\Controllers\\CategoryController@update',
+        'controller' => 'App\\Http\\Controllers\\CategoryController@update',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.category.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'users/seller/category/{category}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.category.destroy',
+        'uses' => 'App\\Http\\Controllers\\CategoryController@destroy',
+        'controller' => 'App\\Http\\Controllers\\CategoryController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.tag.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/tag',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.tag.index',
+        'uses' => 'App\\Http\\Controllers\\TagController@index',
+        'controller' => 'App\\Http\\Controllers\\TagController@index',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.tag.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/tag/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.tag.create',
+        'uses' => 'App\\Http\\Controllers\\TagController@create',
+        'controller' => 'App\\Http\\Controllers\\TagController@create',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.tag.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/seller/tag',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.tag.store',
+        'uses' => 'App\\Http\\Controllers\\TagController@store',
+        'controller' => 'App\\Http\\Controllers\\TagController@store',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.tag.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/tag/{tag}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.tag.show',
+        'uses' => 'App\\Http\\Controllers\\TagController@show',
+        'controller' => 'App\\Http\\Controllers\\TagController@show',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.tag.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/tag/{tag}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.tag.edit',
+        'uses' => 'App\\Http\\Controllers\\TagController@edit',
+        'controller' => 'App\\Http\\Controllers\\TagController@edit',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.tag.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'users/seller/tag/{tag}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.tag.update',
+        'uses' => 'App\\Http\\Controllers\\TagController@update',
+        'controller' => 'App\\Http\\Controllers\\TagController@update',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.tag.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'users/seller/tag/{tag}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.tag.destroy',
+        'uses' => 'App\\Http\\Controllers\\TagController@destroy',
+        'controller' => 'App\\Http\\Controllers\\TagController@destroy',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.post.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/post',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.post.index',
+        'uses' => 'App\\Http\\Controllers\\PostController@index',
+        'controller' => 'App\\Http\\Controllers\\PostController@index',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.post.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/post/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.post.create',
+        'uses' => 'App\\Http\\Controllers\\PostController@create',
+        'controller' => 'App\\Http\\Controllers\\PostController@create',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.post.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/seller/post',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.post.store',
+        'uses' => 'App\\Http\\Controllers\\PostController@store',
+        'controller' => 'App\\Http\\Controllers\\PostController@store',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.post.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/post/{post}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.post.show',
+        'uses' => 'App\\Http\\Controllers\\PostController@show',
+        'controller' => 'App\\Http\\Controllers\\PostController@show',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.post.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/post/{post}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.post.edit',
+        'uses' => 'App\\Http\\Controllers\\PostController@edit',
+        'controller' => 'App\\Http\\Controllers\\PostController@edit',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.post.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'users/seller/post/{post}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.post.update',
+        'uses' => 'App\\Http\\Controllers\\PostController@update',
+        'controller' => 'App\\Http\\Controllers\\PostController@update',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.post.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'users/seller/post/{post}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'as' => 'seller.post.destroy',
+        'uses' => 'App\\Http\\Controllers\\PostController@destroy',
+        'controller' => 'App\\Http\\Controllers\\PostController@destroy',
         'namespace' => NULL,
         'prefix' => '/users/seller',
         'where' => 

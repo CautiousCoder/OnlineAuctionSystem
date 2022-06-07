@@ -66,9 +66,7 @@ Route::prefix('users/admins')->name('admin.')->group(function(){
     //     return view('backend.admin.starter');
     // });
    
-    Route::resource('category', CategoryController::class);
-    Route::resource('tag', TagController::class);
-    Route::resource('post', PostController::class);
+
 
 // Auth::routes();
 
@@ -98,6 +96,10 @@ Route::prefix('users/seller')->name('seller.')->group(function(){
     Route::middleware(['role:Seller','auth:web'])->group(function(){
         Route::view('/dashboard', 'backend.pages.user.sellerDashboard')->name('sellerDashboard');
         Route::post('/logout', [LoginController::class, 'sellerlogout'])->name('sellerlogout');
+
+        Route::resource('category', CategoryController::class);
+        Route::resource('tag', TagController::class);
+        Route::resource('post', PostController::class);
     });
 });
 

@@ -1,5 +1,22 @@
 @extends('backend.layouts.layout')
 
+<!-- Title (Page title) -->
+@section('title')
+    Category | Create Page
+@endsection
+
+<!-- Navbar (Page navbar) -->
+@section('navbar')
+@include('backend.layouts.inc.buyerNavbar')
+@endsection
+
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.buyersideBar')
+@endsection
+
+<!-- Main Content (Page content) -->
+
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -11,7 +28,7 @@
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Category List</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('seller.category.index') }}">Category List</a></li>
           <li class="breadcrumb-item active">New Category</li>
         </ol>
       </div><!-- /.col -->
@@ -27,14 +44,14 @@
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
         <h2 class="card-title">Add Category</h2>
-        <a href="{{ route('category.index') }}" class="btn btn-lg btn-primary">Back</a>
+        <a href="{{ route('seller.category.index') }}" class="btn btn-lg btn-primary">Back</a>
       </div>
     </div>
 
     {{-- <div class="card-body p-0"> --}}
       <!-- form start -->
       <div class="col-12 col-lg-6 col-md-8 offset-lg-3 offset-md-2">
-      <form action="{{ route('category.store') }}" method="POST">
+      <form action="{{ route('seller.category.store') }}" method="POST">
         @csrf
         <div class="card-body">
           @include('backend.inc.error')

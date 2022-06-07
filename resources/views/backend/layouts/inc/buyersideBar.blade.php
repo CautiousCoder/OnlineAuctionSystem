@@ -275,8 +275,8 @@
 
         {{-- post route views all user --}}
         <li class="nav-item menu-open list">
-          <a href="{{ route('post.index')}}"
-            class="nav-link {{ Route::is('post.create') || Route::is('post.index') || Route::is('post.edit') || Route::is('category.index') ||Route::is('category.create') || Route::is('category.edit') || Route::is('tag.index') ||Route::is('tag.create') || Route::is('tag.edit') ? 'active' : '' }}">
+          <a href="{{ route('seller.post.index')}}"
+            class="nav-link {{ Route::is('seller.post.create') || Route::is('seller.post.index') || Route::is('seller.post.edit') || Route::is('seller.category.index') ||Route::is('seller.category.create') || Route::is('seller.category.edit') || Route::is('seller.tag.index') ||Route::is('seller.tag.create') || Route::is('seller.tag.edit') ? 'active' : '' }}">
             <p>
               Posts
               <i class="right fas fa-angle-left"></i>
@@ -284,24 +284,24 @@
           </a>
           <ul class="nav nav-treeview sidemenu">
             <li class="nav-item mt-2">
-              <a href="{{ route('post.index')}}" class="nav-link {{ Route::is('post.index') ? 'active' : '' }}">
+              <a href="{{ route('seller.post.index')}}" class="nav-link {{ Route::is('seller.post.index') ? 'active' : '' }}">
                 <p>All Posts</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('post.create')}}" class="nav-link {{ Route::is('post.index') ? 'active' : '' }}">
+              <a href="{{ route('seller.post.create')}}" class="nav-link {{ Route::is('seller.post.index') ? 'active' : '' }}">
                 <p>Add New Post</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('category.index')}}"
-                class="nav-link {{ Route::is('category.index') ||Route::is('category.create') || Route::is('category.edit') ? 'active' : '' }}">
+              <a href="{{ route('seller.category.index')}}"
+                class="nav-link {{ Route::is('seller.category.index') ||Route::is('seller.category.create') || Route::is('seller.category.edit') ? 'active' : '' }}">
                 <p>Categories</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ route('tag.index')}}"
-                class="nav-link {{ Route::is('tag.index') ||Route::is('tag.create') || Route::is('tag.edit') ? 'active' : '' }}">
+              <a href="{{ route('seller.tag.index')}}"
+                class="nav-link {{ Route::is('seller.tag.index') ||Route::is('seller.tag.create') || Route::is('seller.tag.edit') ? 'active' : '' }}">
                 <p>Tags</p>
               </a>
             </li>
