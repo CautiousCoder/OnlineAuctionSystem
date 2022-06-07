@@ -14,7 +14,8 @@ class Category extends Model
 
     public $incrementing = false;
   
+    protected $filable = ['post_id','categry_id'];
     public function post(){
-        return $this->belongsToMany(Post::class,'post_categories','category_id','post_id');
+        return $this->belongsToMany(Post::class,'posts_categories','posts_id','categories_id');
     }
 }

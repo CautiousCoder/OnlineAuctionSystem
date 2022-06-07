@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->longText('description')->nullable();
             $table->integer('author_id')->unsigned();
-            $table->integer('category_id')->unsigned();
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();
         });

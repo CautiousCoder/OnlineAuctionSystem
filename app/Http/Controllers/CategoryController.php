@@ -53,7 +53,7 @@ class CategoryController extends Controller
         ]);
         $category->save();
         Session()->flash('success', 'Category Created Successfully.!');
-        return Redirect::to(route('category.create'))->withInput();
+        return redirect()->route('seller.category.create');
         
         //dd($request->all());
     }
@@ -98,7 +98,7 @@ class CategoryController extends Controller
         $category->description = $request->des;
         $category->save();
         Session()->flash('success', 'Category Updated Successfully.!');
-        return Redirect::to(route('category.index'))->withInput();
+        return redirect()->back();
        // dd($request->all());
     }
 
@@ -115,7 +115,7 @@ class CategoryController extends Controller
             $category->delete();
 
             Session()->flash('success', 'Category Deleted Successfully.!');
-            return Redirect::to(route('category.index'))->withInput();
+            return redirect()->route('seller.category.index');
         }
     }
 }

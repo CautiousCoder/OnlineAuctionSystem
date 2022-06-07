@@ -1,5 +1,6 @@
 {
   "recommendations": [
-    "file-icons.file-icons"
+    "file-icons.file-icons",
+    "shufo.vscode-blade-formatter"
   ]
 }

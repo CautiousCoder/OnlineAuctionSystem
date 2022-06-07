@@ -20,12 +20,14 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->timestamps();
         });
-        Schema::create('post_tags', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('tag_id');
-            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
-            $table->unsignedBigInteger('post_id');
-            $table->foreign('tag_id')->references('id')->on('tags');
+        Schema::create('posts_tags', function (Blueprint $table) {
+            // $table->bigIncrements('id');
+            $table->foreignId('posts_id')->constrained();
+            $table->foreignId('tags_id')->constrained();
+            // $table->unsignedBigInteger('posts_id');
+            // $table->foreign('posts_id')->references('id')->on('posts')->onDelete('cascade');
+            // $table->unsignedBigInteger('tags_id');
+            // $table->foreign('tags_id')->references('id')->on('tags');
             $table->timestamps();
         });
     }

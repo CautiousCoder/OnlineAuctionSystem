@@ -12,9 +12,10 @@ class Tag extends Model
     protected $primarykey='id';
 
     public $incrementing = false;
-  
+
+    protected $filable = ['post_id','tag_id'];
 
     public function posts(){
-        return $this->belongsToMany(Post::class,'post_tags','tag_id','post_id');
+        return $this->belongsToMany(Post::class,'posts_tags','posts_id','tags_id');
     }
 }

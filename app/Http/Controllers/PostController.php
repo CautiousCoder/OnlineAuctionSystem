@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\CategoryController;
+use App\Models\Tag;
 use Illuminate\Support\Carbon;
 
 class PostController extends Controller
@@ -33,7 +34,8 @@ class PostController extends Controller
     {
         //
         $categories = Category::all();
-        return view('posts.post.create', compact('categories'));
+        $tags = Tag::all();
+        return view('posts.post.create', compact(['categories','tags']));
     }
 
     /**
@@ -45,19 +47,20 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->all());
         $this->validate($request, [
             'name' => 'required|unique:posts,name',
             'image' => 'image',
+            'category_id' => 'nullable',
         ]);
 
-        $post = Post::create([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name, '-'),
-            'description' => $request->description,
-            'author_id' => 1,
-            'category_id' => $request->category,
-            'publish_at' => Carbon::now(),
-        ]);
+        $post = new Post();
+            $post->name = $request->name;
+            $post->slug = Str::slug($request->name, '-');
+            $post->description = $request->description;
+            $post->author_id = 1;
+            $post->publish_at = Carbon::now();
+            
         if($request->hasFile('image')){
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
@@ -69,10 +72,14 @@ class PostController extends Controller
             $post->image = 'noImage.jpg';
         }
 
-        //dd($request->all());
-        $post->save();
+        $success = $post->save();
+        if($success){
+            $post->categories()->attach($request->categorys);
+            $post->tags()->attach($request->tags);
+        }
+        
         Session()->flash('success', 'Post Created Successfully.!');
-        return Redirect::to(route('post.create'))->withInput();
+        return redirect()->route('seller.post.index');
         
     }
 
@@ -134,7 +141,7 @@ class PostController extends Controller
         //dd($request->all());
         $post->save();
         Session()->flash('success', 'Post Updated Successfully.!');
-        return Redirect::to(route('post.create'))->withInput();
+        return redirect()->route('seller.post.edit');
     }
 
     /**

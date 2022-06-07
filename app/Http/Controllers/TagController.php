@@ -54,9 +54,8 @@ class TagController extends Controller
         ]);
         $tag->save();
         Session()->flash('success', 'Tag Created Successfully.!');
-        return Redirect::to(route('tag.create'))->withInput();
-        
-        //dd($request->all());
+        return redirect()->route('seller.tag.create');
+    
     }
 
     /**
@@ -100,8 +99,8 @@ class TagController extends Controller
         $tag->description = $request->des;
         $tag->save();
         Session()->flash('success', 'Tag Updated Successfully.!');
-        return Redirect::to(route('tag.index'))->withInput();
-       // dd($request->all());
+        return redirect()->route('seller.tag.index');
+
     }
 
     /**

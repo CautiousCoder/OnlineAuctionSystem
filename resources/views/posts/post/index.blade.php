@@ -81,7 +81,7 @@
             </td>
             <td><div class="img"><img style="max-height: 80px; max-width:100px;" src="{{ $post->image }}" alt="Loading..."></div></td>
             <td>{{ $post->description }}</td>
-            <td>{{ $post->category->name }}</td>
+            <td>{{ $post->id }}</td>
             <td>{{ $post->author_id }}</td>
             {{-- <td class="d-flex">
               <a href="{{ route('seller.post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i
