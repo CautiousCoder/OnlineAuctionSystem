@@ -20,6 +20,14 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->timestamps();
         });
+        Schema::create('post_categories', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -30,5 +38,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('categories');
+        Schema::dropIfExists('post_categories');
     }
 };
