@@ -98,6 +98,19 @@
 	color: #fff !important;
 }
 
+/* ======================================================================================
+    Side-bar-nav style
+   ====================================================================================== */
+button.btn.btn-logout.logout-btn {
+    width: 100% !important;
+    text-align: left;
+    padding-left: 20px;
+}
+.logout-link {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* #sidebar-id li.menu-top {
     border: none;
     min-height: 34px;

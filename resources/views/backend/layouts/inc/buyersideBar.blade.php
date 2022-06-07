@@ -30,10 +30,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <div class="nav-link">
-              <form action="{{ route('buyer.buyerlogout') }}" method="POST">
+            <div class="nav-link logout-link w-100">
+              <form class="w-100" action="{{ route('buyer.buyerlogout') }}" method="POST">
                 @csrf
-                <button type="submit" class="btn btn-logout"><p class="pstyle">Logout</p></button>
+                <button type="submit" class="btn btn-logout logout-btn"><p class="pstyle">Logout</p></button>
               </form>
             </div>
           </li>

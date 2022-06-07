@@ -12,6 +12,7 @@ use App\Http\Controllers\BackEnd\RoleController;
 use App\Http\Controllers\BackEnd\Auth\AdminLoginController;
 use App\Http\Controllers\BackEnd\Auth\AdminResetPasswordController;
 use App\Http\Controllers\MailController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +65,7 @@ Route::prefix('users/admins')->name('admin.')->group(function(){
     // Route::get('/', function () {
     //     return view('backend.admin.starter');
     // });
-
+   
     Route::resource('category', CategoryController::class);
     Route::resource('tag', TagController::class);
     Route::resource('post', PostController::class);
@@ -94,7 +95,7 @@ Route::prefix('users/seller')->name('seller.')->group(function(){
         Route::post('/store', [RegisterController::class, 'sellerstore'])->name('register');
         Route::post('/login/submit', [LoginController::class, 'sellerloginsubmit'])->name('login');
     });
-    Route::middleware('auth:web')->group(function(){
+    Route::middleware(['role:Seller','auth:web'])->group(function(){
         Route::view('/dashboard', 'backend.pages.user.sellerDashboard')->name('sellerDashboard');
         Route::post('/logout', [LoginController::class, 'sellerlogout'])->name('sellerlogout');
     });
@@ -109,7 +110,7 @@ Route::prefix('users/buyer')->name('buyer.')->group(function(){
         Route::post('/store', [RegisterController::class, 'buyerstore'])->name('register');
         Route::post('/login/submit', [LoginController::class, 'buyerloginsubmit'])->name('login');
     });
-    Route::middleware('auth:web')->group(function(){
+    Route::middleware(['role:Buyer','auth:web'])->group(function(){
         Route::view('/dashboard', 'backend.pages.user.buyerDashboard')->name('buyerDashboard');
         Route::post('/logout', [LoginController::class, 'buyerlogout'])->name('buyerlogout');
     });

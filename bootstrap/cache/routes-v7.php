@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::rZZ39LM6qIDc7YBl',
+            '_route' => 'generated::aX7p6PiGGWhI7GyP',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::LMpoWvBSl7MDu52Y',
+            '_route' => 'generated::PoYPE00fjLiFoVYp',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::08xKG8WdFoT9WHLS',
+            '_route' => 'generated::RRhWEFjugNUolOD8',
           ),
           1 => NULL,
           2 => 
@@ -635,7 +635,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::NdUdEausmDIvXEog',
+            '_route' => 'generated::ePH3U8FX9oFhxVDA',
           ),
           1 => NULL,
           2 => 
@@ -1433,7 +1433,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::rZZ39LM6qIDc7YBl' => 
+    'generated::aX7p6PiGGWhI7GyP' => 
     array (
       'methods' => 
       array (
@@ -1454,7 +1454,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::rZZ39LM6qIDc7YBl',
+        'as' => 'generated::aX7p6PiGGWhI7GyP',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1579,7 +1579,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::LMpoWvBSl7MDu52Y' => 
+    'generated::PoYPE00fjLiFoVYp' => 
     array (
       'methods' => 
       array (
@@ -1602,7 +1602,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::LMpoWvBSl7MDu52Y',
+        'as' => 'generated::PoYPE00fjLiFoVYp',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1618,7 +1618,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::08xKG8WdFoT9WHLS' => 
+    'generated::RRhWEFjugNUolOD8' => 
     array (
       'methods' => 
       array (
@@ -1640,7 +1640,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::08xKG8WdFoT9WHLS',
+        'as' => 'generated::RRhWEFjugNUolOD8',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3529,7 +3529,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::NdUdEausmDIvXEog' => 
+    'generated::ePH3U8FX9oFhxVDA' => 
     array (
       'methods' => 
       array (
@@ -3550,7 +3550,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::NdUdEausmDIvXEog',
+        'as' => 'generated::ePH3U8FX9oFhxVDA',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3729,7 +3729,8 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth:web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
         ),
         'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
         'controller' => '\\Illuminate\\Routing\\ViewController',
@@ -3774,7 +3775,8 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth:web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
         ),
         'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerlogout',
         'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@sellerlogout',
@@ -3962,7 +3964,8 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth:web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
         ),
         'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
         'controller' => '\\Illuminate\\Routing\\ViewController',
@@ -4007,7 +4010,8 @@ app('router')->setCompiledRoutes(
         'middleware' => 
         array (
           0 => 'web',
-          1 => 'auth:web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
         ),
         'uses' => 'App\\Http\\Controllers\\Auth\\LoginController@buyerlogout',
         'controller' => 'App\\Http\\Controllers\\Auth\\LoginController@buyerlogout',

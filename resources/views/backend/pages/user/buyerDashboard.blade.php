@@ -30,3 +30,14 @@
 
 <!-- /.content -->
 @endsection
+
+{{-- @section('styleArea')
+<link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/select2/css/select2.min.css">
+@endsection --}}
+
+@section('scriptArea')
+<!-- select2 -->
+<script src="{{ asset('backEnd') }}/plugins/chart.js/Chart.min.js"></script>
+<script src="{{ asset('backEnd') }}/plugins/jqvmap/jquery.vmap.min.js"></script>
+
+@endsection
