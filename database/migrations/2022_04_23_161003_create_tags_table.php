@@ -20,16 +20,6 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->timestamps();
         });
-        Schema::create('posts_tags', function (Blueprint $table) {
-            // $table->bigIncrements('id');
-            $table->foreignId('posts_id')->constrained();
-            $table->foreignId('tags_id')->constrained();
-            // $table->unsignedBigInteger('posts_id');
-            // $table->foreign('posts_id')->references('id')->on('posts')->onDelete('cascade');
-            // $table->unsignedBigInteger('tags_id');
-            // $table->foreign('tags_id')->references('id')->on('tags');
-            $table->timestamps();
-        });
     }
 
     /**
@@ -40,6 +30,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('tags');
-        Schema::dropIfExists('post_tags');
     }
 };

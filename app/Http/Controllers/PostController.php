@@ -72,11 +72,10 @@ class PostController extends Controller
             $post->image = 'noImage.jpg';
         }
 
-        $success = $post->save();
-        if($success){
-            $post->categories()->attach($request->categorys);
-            $post->tags()->attach($request->tags);
-        }
+        $post->save();
+    
+        $post->categories()->attach($request->categories);
+        $post->tags()->attach($request->tags);
         
         Session()->flash('success', 'Post Created Successfully.!');
         return redirect()->route('seller.post.index');
