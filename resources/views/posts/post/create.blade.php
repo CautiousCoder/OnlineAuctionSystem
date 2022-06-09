@@ -152,23 +152,3 @@ Post | Create Page
 <!-- /.content -->
 @endsection
 
-@section('styleArea')
-<link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/select2/css/select2.min.css">
-@endsection
-
-@section('scriptArea')
-<!-- select2 -->
-<script src="{{ asset('backEnd') }}/plugins/select2/js/select2.full.min.js"></script>
-<script src="{{ asset('backEnd') }}/plugins/select2/js/select2.min.js"></script>
-<script src="{{ asset('backEnd') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-<script>
-  $('.js-example-basic-multiple').select2();
-  $('.js-example-basic-multiply').select2();
-</script>
-<script>
-  $(function () {
-    bsCustomFileInput.init();
-  });
-  </script>
-
-@endsection
