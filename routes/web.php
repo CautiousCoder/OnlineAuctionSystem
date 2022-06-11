@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BackEnd\RoleController;
 use App\Http\Controllers\BackEnd\Auth\AdminLoginController;
 use App\Http\Controllers\BackEnd\Auth\AdminResetPasswordController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Auth;
 
@@ -70,7 +71,7 @@ Route::prefix('users/admins')->name('admin.')->group(function(){
 
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // Route::get('send-mail', function () {
    
