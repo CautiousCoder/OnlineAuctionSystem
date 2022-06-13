@@ -73,8 +73,8 @@ class PostController extends Controller
         }
 
         $post->save();
-    
-        $post->categories()->attach($request->categories);
+        // dd($request->categories_id);
+        $post->categories()->attach($request->categories_id);
         $post->tags()->attach($request->tags);
         
         Session()->flash('success', 'Post Created Successfully.!');

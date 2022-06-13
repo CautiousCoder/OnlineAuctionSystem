@@ -10,6 +10,13 @@ class Post extends Model
     use HasFactory;
     protected $guarded = [];
     protected $dates = ['publish_at'];
+    protected $table = 'posts';
+    
+    protected $fillable = [
+        'category_id',
+        'post_id',
+        'tag_id',
+    ];
 
     public $incrementing = false;
     
@@ -18,10 +25,10 @@ class Post extends Model
 
     //category relation
     public function categories(){
-        return $this->belongsToMany(Category::class, 'category_posts')->withTimestamps();
+        return $this->belongsToMany(Category::class, 'category_post', 'category_id', 'post_id');
     }
     public function tags(){
-        return $this->belongsToMany(Tag::class, 'post_tags')->withTimestamps();
+        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id');
     }
 
 }

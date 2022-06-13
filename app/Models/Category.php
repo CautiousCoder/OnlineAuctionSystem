@@ -10,11 +10,11 @@ class Category extends Model
     use HasFactory;
     protected $guarded = [];
 
-    protected $primarykey='id';
+    protected $table = 'categories';
 
     public $incrementing = false;
   
     public function posts(){
-        return $this->belongsToMany(Post::class, 'category_posts');
+        return $this->belongsToMany(Post::class, 'category_post', 'post_id', 'category_id');
     }
 }

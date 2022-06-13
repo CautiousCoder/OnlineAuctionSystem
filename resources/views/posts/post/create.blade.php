@@ -73,7 +73,7 @@ Post | Create Page
               <div class="col-12 col-md-4">
                 <div class="form-group" style="margin-bottom: -8px !important">
                   <label>Category</label>
-                  <select class="select2 select2-hidden-accessible js-example-basic-multiple" name="categories[]"
+                  <select class="select2 select2-hidden-accessible js-example-basic-multiple" name="categories_id[]"
                     multiple="multiple" data-placeholder="Select Category" style="width: 100%;" data-select2-id="7"
                     tabindex="-1" aria-hidden="true">
                     @foreach ($categories as $category)
