@@ -1,42 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-
-    <title>@yield('ftitle')</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="https://kit.fontawesome.com//b416f6d14b.js"></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        @if (Auth::guard('web')->user()->can('seller.dashboard'))
-            @include('frontend.inc.sellernavbar')
-        @endif
-        @if (Auth::guard('web')->user()->can('buyer.dashboard'))
-            @include('frontend.inc.buyernavbar')
-        @endif
+@include('frontend.header')
+    <div id="app" class="container">
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    @include('frontend.footer')
 </body>
+
 </html>

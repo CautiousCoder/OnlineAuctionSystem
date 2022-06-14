@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class UserSeeder extends Seeder
 {
@@ -17,15 +18,20 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
-        $user = User::where('email','zahidul@zahidul.com')->first();
-        if(is_null($user)){
+        $user = User::where('email', 'seller@seller.com')->first();
+        if (is_null($user)) {
             $user = new User();
-            $user->name = 'Md. Zahidul Islam';
-            $user->username = 'zahid';
-            $user->role_name = 'User';
-            $user->email = 'zahidul@zahidul.com';
+            $user->name = 'Seller';
+            $user->username = 'seller';
+            $user->role_name = 'Seller';
+            $user->email = 'seller@seller.com';
             $user->password = Hash::make('12345678');
-            $user->save();
+            $permissions = ['seller.dashboard', 'seller.profile', 'seller.post'];
+            $roles = 'Seller';
+            $role_r = Role::where('name', '=', $roles)->firstOrFail();
+            $role_r->givePermissionTo($permissions);
+            $user->assignRole($role_r);
+            $data = $user->save();
         }
     }
 }
