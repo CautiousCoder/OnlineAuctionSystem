@@ -1,23 +1,8 @@
 @extends('backend.layouts.layout')
-
-<!-- Title (Page title) -->
-@section('title')
-Post | Create Page
-@endsection
-
-<!-- Navbar (Page navbar) -->
-@section('navbar')
-@include('backend.layouts.inc.buyerNavbar')
-@endsection
-
-<!-- Side Bar (Page sidebar) -->
-@section('navbarSection')
-@include('backend.layouts.inc.buyersideBar')
-@endsection
-
-<!-- Main Content (Page content) -->
-
-@section('content')
+<!-- Title (Page title) --> @section('title') Post | Create Page @endsection
+<!-- Navbar (Page navbar) --> @section('navbar') @include('backend.layouts.inc.buyerNavbar') @endsection
+<!-- Side Bar (Page sidebar) --> @section('navbarSection') @include('backend.layouts.inc.buyersideBar') @endsection
+<!-- Main Content (Page content) --> @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
   <div class="container-fluid">
@@ -36,7 +21,6 @@ Post | Create Page
   </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
-
 <!-- Main content -->
 <div class="postindex p-2">
   <!-- Card content -->
@@ -46,38 +30,44 @@ Post | Create Page
         <h2 class="card-title">Add Post</h2>
         <a href="{{ route('seller.post.index') }}" class="btn btn-lg btn-primary">Back</a>
       </div>
-    </div>
-
-    {{-- <div class="card-body p-0"> --}}
+    </div> {{-- <div class="card-body p-0"> --}}
       <!-- form start -->
       <div class="col-12">
-        <form action="{{ route('seller.post.store') }}" method="POST" enctype="multipart/form-data">
-          @csrf
-          <div class="card-body">
-            @include('backend.inc.error')
-            <div class="row">
+        <form action="{{ route('seller.post.store') }}" method="POST" enctype="multipart/form-data"> @csrf <div
+            class="card-body"> @include('backend.inc.error') <div class="row">
               <div class="col-12 col-md-8">
                 <div class="form-group">
                   <label for="name">Post Title</label>
                   <input type="text" name="title" class="form-control" id="name" value="{{ old('title') }}"
                     placeholder="Enter Post Name">
                 </div>
-                <div class="form-group">
-                  <label for="desc">Description</label>
-                  <textarea class="form-control" name="description" id="desc" rows="4"
+                <div class="form-group mb-5">
+                  <label for="description">Description</label>
+                  <textarea class="form-control" name="description" id="description" rows="10"
                     placeholder="Descriptions">{{ old('description') }}</textarea>
                 </div>
+                <div class="card-footer mb-2 d-flex justify-content-between">
+                  <button type="submit" class="btn btn-lg btn-primary m-auto">Submit</button>
+                </div>
               </div>
-              <div class="col-12 col-md-4">
+              <div class="col-12 col-md-4 bg-dark pl-3 py-4">
+                <div class="form-group">
+                  <label>Status</label>
+                  <select class="form-control">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                </div>
                 <div class="form-group" style="margin-bottom: -8px !important">
                   <label>Category</label>
                   <select class="select2 select2-hidden-accessible js-example-basic-multiple" name="categories_id[]"
                     multiple="multiple" data-placeholder="Select Category" style="width: 100%;" data-select2-id="7"
-                    tabindex="-1" aria-hidden="true">
-                    @foreach ($categories as $category)
-                    <option data-select2-id="7{{$category->id}}" value="{{ $category->id }}">{{$category->name}}</option>
-                    @endforeach
-                  </select>
+                    tabindex="-1" aria-hidden="true"> @foreach ($categories as $category) <option
+                      data-select2-id="7{{ $category->id }}" value="{{ $category->id }}"> {{ $category->name }}</option>
+                    @endforeach </select>
                   <span class="select2 select2-container select2-container--default select2-container--above" dir="ltr"
                     data-select2-id="8" style="width: 100%;">
                     <span class="selection d-none">
@@ -99,11 +89,8 @@ Post | Create Page
                   <label>Tags</label>
                   <select class="select2 select2-hidden-accessible js-example-basic-multiply" name="tags[]"
                     multiple="multiple" data-placeholder="Select Tag" style="width: 100%;" data-select2-id="4"
-                    tabindex="-1" aria-hidden="true">
-                    @foreach ($tags as $tag)
-                    <option data-select2-id="4{{$tag->id}}" value="{{ $tag->id }}">{{$tag->name}}</option>
-                    @endforeach
-                  </select>
+                    tabindex="-1" aria-hidden="true"> @foreach ($tags as $tag) <option data-select2-id="4{{ $tag->id }}"
+                      value="{{ $tag->id }}"> {{ $tag->name }}</option> @endforeach </select>
                   <span class="select2 select2-container select2-container--default select2-container--above" dir="ltr"
                     data-select2-id="8" style="width: 100%;">
                     <span class="selection d-none">
@@ -132,21 +119,35 @@ Post | Create Page
                 </div>
               </div>
             </div>
-
           </div>
           <!-- /.card-body -->
-
-          <div class="card-footer mb-2 d-flex justify-content-between">
-            <button type="submit" class="btn btn-lg btn-primary m-auto">Submit</button>
-          </div>
-        </form>
-        {{--
+        </form> {{--
       </div> --}}
       <!-- /.form -->
     </div>
   </div>
   <!--/.Card content -->
 </div>
-<!-- /.content -->
-@endsection
-
+<!-- /.content --> @endsection {{-- Additional script --}} @section('styleArea')
+<link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/select2/css/select2.min.css">
+<link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/summernote.min.css"> @endsection @section('scriptArea')
+<script src="{{ asset('backEnd') }}/plugins/select2/js/select2.full.min.js"></script>
+<script src="{{ asset('backEnd') }}/plugins/select2/js/select2.min.js"></script>
+<script src="{{ asset('backEnd') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="{{ asset('backEnd') }}/dist/js/summernote.min.js"></script>
+<script>
+  $('.js-example-basic-multiple').select2();
+        $('.js-example-basic-multiply').select2();
+</script>
+<script>
+  $(function() {
+            bsCustomFileInput.init();
+        });
+</script>
+<script>
+  $('#description').summernote({
+        placeholder: 'Write Post Description',
+        tabsize: 4,
+        height: 350
+      });
+</script> @endsection

@@ -173,31 +173,4 @@
     </div>
     <!-- /.sidebar -->
 </aside>
-@section('styleArea')
-    <link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css"
-        integrity="sha512-A81ejcgve91dAWmCGseS60zjrAdohm7PTcAjjiDWtw3Tcj91PNMa1gJ/ImrhG+DbT5V+JQ5r26KT5+kgdVTb5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-@endsection
-@section('scriptArea')
-    <script src="{{ asset('backEnd') }}/plugins/select2/js/select2.full.min.js"></script>
-    <script src="{{ asset('backEnd') }}/plugins/select2/js/select2.min.js"></script>
-    <script src="{{ asset('backEnd') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-    <script>
-        $('.js-example-basic-multiple').select2();
-        $('.js-example-basic-multiply').select2();
-    </script>
-    <script>
-        $(function() {
-            bsCustomFileInput.init();
-        });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.js"
-        integrity="sha512-Hyk+1XSRfagqzuSHE8M856g295mX1i5rfSV5yRugcYFlvQiE3BKgg5oFRfX45s7I8qzMYFa8gbFy9xMFbX7Lqw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        $(function() {
-            $('#tree').treeview();
-        })
-    </script>
-@endsection
+

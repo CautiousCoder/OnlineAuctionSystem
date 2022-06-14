@@ -8,3 +8,6 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/adminlte.min.css">
 <link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/custom.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-treeview/1.2.0/bootstrap-treeview.min.css"
+        integrity="sha512-A81ejcgve91dAWmCGseS60zjrAdohm7PTcAjjiDWtw3Tcj91PNMa1gJ/ImrhG+DbT5V+JQ5r26KT5+kgdVTb5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
