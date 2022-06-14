@@ -49,14 +49,14 @@ class PostController extends Controller
         //
         //dd($request->all());
         $this->validate($request, [
-            'name' => 'required|unique:posts,name',
+            'title' => 'required|unique:posts,title',
             'image' => 'image',
             'category_id' => 'nullable',
         ]);
 
         $post = new Post();
-            $post->name = $request->name;
-            $post->slug = Str::slug($request->name, '-');
+            $post->title = $request->title;
+            $post->slug = Str::slug($request->title, '-');
             $post->description = $request->description;
             $post->author_id = 1;
             $post->publish_at = Carbon::now();
@@ -74,8 +74,10 @@ class PostController extends Controller
 
         $post->save();
         // dd($request->categories_id);
-        $post->categories()->attach($request->categories_id);
-        $post->tags()->attach($request->tags);
+        $posts = Post::firstOrNew(['title' => $post->title]);
+        //dd($posts);
+        $posts->categories()->attach($request->categories_id);
+        $posts->tags()->attach($request->tags);
         
         Session()->flash('success', 'Post Created Successfully.!');
         return redirect()->route('seller.post.index');

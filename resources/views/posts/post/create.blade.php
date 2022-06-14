@@ -58,8 +58,8 @@ Post | Create Page
             <div class="row">
               <div class="col-12 col-md-8">
                 <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}"
+                  <label for="name">Post Title</label>
+                  <input type="text" name="title" class="form-control" id="name" value="{{ old('title') }}"
                     placeholder="Enter Post Name">
                 </div>
                 <!-- select -->
