@@ -52,7 +52,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th style="width: 10px">No.</th>
+            <th>No.</th>
             <th>Name</th>
             <th>Image</th>
             <th>Description</th>
@@ -64,9 +64,9 @@
           @if ($posts->count() > 0)
           @foreach ($posts as $post)
           <tr>
-            <td>{{ $post->id }}.</td>
-            <td style="width: 200px;">
-              <div class="name">{{ $post->name }}</div>
+            <td style="max-width: 7px">{{ $loop->index+1 }}.</td>
+            <td style="max-width: 200px;">
+              <div class="name">{{ $post->title }}</div>
               <div class="action d-flex pt-2">
                   <a href="{{ route('seller.post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i
                       class="far fa-edit"></i></a>
@@ -80,9 +80,9 @@
               </div>
             </td>
             <td><div class="img"><img style="max-height: 80px; max-width:100px;" src="{{ $post->image }}" alt="Loading..."></div></td>
-            <td>{{ $post->description }}</td>
+            <td>{!! Str::words($post->description, 10, '<a class="btn btn-info btn-sm text-white ml-2" href="#">Read More</a>') !!}</td>
             <td>{{ $post->id }}</td>
-            <td>{{ $post->author_id }}</td>
+            <td>{{ $post->user->name }}</td>
             {{-- <td class="d-flex">
               <a href="{{ route('seller.post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i
                   class="far fa-edit"></i></a>

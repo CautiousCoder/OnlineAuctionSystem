@@ -58,7 +58,7 @@ class PostController extends Controller
             $post->title = $request->title;
             $post->slug = Str::slug($request->title, '-');
             $post->description = $request->description;
-            $post->author_id = 1;
+            $post->user_id = 1;
             $post->publish_at = Carbon::now();
             
         if($request->hasFile('image')){
@@ -93,6 +93,8 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
+        $categories = Category::all();
+        $tags = Tag::all();
     }
 
     /**
@@ -105,7 +107,8 @@ class PostController extends Controller
     {
         //
         $categories = Category::all();
-        return view('posts.post.edit', compact(['post','categories']));
+        $tags = Tag::all();
+        return view('posts.post.edit', compact(['post','categories','tags']));
 
     }
 

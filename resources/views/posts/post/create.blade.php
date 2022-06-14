@@ -62,8 +62,6 @@ Post | Create Page
                   <input type="text" name="title" class="form-control" id="name" value="{{ old('title') }}"
                     placeholder="Enter Post Name">
                 </div>
-                <!-- select -->
-
                 <div class="form-group">
                   <label for="desc">Description</label>
                   <textarea class="form-control" name="description" id="desc" rows="4"
