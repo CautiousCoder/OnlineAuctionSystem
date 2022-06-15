@@ -22,7 +22,7 @@ class PostSeeder extends Seeder
         $category = Category::all()->random(3);
         $tag = Tag::all()->random(4);
         Post::factory()
-            ->count(3)
+            ->count(30)
             ->hasAttached($category, ['category_id' => 1, 'post_id' => 1])
             ->hasAttached($tag, ['post_id' => 1, 'tag_id' => 1])
             ->create();
