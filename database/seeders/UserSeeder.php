@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             $role_r = Role::where('name', '=', $roles)->firstOrFail();
             $role_r->givePermissionTo($permissions);
             $user->assignRole($role_r);
-            $data = $user->save();
+            $user->save();
         }
     }
 }

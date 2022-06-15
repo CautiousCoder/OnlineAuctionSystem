@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::orderBy('created_at','DESC')->paginate(20);
+        $posts = Post::orderBy('created_at', 'DESC')->paginate(20);
         return view('posts.post.index', compact('posts'));
     }
 
@@ -35,7 +35,7 @@ class PostController extends Controller
         //
         $categories = Category::all();
         $tags = Tag::all();
-        return view('posts.post.create', compact(['categories','tags']));
+        return view('posts.post.create', compact(['categories', 'tags']));
     }
 
     /**
@@ -55,20 +55,19 @@ class PostController extends Controller
         ]);
 
         $post = new Post();
-            $post->title = $request->title;
-            $post->slug = Str::slug($request->title, '-');
-            $post->description = $request->description;
-            $post->user_id = 1;
-            $post->publish_at = Carbon::now();
-            
-        if($request->hasFile('image')){
+        $post->title = $request->title;
+        $post->slug = Str::slug($request->title, '-');
+        $post->description = $request->description;
+        $post->user_id = 1;
+        $post->publish_at = Carbon::now();
+
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('storage/post/',$filename);
-            $post->image = '/storage/post/'.$filename;
-        }
-        else {
+            $filename = time() . '.' . $extension;
+            $file->move('storage/post/', $filename);
+            $post->image = '/storage/post/' . $filename;
+        } else {
             $post->image = 'noImage.jpg';
         }
 
@@ -78,10 +77,9 @@ class PostController extends Controller
         //dd($posts);
         $posts->categories()->attach($request->categories_id);
         $posts->tags()->attach($request->tags);
-        
+
         Session()->flash('success', 'Post Created Successfully.!');
         return redirect()->route('seller.post.index');
-        
     }
 
     /**
@@ -108,8 +106,7 @@ class PostController extends Controller
         //
         $categories = Category::all();
         $tags = Tag::all();
-        return view('posts.post.edit', compact(['post','categories','tags']));
-
+        return view('posts.post.edit', compact(['post', 'categories', 'tags']));
     }
 
     /**
@@ -134,12 +131,12 @@ class PostController extends Controller
         $post->category_id = $request->category;
         $post->publish_at = Carbon::now();
 
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            $file->move('storage/post/',$filename);
-            $post->image = '/storage/post/'.$filename;
+            $filename = time() . '.' . $extension;
+            $file->move('storage/post/', $filename);
+            $post->image = '/storage/post/' . $filename;
         }
 
         //dd($request->all());
@@ -157,7 +154,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         //
-        if($post){
+        if ($post) {
             $post->delete();
 
             Session()->flash('success', 'Post Deleted Successfully.!');

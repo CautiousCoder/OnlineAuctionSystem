@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Category;
+use App\Models\Post;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -21,14 +23,12 @@ class PostFactory extends Factory
     {
         $title = $this->faker->sentence;
         $slug = Str::slug($title);
-        // $user = User::count() >= 20 ? User::inRandomOrder()->first()->id : User::factory();
-        // $category = Category::count() >= 7 ? Category::inRandomOrder()->first()->id : Category::factory();
 
         return [
             'title' => $title,
             'slug' => $slug,
             'image' => $this->faker->imageUrl(400, 300),
-            'content' => $this->faker->text(300),
+            'description' => $this->faker->text(300),
             'user_id' => 1,
         ];
     }
