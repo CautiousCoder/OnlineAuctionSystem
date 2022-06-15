@@ -21,7 +21,7 @@ class PostFactory extends Factory
      */
     public function definition()
     {
-        $id = rand(100, 2000);
+        $id = rand(100, 1000);
         $title = $this->faker->sentence;
         $slug = Str::slug($title);
         $image = "https://picsum.photos/id/" . $id . "/367/267";

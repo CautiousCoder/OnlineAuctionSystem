@@ -19,10 +19,10 @@ class PostSeeder extends Seeder
     {
         Category::factory()->count(10)->create();
         Tag::factory()->count(10)->create();
-        $category = Category::all()->random(3);
-        $tag = Tag::all()->random(4);
+        $category = Category::get()->random();
+        $tag = Tag::get()->random();
         Post::factory()
-            ->count(30)
+            ->count(50)
             ->hasAttached($category, ['category_id' => 1, 'post_id' => 1])
             ->hasAttached($tag, ['post_id' => 1, 'tag_id' => 1])
             ->create();
