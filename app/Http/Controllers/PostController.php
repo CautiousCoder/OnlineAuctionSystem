@@ -51,7 +51,6 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required|unique:posts,title',
             'image' => 'image',
-            'category_id' => 'nullable',
         ]);
 
         $post = new Post();
@@ -74,7 +73,6 @@ class PostController extends Controller
         $post->save();
         // dd($request->categories_id);
         $posts = Post::firstOrNew(['title' => $post->title]);
-        //dd($posts);
         $posts->categories()->attach($request->categories_id);
         $posts->tags()->attach($request->tags);
 
@@ -120,15 +118,14 @@ class PostController extends Controller
     {
         //
         $this->validate($request, [
-            'name' => 'required|unique:posts,name',
-            'image' => 'image',
+            'title' => 'nullable',
+            'image' => 'nullable|image',
         ]);
 
-        $post->name = $request->name;
-        $post->slug = Str::slug($request->name, '-');
+        $post->title = $request->title;
+        $post->slug = Str::slug($request->title, '-');
         $post->description = $request->description;
-        $post->author_id = 1;
-        $post->category_id = $request->category;
+        $post->user_id = 1;
         $post->publish_at = Carbon::now();
 
         if ($request->hasFile('image')) {
@@ -141,8 +138,11 @@ class PostController extends Controller
 
         //dd($request->all());
         $post->save();
+        $posts = Post::firstOrNew(['title' => $post->title]);
+        $posts->categories()->sync($request->categories_id);
+        $posts->tags()->sync($request->tags);
         Session()->flash('success', 'Post Updated Successfully.!');
-        return redirect()->route('seller.post.edit');
+        return redirect()->back();
     }
 
     /**

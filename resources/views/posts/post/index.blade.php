@@ -81,7 +81,9 @@
             </td>
             <td><div class="img"><img style="max-height: 80px; max-width:100px;" src="{{ $post->image }}" alt="Loading..."></div></td>
             <td>{!! Str::words($post->description, 10, '<a class="btn btn-info btn-sm text-white ml-2" href="#">Read More</a>') !!}</td>
-            <td>{{ $post->id }}</td>
+            <td> @foreach ($post->categories as $cat)
+                <span class="badge bg-dark">{{ $cat->name }}</span>
+            @endforeach </td>
             <td>{{ $post->user->name }}</td>
             {{-- <td class="d-flex">
               <a href="{{ route('seller.post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i

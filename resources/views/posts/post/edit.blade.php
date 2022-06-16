@@ -37,8 +37,8 @@
 						class="card-body"> @include('backend.inc.error') <div class="row">
 							<div class="col-12 col-md-8">
 								<div class="form-group">
-									<label for="name">Post Title</label>
-									<input type="text" name="title" class="form-control" id="name" value="{{ $post->title }}"
+									<label for="title">Post Title</label>
+									<input type="text" name="title" class="form-control" id="title" value="{{ $post->title }}"
 										placeholder="Enter Post Name">
 								</div>
 								<div class="form-group">

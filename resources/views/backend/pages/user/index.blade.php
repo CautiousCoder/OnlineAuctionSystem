@@ -10,6 +10,11 @@ User | Index page
 @include('backend.layouts.inc.navbar')
 @endsection
 
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.sideBar')
+@endsection
+
 <!-- Main Content (Page content) -->
 
 

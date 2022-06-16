@@ -17,7 +17,7 @@ class RoleController extends Controller
 
     public function __construct()
     {
-        $this->middleware(function($request, $next){
+        $this->middleware(function ($request, $next) {
             $this->usr = Auth::guard('admin')->user();
             return $next($request);
         });
@@ -33,7 +33,7 @@ class RoleController extends Controller
         if (is_null($this->usr || !$this->usr->can('role.index'))) {
             abort(403, 'Unauthorized action.');
         }
-        $roles = Role::orderBy('created_at','DESC')->paginate(20);
+        $roles = Role::orderBy('created_at', 'DESC')->where('guard_name', 'admin')->paginate(20);
         return view('backend.pages.role.index', compact('roles'));
     }
 
@@ -68,7 +68,7 @@ class RoleController extends Controller
 
         $this->validate($request, [
             'name' => 'required|max:100|unique:roles,name',
-        ],[
+        ], [
             'name.required' => 'The Role name is required.',
             'name.unique' => 'Already exists this Role.',
         ]);
@@ -108,9 +108,10 @@ class RoleController extends Controller
         if (is_null($this->usr || !$this->usr->can('role.edit'))) {
             abort(403, 'Unauthorized action.');
         }
-        
+
         $role = Role::findById($id, 'admin');
-        $all_permissions = Permission::all();
+        $all_permissions = Permission::all()->where('guard_name', 'admin');
+        //dd($all_permissions);
         $permissions_group = User::getPermissionNames();
         return view('backend.pages.role.edit', compact(['role', 'all_permissions', 'permissions_group']));
     }
@@ -130,8 +131,8 @@ class RoleController extends Controller
         }
 
         $this->validate($request, [
-            'name' => 'required|max:100|unique:roles,name,'.$id,
-        ],[
+            'name' => 'required|max:100|unique:roles,name,' . $id,
+        ], [
             'name.required' => 'The Role name is required.',
             'name.unique' => 'Already exists this Role.',
         ]);

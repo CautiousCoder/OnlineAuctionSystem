@@ -10,6 +10,11 @@
 @include('backend.layouts.inc.navbar')
 @endsection
 
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.sideBar')
+@endsection
+
 <!-- Main Content (Page content) -->
 @section('content')
 <!-- Content Header (Page header) -->
@@ -63,7 +68,8 @@
             {{-- Role permission --}}
             <td style="width: 60% !important">@foreach ($Role->permissions as $item)
                 <span class="badge badge-info mr-1">{{$item->name}}</span>
-            @endforeach</td>
+            @endforeach
+            </td>
             <td class="d-flex">
               {{-- checking whether you have permission or not to access role edit --}}
               @if (Auth::guard('admin')->user()->can('role.edit'))

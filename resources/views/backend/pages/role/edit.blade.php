@@ -10,6 +10,11 @@
 @include('backend.layouts.inc.navbar')
 @endsection
 
+<!-- Side Bar (Page sidebar) -->
+@section('navbarSection')
+@include('backend.layouts.inc.sideBar')
+@endsection
+
 <!-- Main Content (Page content) -->
 
 @section('content')
@@ -80,8 +85,10 @@
                       <label for="checkbox{{$item->name}}" class="form-check-label">{{$item->name}}</label>
                     </div>
                   </div>
+
                   <div class="col-9 role-{{ $i }}-management-checkbox">
                     {{-- individual permission --}}
+                    
                     @foreach ($permissions as $p)
                     <div class="form-check col-6">
                       <input name="permissions[]" id="checkbox{{$p->id}}" class="form-check-input" type="checkbox"
