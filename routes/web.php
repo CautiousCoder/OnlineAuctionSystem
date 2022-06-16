@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BackEnd\RoleController;
 use App\Http\Controllers\BackEnd\Auth\AdminLoginController;
 use App\Http\Controllers\BackEnd\Auth\AdminResetPasswordController;
+use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Auth;
@@ -26,16 +27,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/dashboard', function () {
     return view('backend.pages.admin.dashboard');
-})->middleware(['auth:admin','verified'])->name('dashboard');
+})->middleware(['auth:admin', 'verified'])->name('dashboard');
 
 
-Route::prefix('users/admins')->name('admin.')->group(function(){
-    Route::middleware('guest:admin')->group(function(){
+Route::prefix('users/admins')->name('admin.')->group(function () {
+    Route::middleware('guest:admin')->group(function () {
         //Route::post('/store', [AdminController::class, 'store'])->name('store');
         //Admin Login
         Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
@@ -44,16 +42,15 @@ Route::prefix('users/admins')->name('admin.')->group(function(){
         //Admin Reset Password
         Route::get('/password/reste', [AdminResetPasswordController::class, 'showResetForm'])->name('password.request');
         Route::post('/password/reset/submit', [AdminResetPasswordController::class, 'resetPassword'])->name('password.update');
-   
     });
-    Route::middleware('auth:admin')->group(function(){
+    Route::middleware('auth:admin')->group(function () {
         //Admin Dashboard
         Route::view('/dashboard', 'backend.pages.admin.dashboard')->name('dashboard');
 
         //Admin Logout
         Route::post('/logout', [AdminLoginController::class, 'logout'])->name('logout.submit');
 
-        
+
         //Resource Route
         Route::resource('role', RoleController::class);
         Route::resource('user', UserController::class);
@@ -63,41 +60,41 @@ Route::prefix('users/admins')->name('admin.')->group(function(){
 
 
 
-    // Route::get('/', function () {
-    //     return view('backend.admin.starter');
-    // });
-   
+// Route::get('/', function () {
+//     return view('backend.admin.starter');
+// });
+
 
 
 // Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('front_page');
 
 // Route::get('send-mail', function () {
-   
+
 //     $details = [
 //         'title' => 'Mail from Online Web Tutor',
 //         'body' => 'Test mail sent by Laravel 9 using SMTP.'
 //     ];
-   
+
 //     Mail::to('zahidul.cse.brur@gmail.com')->send(new mailTemplate($details));
-   
+
 //     dd("Email is Sent, please check your inbox.");
 //   });
 Route::get('send-mail', [MailController::class, 'index']);
 
 //route for seller
-Route::prefix('users/seller')->name('seller.')->group(function(){
-    Route::middleware('guest:web')->group(function(){
+Route::prefix('users/seller')->name('seller.')->group(function () {
+    Route::middleware('guest:web')->group(function () {
         Route::get('/register', [RegisterController::class, 'sellerregister'])->name('sellerregister');
         Route::get('/login', [LoginController::class, 'sellerloginshow'])->name('sellerloginshow');
         Route::post('/store', [RegisterController::class, 'sellerstore'])->name('register');
         Route::post('/login/submit', [LoginController::class, 'sellerloginsubmit'])->name('login');
     });
-    Route::middleware(['role:Seller','auth:web'])->group(function(){
+    Route::middleware(['role:Seller', 'auth:web'])->group(function () {
         Route::view('/dashboard', 'backend.pages.user.sellerDashboard')->name('sellerDashboard');
         Route::post('/logout', [LoginController::class, 'sellerlogout'])->name('sellerlogout');
-
+        Route::get('/home', [FrontEndController::class, 'views'])->name('home');
         Route::resource('category', CategoryController::class);
         Route::resource('tag', TagController::class);
         Route::resource('post', PostController::class);
@@ -106,15 +103,16 @@ Route::prefix('users/seller')->name('seller.')->group(function(){
 
 
 //route for Buyer
-Route::prefix('users/buyer')->name('buyer.')->group(function(){
-    Route::middleware('guest:web')->group(function(){
+Route::prefix('users/buyer')->name('buyer.')->group(function () {
+    Route::middleware('guest:web')->group(function () {
         Route::get('/register', [RegisterController::class, 'buyerregister'])->name('buyerregister');
         Route::get('/login', [LoginController::class, 'buyerloginshow'])->name('buyerloginshow');
         Route::post('/store', [RegisterController::class, 'buyerstore'])->name('register');
         Route::post('/login/submit', [LoginController::class, 'buyerloginsubmit'])->name('login');
     });
-    Route::middleware(['role:Buyer','auth:web'])->group(function(){
+    Route::middleware(['role:Buyer', 'auth:web'])->group(function () {
         Route::view('/dashboard', 'backend.pages.user.buyerDashboard')->name('buyerDashboard');
         Route::post('/logout', [LoginController::class, 'buyerlogout'])->name('buyerlogout');
+        Route::get('/home', [FrontEndController::class, 'views'])->name('home');
     });
 });

@@ -1,6 +1,6 @@
 @include('frontend.header')
-    <div id="app" class="container">
-        <main class="py-4">
+    <div id="app">
+        <main class="pb-5">
             @yield('content')
         </main>
     </div>
