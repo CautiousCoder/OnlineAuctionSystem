@@ -24,7 +24,7 @@ class RolePermisionSeeder extends Seeder
         $roleSeller = Role::create(['guard_name' => 'web', 'name' => 'Seller']);
 
         $permissions = [
-            
+
             //Admin permission
             [
                 'group_name' => 'Admin',
@@ -38,7 +38,7 @@ class RolePermisionSeeder extends Seeder
                     'admin.dashboard',
                 ]
             ],
-            
+
 
             //user permission
             [
@@ -65,7 +65,7 @@ class RolePermisionSeeder extends Seeder
                     'role.store',
                 ]
             ],
-            
+
             //buyer permission
             [
                 'group_name' => 'Buyer(admin)',
@@ -75,6 +75,9 @@ class RolePermisionSeeder extends Seeder
                     'buyer.edit',
                     'buyer.show',
                     'buyer.delete',
+                    'buyer.dashboard',
+                    'buyer.profile',
+                    'buyer.post',
                 ]
             ],
             //seller permission
@@ -86,15 +89,18 @@ class RolePermisionSeeder extends Seeder
                     'seller.edit',
                     'seller.show',
                     'seller.delete',
+                    'seller.dashboard',
+                    'seller.profile',
+                    'seller.post',
                 ]
             ],
         ];
 
         //create and asign permission admin guard
 
-        for ($i=0; $i < count($permissions); $i++) { //All permission
+        for ($i = 0; $i < count($permissions); $i++) { //All permission
             $groupPermission = $permissions[$i]['group_name']; //find group name
-            for ($j=0; $j < count($permissions[$i]['permission']); $j++) { 
+            for ($j = 0; $j < count($permissions[$i]['permission']); $j++) {
                 $permission = Permission::create(['guard_name' => 'admin', 'name' => $permissions[$i]['permission'][$j], 'group_name' => $groupPermission]);
                 $SuperAdmin->givePermissionTo($permission);
                 $permission->assignRole($SuperAdmin);
@@ -125,13 +131,11 @@ class RolePermisionSeeder extends Seeder
 
         //create and asign permission web guard
 
-        for ($i=0; $i < count($permissions1); $i++) { //All permission
+        for ($i = 0; $i < count($permissions1); $i++) { //All permission
             $groupPermission1 = $permissions1[$i]['group_name']; //find group name
-            for ($j=0; $j < count($permissions1[$i]['permission']); $j++) { 
+            for ($j = 0; $j < count($permissions1[$i]['permission']); $j++) {
                 $permission = Permission::create(['guard_name' => 'web', 'name' => $permissions1[$i]['permission'][$j], 'group_name' => $groupPermission1]);
             }
         }
-
-
     }
 }
