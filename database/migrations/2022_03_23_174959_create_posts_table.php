@@ -18,8 +18,15 @@ return new class extends Migration
             $table->integer('user_id')->unsigned()->default(0);
             $table->string('title')->unique();
             $table->string('slug');
-            $table->string('image')->nullable();
+            $table->longText('sort_description')->nullable();
             $table->longText('description')->nullable();
+            $table->integer('base_priz')->default(10);
+            $table->integer('regular_priz')->default(10);
+            $table->integer('sale_priz')->default(10);
+            $table->string('SKU');
+            $table->enum('stock_status', ['instock', 'outofstock']);
+            $table->string('image')->nullable();
+            $table->string('images')->nullable();
             $table->string('post_type')->default("post");
             $table->string('post_status')->default("publish");
             $table->integer('count_comment')->unsigned()->default(0);
