@@ -8,6 +8,6 @@ class FrontEndController extends Controller
 {
     public function views()
     {
-        return view('frontend.pages.home');
+        return view('frontend.pages.cart');
     }
 }

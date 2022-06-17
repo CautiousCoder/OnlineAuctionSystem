@@ -26,10 +26,19 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('frontStyle')
 </head>
 
-<body>
-    <header>
+<body class="inner-page about-us">
+    <!-- mobile menu -->
+    <div class="mercado-clone-wrap">
+        <div class="mercado-panels-actions-wrap">
+            <a class="mercado-close-btn mercado-close-panels" href="#">x</a>
+        </div>
+        <div class="mercado-panels"></div>
+    </div>
+
+    <header id="header" class="header header-style-1">
         @if (Auth::guard('web')->user()->can('seller.dashboard'))
             @include('frontend.inc.sellernavbar')
         @endif

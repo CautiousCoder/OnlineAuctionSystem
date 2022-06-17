@@ -1,6 +1,6 @@
 @include('frontend.header')
     <div id="app">
-        <main class="pb-5">
+        <main id="main" class="main-site mb-5">
             @yield('content')
         </main>
     </div>
