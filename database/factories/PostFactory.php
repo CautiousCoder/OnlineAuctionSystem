@@ -30,7 +30,9 @@ class PostFactory extends Factory
             'title' => $title,
             'slug' => $slug,
             'image' => $image,
+            'sort_description' => $this->faker->text(150),
             'description' => $this->faker->text(300),
+            'SKU' => $this->faker->randomDigit(100, 999),
             'user_id' => 1,
         ];
     }

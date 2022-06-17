@@ -33,5 +33,21 @@ class UserSeeder extends Seeder
             $user->assignRole($role_r);
             $user->save();
         }
+
+        $buyeruser = User::where('email', 'buyer@buyer.com')->first();
+        if (is_null($buyeruser)) {
+            $buser = new User();
+            $buser->name = 'Buyer';
+            $buser->username = 'buyer';
+            $buser->role_name = 'Buyer';
+            $buser->email = 'buyer@buyer.com';
+            $buser->password = Hash::make('12345678');
+            $permissions = ['buyer.dashboard', 'buyer.profile', 'buyer.post'];
+            $roles = 'Buyer';
+            $role_r = Role::where('name', '=', $roles)->firstOrFail();
+            $role_r->givePermissionTo($permissions);
+            $buser->assignRole($role_r);
+            $buser->save();
+        }
     }
 }
