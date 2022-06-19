@@ -1,23 +1,24 @@
 @extends('backend.layouts.layout')
-<!-- Title (Page title) --> @section('title') Post | Create Page @endsection
+<!-- Title (Page title) --> @section('title') Product | Create Page @endsection
 <!-- Navbar (Page navbar) --> @section('navbar') @include('backend.layouts.inc.buyerNavbar') @endsection
 <!-- Side Bar (Page sidebar) --> @section('navbarSection') @include('backend.layouts.inc.buyersideBar') @endsection
 <!-- Main Content (Page content) --> @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
   <div class="container-fluid">
-    <div class="row mb-2">
+    {{-- <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0">New Post</h1>
+        <h1 class="m-0">New Product</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="{{ route('seller.sellerDashboard') }}">Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('seller.post.index') }}">Post List</a></li>
-          <li class="breadcrumb-item active">New Post</li>
+          <li class="breadcrumb-item"><a href="{{ route('seller.post.index') }}">Product List</a></li>
+          <li class="breadcrumb-item active">New Product</li>
         </ol>
       </div><!-- /.col -->
-    </div><!-- /.row -->
+    </div> --}}
+    <!-- /.row -->
   </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
@@ -27,7 +28,7 @@
   <div class="card">
     <div class="card-header">
       <div class="d-flex justify-content-between align-item-center">
-        <h2 class="card-title">Add Post</h2>
+        <h1 class="card-title">Create Product</h1>
         <a href="{{ route('seller.post.index') }}" class="btn btn-lg btn-primary">Back</a>
       </div>
     </div> {{-- <div class="card-body p-0"> --}}
@@ -35,11 +36,16 @@
       <div class="col-12">
         <form action="{{ route('seller.post.store') }}" method="POST" enctype="multipart/form-data"> @csrf <div
             class="card-body"> @include('backend.inc.error') <div class="row">
-              <div class="col-12 col-md-8">
+              <div class="col-12 col-md-9">
                 <div class="form-group">
-                  <label for="name">Post Title</label>
+                  <label for="name">Product Title</label>
                   <input type="text" name="title" class="form-control" id="name" value="{{ old('title') }}"
-                    placeholder="Enter Post Name">
+                    placeholder="Enter Product Name">
+                </div>
+                <div class="form-group mb-5">
+                  <label for="sort_description">Short Description</label>
+                  <textarea class="form-control" name="sort_description" id="sort_description" rows="10"
+                    placeholder="Short Descriptions">{{ old('sort_description') }}</textarea>
                 </div>
                 <div class="form-group mb-5">
                   <label for="description">Description</label>
@@ -50,15 +56,12 @@
                   <button type="submit" class="btn btn-lg btn-primary m-auto">Submit</button>
                 </div>
               </div>
-              <div class="col-12 col-md-4 bg-dark pl-3 py-4">
+              <div class="col-12 col-md-3 bg-dark pl-3 py-4">
                 <div class="form-group">
                   <label>Status</label>
-                  <select class="form-control">
-                    <option>option 1</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
+                  <select class="form-control" data-placeholder="Publish" name="post_status">
+                    <option value="publish">Publish</option>
+                    <option value="draft">Draft</option>
                   </select>
                 </div>
                 <div class="form-group" style="margin-bottom: -8px !important">
@@ -108,6 +111,35 @@
                     <span class="dropdown-wrapper" aria-hidden="true"></span>
                   </span>
                 </div>
+                <div class="form-group" style="margin-bottom: 15px !important">
+                  <div class="input-group mb-3">
+                  <input type="number" min="10" name="SKU" class="form-control" placeholder="SKU code">
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px !important">
+                  <label for="desc">Regular Prize</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" min="10" name="regular_priz" class="form-control" placeholder="Regular Prize">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px !important">
+                  <label for="desc">Sale Prize</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" min="10" name="sale_priz" class="form-control" placeholder="Sale Prize">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                </div>
                 <div class="form-group">
                   <label for="desc">Image</label>
                   <!-- <label for="customFile">Custom File</label> -->
@@ -145,9 +177,14 @@
         });
 </script>
 <script>
-  $('#description').summernote({
-        placeholder: 'Write Post Description',
+ $('#sort_description').summernote({
+        placeholder: 'Write Product Description',
         tabsize: 4,
-        height: 350
+        height: 150
+      });
+  $('#description').summernote({
+        placeholder: 'Write Product Description',
+        tabsize: 4,
+        height: 250
       });
 </script> @endsection

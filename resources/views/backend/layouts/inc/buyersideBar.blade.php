@@ -24,6 +24,11 @@
                         </div>
                     </div>
                     <ul class="nav nav-treeview sidemenu">
+                        <li class="nav-item my-1">
+                        <a href="{{ route('buyer.buyerDashboard') }}" class="nav-link py-2" style="font-size: 18px; color:black;">
+                          Buyer Dashboard
+                        </a>
+                    </li>
                         <li class="nav-item mt-2">
                             <a href="{{ route('admin.admin.index') }}" class="nav-link">
                                 <p class="pstyle">Profile</p>

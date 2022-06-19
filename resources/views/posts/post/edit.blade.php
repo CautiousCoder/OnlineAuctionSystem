@@ -1,23 +1,24 @@
 @extends('backend.layouts.layout')
-<!-- Title (Page title) --> @section('title') Post | Edit Page @endsection
+<!-- Title (Page title) --> @section('title') Product | Edit Page @endsection
 <!-- Navbar (Page navbar) --> @section('navbar') @include('backend.layouts.inc.buyerNavbar') @endsection
 <!-- Side Bar (Page sidebar) --> @section('navbarSection') @include('backend.layouts.inc.buyersideBar') @endsection
 <!-- Main Content (Page content) --> @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
 	<div class="container-fluid">
-		<div class="row mb-2">
+		{{-- <div class="row mb-2">
 			<div class="col-sm-6">
-				<h1 class="m-0">Edit Post</h1>
+				<h1 class="m-0">Edit Product</h1>
 			</div><!-- /.col -->
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="{{ route('seller.sellerDashboard') }}">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="{{ route('seller.post.index') }}">Post List</a></li>
-					<li class="breadcrumb-item active">Edit Post</li>
+					<li class="breadcrumb-item"><a href="{{ route('seller.post.index') }}">Product List</a></li>
+					<li class="breadcrumb-item active">Edit Product</li>
 				</ol>
 			</div><!-- /.col -->
-		</div><!-- /.row -->
+		</div> --}}
+		<!-- /.row -->
 	</div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
@@ -27,7 +28,7 @@
 	<div class="card">
 		<div class="card-header">
 			<div class="d-flex justify-content-between align-item-center">
-				<h2 class="card-title">Edit Post</h2>
+				<h2 class="card-title">Edit Product</h2>
 				<a href="{{ route('seller.post.index') }}" class="btn btn-lg btn-primary">Back</a>
 			</div>
 		</div> {{-- <div class="card-body p-0"> --}}
@@ -35,29 +36,31 @@
 			<div class="col-12">
 				<form action="{{ route('seller.post.update', [$post->id]) }}" method="POST"> @method('PUT') @csrf <div
 						class="card-body"> @include('backend.inc.error') <div class="row">
-							<div class="col-12 col-md-8">
+							<div class="col-12 col-md-9">
 								<div class="form-group">
-									<label for="title">Post Title</label>
+									<label for="title">Product Title</label>
 									<input type="text" name="title" class="form-control" id="title" value="{{ $post->title }}"
-										placeholder="Enter Post Name">
+										placeholder="Enter Product Name">
 								</div>
+								<div class="form-group mb-5">
+                  <label for="sort_description">Short Description</label>
+                  <textarea class="form-control" name="sort_description" id="sort_description" rows="10"
+                    placeholder="Short Descriptions">{{ old('sort_description') }}</textarea>
+                </div>
 								<div class="form-group">
 									<label for="description">Description</label>
 									<textarea class="form-control" name="description" id="description" rows="4"
 										placeholder="Descriptions">{{ $post->description }}</textarea>
 								</div>
 							</div>
-							<div class="col-12 col-md-4 bg-dark py-4 pl-2">
+							<div class="col-12 col-md-3 bg-dark py-4 pl-2">
 								<div class="form-group">
-									<label>Status</label>
-									<select class="form-control">
-										<option>option 1</option>
-										<option>option 2</option>
-										<option>option 3</option>
-										<option>option 4</option>
-										<option>option 5</option>
-									</select>
-								</div>
+                  <label>Status</label>
+                  <select class="form-control" data-placeholder="Publish" name="post_status">
+                    <option value="publish" @if ($post->post_status == 'publish	') selected @endif >Publish</option>
+                    <option value="draft" @if ($post->post_status == 'draft	') selected @endif >Draft</option>
+                  </select>
+                </div>
 								<div class="form-group" style="margin-bottom: -8px !important">
 									<label>Category</label>
 									<select class="select2 select2-hidden-accessible js-example-basic-multiple" name="categories_id[]"
@@ -107,6 +110,30 @@
 										<span class="dropdown-wrapper" aria-hidden="true"></span>
 									</span>
 								</div>
+								<div class="form-group" style="margin-bottom: 15px !important">
+                  <label for="desc">Regular Prize</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" min="10" name="regular_priz" class="form-control" placeholder="Regular Prize">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px !important">
+                  <label for="desc">Sale Prize</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" min="10" name="sale_priz" class="form-control" placeholder="Sale Prize">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                </div>
 								<div class="form-group">
 									<label for="img">Image</label>
 									<!-- <label for="customFile">Custom File</label> -->
@@ -125,7 +152,7 @@
 					</div>
 					<!-- /.card-body -->
 					<div class="card-footer d-flex justify-content-between mb-2">
-						<button type="submit" class="btn btn-lg btn-primary m-auto">Update Post</button>
+						<button type="submit" class="btn btn-lg btn-primary m-auto">Update Product</button>
 					</div>
 				</form> {{--
 			</div> --}}
@@ -154,8 +181,13 @@
         });
 </script>
 <script>
+	$('#sort_description').summernote({
+        placeholder: 'Write Product Description',
+        tabsize: 4,
+        height: 150
+      });
 	$('#description').summernote({
-        placeholder: 'Write Post Description',
+        placeholder: 'Write Product Description',
         tabsize: 4,
         height: 350
       });
