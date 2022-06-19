@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\CategoryController;
 use App\Models\Tag;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -51,13 +52,30 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required|unique:posts,title',
             'image' => 'image',
+            'start_date'  => 'required',
+            'end_date'    => 'required|after:start_date',
+            'regular_prize' => 'required',
+            'SKU' => 'required',
+        ], [
+            'title.required' => 'The post title can not be NULL.',
+            'start_date.required' => 'Starting Bidding time is required.',
+            'end_date.required' => 'Endding Bidding time is required.',
+            'regular_prize.required' => 'Regular prize feild is required.',
         ]);
 
         $post = new Post();
         $post->title = $request->title;
         $post->slug = Str::slug($request->title, '-');
         $post->description = $request->description;
-        $post->user_id = 1;
+        $post->user_id = Auth::guard('web')->user()->id;
+        $post->sort_description = $request->sort_description;
+        $post->post_status = $request->post_status;
+        $post->SKU = $request->SKU;
+        $post->regular_prize = $request->regular_prize;
+        $post->sale_prize = $request->sale_prize;
+        $post->base_prize = $request->regular_prize;
+        $post->start_date = $request->start_date;
+        $post->end_date = $request->end_date;
         $post->publish_at = Carbon::now();
 
         if ($request->hasFile('image')) {

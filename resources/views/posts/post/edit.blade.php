@@ -36,7 +36,7 @@
 			<div class="col-12">
 				<form action="{{ route('seller.post.update', [$post->id]) }}" method="POST"> @method('PUT') @csrf <div
 						class="card-body"> @include('backend.inc.error') <div class="row">
-							<div class="col-12 col-md-9">
+							<div class="col-12 col-md-8">
 								<div class="form-group">
 									<label for="title">Product Title</label>
 									<input type="text" name="title" class="form-control" id="title" value="{{ $post->title }}"
@@ -53,7 +53,7 @@
 										placeholder="Descriptions">{{ $post->description }}</textarea>
 								</div>
 							</div>
-							<div class="col-12 col-md-3 bg-dark py-4 pl-2">
+							<div class="col-12 col-md-4 bg-dark py-4 pl-3">
 								<div class="form-group">
                   <label>Status</label>
                   <select class="form-control" data-placeholder="Publish" name="post_status">
@@ -61,55 +61,12 @@
                     <option value="draft" @if ($post->post_status == 'draft	') selected @endif >Draft</option>
                   </select>
                 </div>
-								<div class="form-group" style="margin-bottom: -8px !important">
-									<label>Category</label>
-									<select class="select2 select2-hidden-accessible js-example-basic-multiple" name="categories_id[]"
-										multiple="multiple" data-placeholder="Select Category" style="width: 100%;" data-select2-id="7"
-										tabindex="-1" aria-hidden="true"> @foreach ($categories as $category) <option
-											data-select2-id="7{{ $category->id }}" value="{{ $category->id }}" @foreach ($post->categories as
-											$c) @if ($category->id == $c->id) selected @endif @endforeach > {{ $category->name }}</option>
-										@endforeach </select>
-									<span class="select2 select2-container select2-container--default select2-container--above" dir="ltr"
-										data-select2-id="8" style="width: 100%;">
-										<span class="selection d-none">
-											<span class="select2-selection select2-selection--multiple" category="combobox"
-												aria-haspopup="false" aria-expanded="false" tabindex="-1" aria-disabled="false">
-												<ul class="select2-selection__rendered">
-													<li class="select2-search select2-search--inline">
-														<input class="select2-search__field" type="search" tabindex="0" autocomplete="off"
-															autocorrect="off" autocapitalize="none" spellcheck="false" category="searchbox"
-															aria-autocomplete="list" style="width: 474px;">
-													</li>
-												</ul>
-											</span>
-										</span>
-										<span class="dropdown-wrapper" aria-hidden="true"></span>
-									</span>
-								</div>
-								<div class="form-group" style="margin-bottom: -8px !important">
-									<label>Tags</label>
-									<select class="select2 select2-hidden-accessible js-example-basic-multiply" name="tags[]"
-										multiple="multiple" data-placeholder="Select Tag" style="width: 100%;" data-select2-id="4"
-										tabindex="-1" aria-hidden="true"> @foreach ($tags as $tag) <option data-select2-id="4{{ $tag->id }}"
-											value="{{ $tag->id }}" @foreach ($post->tags as $t) @if ($tag->id == $t->id) selected @endif
-											@endforeach > {{ $tag->name }}</option> @endforeach </select>
-									<span class="select2 select2-container select2-container--default select2-container--above" dir="ltr"
-										data-select2-id="8" style="width: 100%;">
-										<span class="selection d-none">
-											<span class="select2-selection select2-selection--multiple" category="combobox"
-												aria-haspopup="false" aria-expanded="false" tabindex="-1" aria-disabled="false">
-												<ul class="select2-selection__rendered">
-													<li class="select2-search select2-search--inline">
-														<input class="select2-search__field" type="search" tabindex="0" autocomplete="off"
-															autocorrect="off" autocapitalize="none" spellcheck="false" category="searchbox"
-															aria-autocomplete="list" style="width: 474px;">
-													</li>
-												</ul>
-											</span>
-										</span>
-										<span class="dropdown-wrapper" aria-hidden="true"></span>
-									</span>
-								</div>
+								<div class="form-group" style="margin-bottom: 15px !important">
+                  <label for="name">Product SKU Code</label>
+                  <div class="input-group mb-3">
+                  <input type="number" min="10" name="SKU" class="form-control" value="{{ $post->SKU }}" placeholder="SKU code">
+                  </div>
+                </div>
 								<div class="form-group" style="margin-bottom: 15px !important">
                   <label for="desc">Regular Prize</label>
                   <div class="input-group">
@@ -134,6 +91,73 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-group">
+                  <label>Start Date</label>
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                      <input type="text" name="start_date" class="form-control datetimepicker-input" value="{{ $post->start_time }}" placeholder="yyyy-mm-dd" data-target="#reservationdate">
+                    <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>End Date</label>
+                    <div class="input-group date" id="reservationdatee" data-target-input="nearest">
+                      <input type="text" name="end_date" class="form-control datetimepicker-input" value="{{ $post->end_time }}" placeholder="yyyy-mm-dd" data-target="#reservationdatee">
+                    <div class="input-group-append" data-target="#reservationdatee" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+                  </div>
+                </div>
+								<div class="form-group" style="margin-bottom: 10px !important">
+									<label>Category</label>
+									<select class="select2 select2-hidden-accessible js-example-basic-multiple" name="categories_id[]"
+										multiple="multiple" data-placeholder="Select Category" style="width: 100%;" data-select2-id="7"
+										tabindex="-1" aria-hidden="true"> @foreach ($categories as $category) <option
+											data-select2-id="7{{ $category->id }}" value="{{ $category->id }}" @foreach ($post->categories as
+											$c) @if ($category->id == $c->id) selected @endif @endforeach > {{ $category->name }}</option>
+										@endforeach </select>
+									<span class="select2 select2-container select2-container--default select2-container--above" dir="ltr"
+										data-select2-id="8" style="width: 100%;">
+										<span class="selection d-none">
+											<span class="select2-selection select2-selection--multiple" category="combobox"
+												aria-haspopup="false" aria-expanded="false" tabindex="-1" aria-disabled="false">
+												<ul class="select2-selection__rendered">
+													<li class="select2-search select2-search--inline">
+														<input class="select2-search__field" type="search" tabindex="0" autocomplete="off"
+															autocorrect="off" autocapitalize="none" spellcheck="false" category="searchbox"
+															aria-autocomplete="list" style="width: 474px;">
+													</li>
+												</ul>
+											</span>
+										</span>
+										<span class="dropdown-wrapper" aria-hidden="true"></span>
+									</span>
+								</div>
+								<div class="form-group" style="margin-bottom: 10px !important">
+									<label>Tags</label>
+									<select class="select2 select2-hidden-accessible js-example-basic-multiply" name="tags[]"
+										multiple="multiple" data-placeholder="Select Tag" style="width: 100%;" data-select2-id="4"
+										tabindex="-1" aria-hidden="true"> @foreach ($tags as $tag) <option data-select2-id="4{{ $tag->id }}"
+											value="{{ $tag->id }}" @foreach ($post->tags as $t) @if ($tag->id == $t->id) selected @endif
+											@endforeach > {{ $tag->name }}</option> @endforeach </select>
+									<span class="select2 select2-container select2-container--default select2-container--above" dir="ltr"
+										data-select2-id="8" style="width: 100%;">
+										<span class="selection d-none">
+											<span class="select2-selection select2-selection--multiple" category="combobox"
+												aria-haspopup="false" aria-expanded="false" tabindex="-1" aria-disabled="false">
+												<ul class="select2-selection__rendered">
+													<li class="select2-search select2-search--inline">
+														<input class="select2-search__field" type="search" tabindex="0" autocomplete="off"
+															autocorrect="off" autocapitalize="none" spellcheck="false" category="searchbox"
+															aria-autocomplete="list" style="width: 474px;">
+													</li>
+												</ul>
+											</span>
+										</span>
+										<span class="dropdown-wrapper" aria-hidden="true"></span>
+									</span>
+								</div>
 								<div class="form-group">
 									<label for="img">Image</label>
 									<!-- <label for="customFile">Custom File</label> -->
@@ -164,13 +188,18 @@
 <!-- /.content --> 
 
 {{-- Additional script --}}
-@endsection @section('styleArea')
+@endsection 
+@section('styleArea')
 <link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/select2/css/select2.min.css">
-<link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/summernote.min.css"> @endsection @section('scriptArea')
+<link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/summernote.min.css"> @endsection 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@section('scriptArea')
 <script src="{{ asset('backEnd') }}/plugins/select2/js/select2.full.min.js"></script>
 <script src="{{ asset('backEnd') }}/plugins/select2/js/select2.min.js"></script>
 <script src="{{ asset('backEnd') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="{{ asset('backEnd') }}/dist/js/summernote.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" integrity="sha512-x/vqovXY/Q4b+rNjgiheBsA/vbWA3IVvsS8lkQSX1gQ4ggSJx38oI2vREZXpTzhAv6tNUaX81E7QBBzkpDQayA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 	$('.js-example-basic-multiple').select2();
         $('.js-example-basic-multiply').select2();
@@ -184,11 +213,18 @@
 	$('#sort_description').summernote({
         placeholder: 'Write Product Description',
         tabsize: 4,
-        height: 150
+        height: 250
       });
 	$('#description').summernote({
         placeholder: 'Write Product Description',
         tabsize: 4,
         height: 350
       });
+			//Date picker
+    $('#reservationdate').datepicker({
+        format: 'yyyy-mm-dd',
+    });
+    $('#reservationdatee').datepicker({
+        format: 'yyyy-mm-dd',
+    });
 </script> @endsection

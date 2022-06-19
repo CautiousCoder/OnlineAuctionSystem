@@ -36,7 +36,7 @@
       <div class="col-12">
         <form action="{{ route('seller.post.store') }}" method="POST" enctype="multipart/form-data"> @csrf <div
             class="card-body"> @include('backend.inc.error') <div class="row">
-              <div class="col-12 col-md-9">
+              <div class="col-12 col-md-8">
                 <div class="form-group">
                   <label for="name">Product Title</label>
                   <input type="text" name="title" class="form-control" id="name" value="{{ old('title') }}"
@@ -56,13 +56,70 @@
                   <button type="submit" class="btn btn-lg btn-primary m-auto">Submit</button>
                 </div>
               </div>
-              <div class="col-12 col-md-3 bg-dark pl-3 py-4">
+              <div class="col-12 col-md-4 bg-dark pl-3 py-4">
                 <div class="form-group">
                   <label>Status</label>
                   <select class="form-control" data-placeholder="Publish" name="post_status">
                     <option value="publish">Publish</option>
                     <option value="draft">Draft</option>
                   </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px !important">
+                  <label for="name">Product SKU Code</label>
+                  <div class="input-group mb-3">
+                  <input type="text" min="10" name="SKU" class="form-control" placeholder="SKU code">
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px !important">
+                  <label for="desc">Regular Prize</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" min="10" name="regular_prize" class="form-control" placeholder="Regular Prize">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px !important">
+                  <label for="desc">Sale Prize</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="number" min="10" name="sale_prize" class="form-control" placeholder="Sale Prize">
+                    <div class="input-group-append">
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Start Date</label>
+                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                      <input type="text" name="start_date" class="form-control datetimepicker-input" placeholder="yyyy-mm-dd" data-target="#reservationdate">
+                    <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                <label>Start Date</label>
+                  <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
+                  <input type="text" name="start_date" class="form-control datetimepicker-input" placeholder="yyyy-mm-dd" data-target="#reservationdatetime">
+                  <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>End Date</label>
+                    <div class="input-group date" id="reservationdatee" data-target-input="nearest">
+                      <input type="text" name="end_date" class="form-control datetimepicker-input" placeholder="yyyy-mm-dd" data-target="#reservationdatee">
+                    <div class="input-group-append" data-target="#reservationdatee" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                  </div>
+                  </div>
                 </div>
                 <div class="form-group" style="margin-bottom: -8px !important">
                   <label>Category</label>
@@ -111,35 +168,6 @@
                     <span class="dropdown-wrapper" aria-hidden="true"></span>
                   </span>
                 </div>
-                <div class="form-group" style="margin-bottom: 15px !important">
-                  <div class="input-group mb-3">
-                  <input type="number" min="10" name="SKU" class="form-control" placeholder="SKU code">
-                  </div>
-                </div>
-                <div class="form-group" style="margin-bottom: 15px !important">
-                  <label for="desc">Regular Prize</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">$</span>
-                    </div>
-                    <input type="number" min="10" name="regular_priz" class="form-control" placeholder="Regular Prize">
-                    <div class="input-group-append">
-                      <span class="input-group-text">.00</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group" style="margin-bottom: 15px !important">
-                  <label for="desc">Sale Prize</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">$</span>
-                    </div>
-                    <input type="number" min="10" name="sale_priz" class="form-control" placeholder="Sale Prize">
-                    <div class="input-group-append">
-                      <span class="input-group-text">.00</span>
-                    </div>
-                  </div>
-                </div>
                 <div class="form-group">
                   <label for="desc">Image</label>
                   <!-- <label for="customFile">Custom File</label> -->
@@ -160,13 +188,20 @@
   </div>
   <!--/.Card content -->
 </div>
-<!-- /.content --> @endsection {{-- Additional script --}} @section('styleArea')
+<!-- /.content --> 
+@endsection {{-- Additional script --}} 
+@section('styleArea')
 <link rel="stylesheet" href="{{ asset('backEnd') }}/plugins/select2/css/select2.min.css">
-<link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/summernote.min.css"> @endsection @section('scriptArea')
+<link rel="stylesheet" href="{{ asset('backEnd') }}/dist/css/summernote.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection 
+@section('scriptArea')
 <script src="{{ asset('backEnd') }}/plugins/select2/js/select2.full.min.js"></script>
 <script src="{{ asset('backEnd') }}/plugins/select2/js/select2.min.js"></script>
 <script src="{{ asset('backEnd') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script src="{{ asset('backEnd') }}/dist/js/summernote.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" integrity="sha512-x/vqovXY/Q4b+rNjgiheBsA/vbWA3IVvsS8lkQSX1gQ4ggSJx38oI2vREZXpTzhAv6tNUaX81E7QBBzkpDQayA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
   $('.js-example-basic-multiple').select2();
         $('.js-example-basic-multiply').select2();
@@ -180,11 +215,18 @@
  $('#sort_description').summernote({
         placeholder: 'Write Product Description',
         tabsize: 4,
-        height: 150
+        height: 200
       });
   $('#description').summernote({
         placeholder: 'Write Product Description',
         tabsize: 4,
-        height: 250
+        height: 350
       });
+   //Date picker
+    $('#reservationdate').datepicker({
+        format: 'yyyy-mm-dd',
+    });
+    $('#reservationdatee').datepicker({
+        format: 'yyyy-mm-dd',
+    });
 </script> @endsection
