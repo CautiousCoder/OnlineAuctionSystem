@@ -18,14 +18,23 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
-            $table->string('phone')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role_name')->nullable();
+            $table->rememberToken();
+            $table->timestamps();
+        });
+        Schema::create('profile', function (Blueprint $table) {
+            $table->id();
+            $table->string('phone')->nullable();
+            $table->string('road_num')->nullable();
+            $table->string('zip_num')->nullable();
+            $table->string('state')->nullable();
+            $table->string('contry')->default('Bangladesh');
             $table->string('image_name')->nullable();
-            $table->string('license_number')->nullable();
-            $table->string('nid_number')->nullable();
+            $table->string('license_number')->default('XXX-XX-XXX');
+            $table->string('nid_number')->default('XXXXXXXXXX');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -39,5 +48,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('profile');
     }
 };

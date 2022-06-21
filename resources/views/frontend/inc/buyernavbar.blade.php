@@ -161,13 +161,15 @@
 						<div class="text-end">
 						 <div class="nav-item dropdown">
 								<a id="navbarDropdown" class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-									aria-haspopup="true" aria-expanded="false" v-pre>Hello {{ Auth::guard('web')->user()->name }} </a>
+									aria-haspopup="true" aria-expanded="false" v-pre>Hello {{ Auth::guard('web')->user()->username }} </a>
 								<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="{{ route('seller.sellerDashboard') }}"> {{ __('Profile') }} </a>
-									<a class="dropdown-item" href="{{ route('seller.sellerDashboard') }}"> {{ __('Dashboard') }} </a>
-									<a class="dropdown-item" href="{{ route('seller.sellerlogout') }}" onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
-									<form id="logout-form" action="{{ route('seller.sellerlogout') }}" method="POST" class="d-none"> @csrf
+									<a class="dropdown-item" href="{{ route('buyer.buyerDashboard') }}"> {{ __('Profile') }} </a>
+									<a class="dropdown-item" href="{{ route('buyer.buyerDashboard') }}"> {{ __('Dashboard') }} </a>
+									<a class="dropdown-item" href="{{ route('buyer.buyerlogout') }}"
+									onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+																					  {{ __('Logout') }} </a>
+									<form id="logout-form" action="{{ route('buyer.buyerlogout') }}" method="POST" class="d-none"> 
+										@csrf
 									</form>
 								</div>
 							</div>
