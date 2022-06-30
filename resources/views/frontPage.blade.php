@@ -5,38 +5,66 @@
 @endsection
 
 @section('navbarhome')
-    <header class="p-3 bg-light text-black">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-black text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
+    <header class="p-3 bg-secondary text-black">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-black text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+          </a>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="#" class="nav-link px-2 text-black">Features</a></li>
-          <li><a href="#" class="nav-link px-2 text-black">Pricing</a></li>
-          <li><a href="#" class="nav-link px-2 text-black">FAQs</a></li>
-          <li><a href="#" class="nav-link px-2 text-black">About</a></li>
-        </ul>
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 text-white">Home</a></li>
+            <li><a href="#" class="nav-link px-2 text-black">FAQs</a></li>
+            <li><a href="#" class="nav-link px-2 text-black">About</a></li>
+          </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark text-black bg-dark" placeholder="Search..." aria-label="Search">
-        </form>
+          {{-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control form-control-dark text-black bg-dark" placeholder="Search..." aria-label="Search">
+          </form> --}}
 
-        <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <div class="text-end">
+            <button type="button" class="btn btn-lg btn-light me-2">Login</button>
+            <button type="button" class="btn btn-lg btn-warning">Sign-up</button>
+          </div>
         </div>
       </div>
-    </div>
   </header>
 @endsection
 
 @section('content')
 <main>
 
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="slide">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="max-height: 540px !important;">
+      <div class="d-block w-100" style="background-image: url({{ asset('backEnd') }}/dist/img/slide.png);background-repeat: no-repeat;background-origin: content-box;background-position: center; background-size: cover;height:660px;">
+        <p>fhsf  sfgshaf gjfskajgf</p>
+      </div>
+      {{-- <img src="{{ asset('backEnd') }}/dist/img/slide.png" class="d-block w-100 img-fluid" alt="..."> --}}
+    </div>
+    <div class="carousel-item" style="max-height: 540px !important;">
+      <div class="d-block w-100" style="background-image: url({{ asset('backEnd') }}/dist/img/slide0.jpg);background-repeat: no-repeat;background-origin: content-box;background-position: center; background-size: cover;height:660px;">
+        <p>fhsf  sfgshaf gjfskajgf</p>
+      </div>
+    </div>
+    <div class="carousel-item" style="max-height: 540px !important;">
+      <div class="d-block w-100" style="background-image: url({{ asset('backEnd') }}/dist/img/slide1.png);background-repeat: no-repeat;background-origin: content-box;background-position: center; background-size: cover;height:660px;">
+        <p>fhsf  sfgshaf gjfskajgf</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon d-none" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon d-none" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  </div>
+  {{-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
@@ -85,17 +113,17 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+  </div> --}}
 
 
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
-  <div class="container marketing">
+  <div class="container marketing mt-4">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row">
+    {{-- <div class="row">
       <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
 
@@ -117,7 +145,8 @@
         <p>And lastly this, the third column of representative placeholder content.</p>
         <p><a class="btn btn-secondary" href="#">View details »</a></p>
       </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
+    </div> --}}
+    <!-- /.row -->
 
 
     <!-- START THE FEATURETTES -->
@@ -165,7 +194,8 @@
 
     <!-- /END THE FEATURETTES -->
 
-  </div><!-- /.container -->
+  </div>
+  <!-- /.container -->
 
 
   <!-- FOOTER -->
