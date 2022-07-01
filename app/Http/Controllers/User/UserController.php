@@ -11,19 +11,28 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         //
-        $users = User::orderBy('created_at','DESC')->paginate(20);
+        $users = User::orderBy('created_at', 'DESC')->paginate(20);
         return view('backend.pages.user.index', compact('users'));
     }
 
-    public function create(){
+    public function profileview(User $user)
+    {
+        dd($user);
+        return view('profile.sellerprofile');
+    }
+
+    public function create()
+    {
         //
         $roles = Role::all();
         return view('backend.pages.user.create', compact('roles'));
     }
     //
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users,email',
@@ -31,7 +40,7 @@ class UserController extends Controller
             'phone' => 'nullable|max:15|min:8',
             'password' => 'required|min:6|max:15',
             'cpassword' => 'required|same:password',
-        ],[
+        ], [
             'cpassword.required' => 'The Confirm Password field is required.',
             'username.unique' => 'Already Exists. Please try again.',
             'username.required' => 'The Username field is required.',
@@ -57,20 +66,21 @@ class UserController extends Controller
 
         $data = $user->save();
 
-        if($data){
+        if ($data) {
             return redirect()->back()->with('success', 'User created Successfully.');
-        }else {
+        } else {
             return redirect()->back()->with('error', 'User created Failed.');
         }
-        
     }
 
-    public function edit(User $user){
+    public function edit(User $user)
+    {
         $roles = Role::all();
-        return view('backend.pages.user.edit', compact(['user','roles']));
+        return view('backend.pages.user.edit', compact(['user', 'roles']));
     }
 
-    public function update(Request $request, User $user){
+    public function update(Request $request, User $user)
+    {
         $request->validate([
             'name' => 'nullable',
             'email' => 'nullable|unique:users,email',
@@ -78,7 +88,7 @@ class UserController extends Controller
             'phone' => 'nullable|max:15|min:8',
             'password' => 'nullable|min:6|max:15',
             'cpassword' => 'nullable|same:password',
-        ],[
+        ], [
             'cpassword.same' => 'The Confirm Password and Password must match.'
         ]);
 
@@ -101,15 +111,16 @@ class UserController extends Controller
 
         $data = $user->save();
 
-        if($data){
+        if ($data) {
             return redirect()->back()->with('success', 'User created Successfully.');
-        }else {
+        } else {
             return redirect()->back()->with('error', 'User created Failed.');
         }
     }
 
-    public function destroy(User $user){
-        if($user){
+    public function destroy(User $user)
+    {
+        if ($user) {
             $user->delete();
         }
         Session()->flash('success', 'User Deleted Successfully.!');
@@ -118,13 +129,14 @@ class UserController extends Controller
 
 
     // user signin or register
-    public function dostore(Request $request){
+    public function dostore(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users,email',
             'password' => 'required|min:6|max:15',
             'cpassword' => 'required|same:password',
-        ],[
+        ], [
             'cpassword.required' => 'The Confirm Password field is required.',
             'cpassword.same' => 'The Confirm Password and Password must match.'
         ]);
@@ -135,30 +147,31 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $data = $user->save();
 
-        if($data){
+        if ($data) {
             return redirect()->back()->with('success', 'You have registered Successfully.');
-        }else {
+        } else {
             return redirect()->back()->with('error', 'Registeration Failed.');
         }
-        
     }
 
-    public function dologin(Request $request){
+    public function dologin(Request $request)
+    {
         $request->validate([
             'email' => 'required|email|exists:users,email',
             'password' => 'required|min:6|max:15'
-        ],[
+        ], [
             'email.exists' => 'This email is not register to our system.'
         ]);
-        $check = $request->only('email','password');
-        if(Auth::guard('web')->attempt($check)){
+        $check = $request->only('email', 'password');
+        if (Auth::guard('web')->attempt($check)) {
             return redirect()->route('user.dashboard')->with('success', 'Welcome to Dashboard.');
-        }else {
+        } else {
             return redirect()->back()->with('error', 'Log In Failed.');
         }
     }
 
-    public function dologout(){
+    public function dologout()
+    {
         Auth::guard('web')->logout();
         return redirect('/');
     }

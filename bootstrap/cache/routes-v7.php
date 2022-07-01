@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::doPmqLYIUHvlvrw1',
+            '_route' => 'generated::KrCCPRfjYWWH6ZNv',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::LHAHcOaz0AqRibTf',
+            '_route' => 'generated::V6b3Ed5WSkUTeYPU',
           ),
           1 => NULL,
           2 => 
@@ -447,7 +447,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::7zDPkreeBWc0mZps',
+            '_route' => 'generated::21Idn88WJs451H7J',
           ),
           1 => NULL,
           2 => 
@@ -585,6 +585,26 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'seller.home',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/profile' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.profileviews',
           ),
           1 => NULL,
           2 => 
@@ -890,6 +910,26 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'buyer.home',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/profile' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.profileviews',
           ),
           1 => NULL,
           2 => 
@@ -1453,7 +1493,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::doPmqLYIUHvlvrw1' => 
+    'generated::KrCCPRfjYWWH6ZNv' => 
     array (
       'methods' => 
       array (
@@ -1474,7 +1514,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::doPmqLYIUHvlvrw1',
+        'as' => 'generated::KrCCPRfjYWWH6ZNv',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1599,7 +1639,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::LHAHcOaz0AqRibTf' => 
+    'generated::V6b3Ed5WSkUTeYPU' => 
     array (
       'methods' => 
       array (
@@ -1622,7 +1662,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::LHAHcOaz0AqRibTf',
+        'as' => 'generated::V6b3Ed5WSkUTeYPU',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2740,7 +2780,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::7zDPkreeBWc0mZps' => 
+    'generated::21Idn88WJs451H7J' => 
     array (
       'methods' => 
       array (
@@ -2761,7 +2801,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::7zDPkreeBWc0mZps',
+        'as' => 'generated::21Idn88WJs451H7J',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3031,6 +3071,45 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\FrontEndController@views',
         'controller' => 'App\\Http\\Controllers\\FrontEndController@views',
         'as' => 'seller.home',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.profileviews' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/profile',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@profileview',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@profileview',
+        'as' => 'seller.profileviews',
         'namespace' => NULL,
         'prefix' => '/users/seller',
         'where' => 
@@ -4118,6 +4197,45 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\FrontEndController@views',
         'controller' => 'App\\Http\\Controllers\\FrontEndController@views',
         'as' => 'buyer.home',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.profileviews' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/profile',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@profileviews',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@profileviews',
+        'as' => 'buyer.profileviews',
         'namespace' => NULL,
         'prefix' => '/users/buyer',
         'where' => 

@@ -95,6 +95,11 @@ Route::prefix('users/seller')->name('seller.')->group(function () {
         Route::view('/dashboard', 'backend.pages.user.sellerDashboard')->name('sellerDashboard');
         Route::post('/logout', [LoginController::class, 'sellerlogout'])->name('sellerlogout');
         Route::get('/home', [FrontEndController::class, 'views'])->name('home');
+
+        //profile
+        Route::get('/profile', [UserController::class, 'profileview'])->name('profileviews');
+
+        //create product
         Route::resource('category', CategoryController::class);
         Route::resource('tag', TagController::class);
         Route::resource('post', PostController::class);
@@ -114,5 +119,6 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
         Route::view('/dashboard', 'backend.pages.user.buyerDashboard')->name('buyerDashboard');
         Route::post('/logout', [LoginController::class, 'buyerlogout'])->name('buyerlogout');
         Route::get('/home', [FrontEndController::class, 'views'])->name('home');
+        Route::get('/profile', [UserController::class, 'profileviews'])->name('profileviews');
     });
 });

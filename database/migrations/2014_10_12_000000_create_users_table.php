@@ -25,20 +25,6 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        Schema::create('profile', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->string('phone')->nullable();
-            $table->string('road_num')->nullable();
-            $table->string('zip_num')->nullable();
-            $table->string('state')->nullable();
-            $table->string('contry')->default('Bangladesh');
-            $table->string('image_name')->nullable();
-            $table->string('license_number')->default('XXX-XX-XXX');
-            $table->string('nid_number')->default('XXXXXXXXXX');
-            $table->rememberToken();
-            $table->timestamps();
-        });
     }
 
     /**
