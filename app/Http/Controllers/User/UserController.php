@@ -18,10 +18,10 @@ class UserController extends Controller
         return view('backend.pages.user.index', compact('users'));
     }
 
-    public function profileview(User $user)
+    public function profileview()
     {
-        dd($user);
-        return view('profile.sellerprofile');
+        $user = User::find(Auth::guard('web')->user()->id);
+        return view('profile.sellerprofile', compact(['user']));
     }
 
     public function create()

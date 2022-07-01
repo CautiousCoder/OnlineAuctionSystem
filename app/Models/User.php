@@ -11,6 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use App\Models\profile;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -47,11 +48,15 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    public function profile()
+    {
+        return $this->hasOne(profile::class, 'user_id');
+    }
     //Find permission group name
     public static function getPermissionNames()
     {
         $permission_group = DB::table('permissions')->select('group_name as name') // after use name
-        ->groupBy('group_name')->get();
+            ->groupBy('group_name')->get();
 
         return $permission_group;
     }
@@ -60,13 +65,13 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $permissions = DB::table('permissions')->select('name', 'id')->where('group_name', $group_name)->get();
         return $permissions;
-
     }
 
     //check all permissions are checked or not under a group
-    public static function groupPermission($role, $permissions){
+    public static function groupPermission($role, $permissions)
+    {
         $haspermission = true;
-        foreach($permissions as $p){
+        foreach ($permissions as $p) {
             if (!$role->hasPermissionTo($p->name)) {
                 $haspermission = false;
                 return $haspermission;
@@ -74,5 +79,4 @@ class User extends Authenticatable implements MustVerifyEmail
         }
         return $haspermission;
     }
-
 }

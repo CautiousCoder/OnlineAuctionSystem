@@ -67,7 +67,7 @@
                         </a>
                     </li>
                         <li class="nav-item mt-1">
-                            <a href="{{ route('seller.profileviews', [Auth::guard('web')->user()->id]) }}" class="nav-link py-2" style="font-size: 18px; color:black;">
+                            <a href="{{ route('seller.profileviews') }}" class="nav-link py-2" style="font-size: 18px; color:black;">
                                 Profile
                             </a>
                         </li>

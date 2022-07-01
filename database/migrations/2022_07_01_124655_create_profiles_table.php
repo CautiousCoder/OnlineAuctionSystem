@@ -20,9 +20,10 @@ return new class extends Migration
             $table->string('designation')->nullable();
             $table->string('bio')->nullable();
             $table->string('road_num')->nullable();
-            $table->string('zip_num')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('city')->nullable();
             $table->string('state')->nullable();
-            $table->string('contry')->default('Bangladesh');
+            $table->string('country')->default('Bangladesh');
             $table->string('image_name')->nullable();
             $table->string('license_number')->default('XXX-XX-XXX');
             $table->string('nid_number')->default('XXXXXXXXXX');

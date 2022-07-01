@@ -128,3 +128,16 @@ button.btn.btn-logout.logout-btn {
 /* ======================================================================================
     Additional style
    ====================================================================================== */
+.list-group {
+    -ms-flex-direction: inherit;
+    flex-direction: inherit;
+}
+.s-icon:active,
+.s-icon:focus,
+.s-icon:hover {
+    background: rgba(8, 5, 5, 0.274);
+    border-radius: 110%;
+}
+.s-icon i {
+    font-size: 24px;
+}
