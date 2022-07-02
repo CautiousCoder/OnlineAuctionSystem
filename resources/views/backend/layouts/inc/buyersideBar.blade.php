@@ -30,7 +30,7 @@
                         </a>
                     </li>
                         <li class="nav-item mt-2">
-                            <a href="{{ route('admin.admin.index') }}" class="nav-link">
+                            <a href="{{ route('buyer.profileviews') }}" class="nav-link">
                                 <p class="pstyle">Profile</p>
                             </a>
                         </li>

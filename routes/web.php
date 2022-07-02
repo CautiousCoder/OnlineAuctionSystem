@@ -121,7 +121,10 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
         Route::view('/dashboard', 'backend.pages.user.buyerDashboard')->name('buyerDashboard');
         Route::post('/logout', [LoginController::class, 'buyerlogout'])->name('buyerlogout');
         Route::get('/home', [FrontEndController::class, 'views'])->name('home');
-        Route::get('/profile', [UserController::class, 'profileviews'])->name('profileviews');
+
+        //profile
+        Route::get('/profile', [UserController::class, 'profileview'])->name('profileviews');
         Route::get('/profile/edit', [UserController::class, 'editprofile'])->name('editprofile');
+        Route::post('/update/profile', [UserController::class, 'storeprofile'])->name('storeprofile');
     });
 });
