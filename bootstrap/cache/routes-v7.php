@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::4qQ9zS1KON6odUIC',
+            '_route' => 'generated::OKfNHcFEaJiquzQZ',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::gASGFJ13rg99RtbF',
+            '_route' => 'generated::Jq9vKnlejJQTFnPu',
           ),
           1 => NULL,
           2 => 
@@ -447,7 +447,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Ba0BbBue14AznvGv',
+            '_route' => 'generated::r6eQ6eWIK2SsGzHN',
           ),
           1 => NULL,
           2 => 
@@ -611,6 +611,45 @@ app('router')->setCompiledRoutes(
           array (
             'GET' => 0,
             'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/profile/edit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.editprofile',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/seller/update/profile' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'seller.storeprofile',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
           ),
           3 => NULL,
           4 => false,
@@ -930,6 +969,26 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'buyer.profileviews',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/profile/edit' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.editprofile',
           ),
           1 => NULL,
           2 => 
@@ -1493,7 +1552,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::4qQ9zS1KON6odUIC' => 
+    'generated::OKfNHcFEaJiquzQZ' => 
     array (
       'methods' => 
       array (
@@ -1514,7 +1573,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::4qQ9zS1KON6odUIC',
+        'as' => 'generated::OKfNHcFEaJiquzQZ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1639,7 +1698,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::gASGFJ13rg99RtbF' => 
+    'generated::Jq9vKnlejJQTFnPu' => 
     array (
       'methods' => 
       array (
@@ -1662,7 +1721,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::gASGFJ13rg99RtbF',
+        'as' => 'generated::Jq9vKnlejJQTFnPu',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2780,7 +2839,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Ba0BbBue14AznvGv' => 
+    'generated::r6eQ6eWIK2SsGzHN' => 
     array (
       'methods' => 
       array (
@@ -2801,7 +2860,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Ba0BbBue14AznvGv',
+        'as' => 'generated::r6eQ6eWIK2SsGzHN',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3110,6 +3169,83 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@profileview',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@profileview',
         'as' => 'seller.profileviews',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.editprofile' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/seller/profile/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@editprofile',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@editprofile',
+        'as' => 'seller.editprofile',
+        'namespace' => NULL,
+        'prefix' => '/users/seller',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'seller.storeprofile' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/seller/update/profile',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Seller',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@storeprofile',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@storeprofile',
+        'as' => 'seller.storeprofile',
         'namespace' => NULL,
         'prefix' => '/users/seller',
         'where' => 
@@ -4236,6 +4372,45 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@profileviews',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@profileviews',
         'as' => 'buyer.profileviews',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.editprofile' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/profile/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@editprofile',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@editprofile',
+        'as' => 'buyer.editprofile',
         'namespace' => NULL,
         'prefix' => '/users/buyer',
         'where' => 

@@ -23,7 +23,37 @@ class UserController extends Controller
         $user = User::find(Auth::guard('web')->user()->id);
         return view('profile.sellerprofile', compact(['user']));
     }
+    public function editprofile()
+    {
+        $user = User::find(Auth::guard('web')->user()->id);
+        return view('profile.editsellerprofile', compact('user'));
+    }
+    public function storeprofile(Request $request)
+    {
+        $user = User::find(Auth::guard('web')->user()->id);
 
+        $user->name = $request->name;
+        $user->profile()->phone = $request->phone;
+        $user->profile()->designation = $request->designation;
+        $user->profile()->bio = $request->bio;
+        $user->profile()->road_num = $request->road_num;
+        $user->profile()->city = $request->city;
+        $user->profile()->state = $request->state;
+        $user->profile()->country = $request->country;
+        $user->profile()->zip_code = $request->zip_code;
+        $user->profile()->license_number = $request->license_number;
+        $user->profile()->nid_number = $request->nid_number;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('storage/user/', $filename);
+            $user->profile()->image = '/storage/user/' . $filename;
+        }
+
+        $user->save();
+        return redirect()->route('seller.profileviews');
+    }
     public function create()
     {
         //
@@ -95,10 +125,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->username = $request->username;
         $user->email = $request->email;
-        $user->phone = $request->phone;
         $user->role_name = $request->role_name;
-        $user->license_number = $request->license_number;
-        $user->nid_number = $request->nid_number;
         if ($request->password) {
             $user->password = Hash::make($request->password);
         }
@@ -106,8 +133,6 @@ class UserController extends Controller
         if ($request->roles) {
             $user->assignRole($request->roles);
         }
-        //user profile image
-        $user->image_name = 'image.jpg';
 
         $data = $user->save();
 

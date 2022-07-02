@@ -9,12 +9,13 @@
 <div class="content-header">
   <section style="background-color: #eee;">
     <div class="container py-5">
-      <div class="row">
+      <div class="row ">
         <div class="col" style="margin-top: -30px">
           <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
             <ol class="breadcrumb mb-0">
               <li class="breadcrumb-item"><a href="{{ route('seller.sellerDashboard') }}">Dashboard</a></li>
               <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+              <div class="float-right d-block ml-3"><a href="{{ route('seller.editprofile') }}" role="button" class="btn btn-success btn-sm">Edit Profile</a></div>
             </ol>
           </nav>
         </div>

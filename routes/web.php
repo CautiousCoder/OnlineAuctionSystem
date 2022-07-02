@@ -98,6 +98,8 @@ Route::prefix('users/seller')->name('seller.')->group(function () {
 
         //profile
         Route::get('/profile', [UserController::class, 'profileview'])->name('profileviews');
+        Route::get('/profile/edit', [UserController::class, 'editprofile'])->name('editprofile');
+        Route::post('/update/profile', [UserController::class, 'storeprofile'])->name('storeprofile');
 
         //create product
         Route::resource('category', CategoryController::class);
@@ -120,5 +122,6 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
         Route::post('/logout', [LoginController::class, 'buyerlogout'])->name('buyerlogout');
         Route::get('/home', [FrontEndController::class, 'views'])->name('home');
         Route::get('/profile', [UserController::class, 'profileviews'])->name('profileviews');
+        Route::get('/profile/edit', [UserController::class, 'editprofile'])->name('editprofile');
     });
 });
