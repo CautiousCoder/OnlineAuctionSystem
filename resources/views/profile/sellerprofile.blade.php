@@ -24,7 +24,7 @@
         <div class="col-lg-4">
           <div class="card mb-4">
             <div class="card-body text-center">
-              <img src="{{ $user->profile->phone ?? 'https://i.postimg.cc/fbP26sDD/user.png' }}" alt="avatar"
+              <img src="{{ $user->profile->image_name ?? 'https://i.postimg.cc/fbP26sDD/user.png' }}" alt="avatar"
                 class="rounded-circle img-fluid" style="width: 150px;">
               <h5 class="my-3">{{ $user->username }}</h5>
               <p class="text-muted mb-1">{{ $user->profile->designation ?? '' }}</p>
