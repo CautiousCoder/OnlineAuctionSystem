@@ -9,9 +9,9 @@
  @include('backend.layouts.inc.style')
 </head>
 <body class="hold-transition register-page login-page">
-
+<div class="mt-4">
   @yield('signinpage')
-
+</div>
  <!-- script link -->
  @include('backend.layouts.inc.scripts')
 </body>

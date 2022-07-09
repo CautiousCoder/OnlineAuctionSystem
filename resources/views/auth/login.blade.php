@@ -5,6 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <img src="" alt="Signup">
+            </div>
+            <div class="card mt-4">
                 <div class="card-header">{{ __('Buyer Login') }}</div>
 
                 <div class="card-body">

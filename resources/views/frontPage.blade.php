@@ -23,8 +23,8 @@
           </form> --}}
 
           <div class="text-end">
-            <button type="button" class="btn btn-lg btn-light me-2">Login</button>
-            <button type="button" class="btn btn-lg btn-warning">Sign-up</button>
+            <a href="{{ route('buyer.buyerloginshow') }}" class="btn btn-lg btn-light me-2">Login</a>
+            <a href="{{ route('buyer.buyerregister') }}" class="btn btn-lg btn-warning">Signup</a>
           </div>
         </div>
       </div>
