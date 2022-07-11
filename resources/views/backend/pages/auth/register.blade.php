@@ -1,14 +1,14 @@
 @extends('backend.layouts.registerlayout')
 
 @section('signintitle')
-    Register | Member Registration
+    Register | Admin Registration
 @endsection
 @section('signinpage')
       <!-- register-box -->
 <div class="register-box">
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Online</b>AUCTION</a>
+      <a href="javascript:void(0);alert('Hello ! I am here')" class="h1"><b>Online</b>AUCTION</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Register a new membership</p>

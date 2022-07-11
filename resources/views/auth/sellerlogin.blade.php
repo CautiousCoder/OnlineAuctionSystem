@@ -4,10 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Seller Login') }}</div>
-
+            <div class="card mt-5">
+                <div class="card-header text-center">
+                   <a style="text-decoration: none" href="javascript:void(0);alert('Hello ! I am here')" class="h1"><b>seller</b>LOGIN</a>
+                </div>
                 <div class="card-body">
+                    <p class="login-box-msg text-center">Sign in to start your session</p>
                     <form method="POST" action="{{ route('seller.login') }}">
                         @csrf
 

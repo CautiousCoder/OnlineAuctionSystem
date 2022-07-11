@@ -1,7 +1,7 @@
 @extends('backend.layouts.registerlayout')
 
 @section('signintitle')
-LogIn | Member LogIn
+LogIn | User LogIn
 @endsection
 @section('signinpage')
 <!-- login-box -->
@@ -9,7 +9,7 @@ LogIn | Member LogIn
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Online</b>AUCTION</a>
+      <a href="javascript:void(0);alert('Hello ! I am here')" class="h1"><b>Online</b>AUCTION</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>

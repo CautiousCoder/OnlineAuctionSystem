@@ -4,12 +4,10 @@
 <div class="container">
     <div class="row justify-content-center mt-3">
         <div class="col-md-8 mt-4">
-            <div class="mb-2">
-                <img src="" alt="Signup">
-            </div>
             <div class="card">
-                <div class="card-header">{{ __('Buyer Register') }}</div>
-
+                <div class="card-header text-center">
+                <a style="text-decoration: none" href="javascript:void(0);alert('Hello ! I am here')" class="h1"><b>buyer</b>Register</a>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('buyer.register') }}">
                         @csrf
