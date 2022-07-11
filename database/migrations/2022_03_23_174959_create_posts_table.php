@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('regular_prize')->default(10);
             $table->integer('sale_prize')->default(10);
             $table->string('SKU')->nullable();
+            $table->integer('stock')->default(0);
             $table->enum('stock_status', ['instock', 'outofstock']);
             $table->string('image')->nullable();
             $table->string('images')->nullable();
