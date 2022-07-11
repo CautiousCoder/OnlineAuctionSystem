@@ -5,3 +5,13 @@
   .header-nav-section .menu-nav li {
     padding: 15px 3% 13px !important;
 }
+
+.centerbox {
+  width: 50%;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+}
+.centerbox h2 {
+  font-size: 48px;
+}
