@@ -134,7 +134,7 @@
 								</div>
 								<div class="product-info">
 									<a href="#" class="product-name"><span>{{ $item->title }}</span></a> @if ( $item->regular_prize ) <div
-										class="product-name mb-1"><span>Current Prize : {{ $item->regular_prize }} <i class="fa-solid fa-dollar-sign"></i></span></div> @endif @if ( $item->end_date ) 
+										class="product-name mb-1"><span>Current Prize : <i class="fa-solid fa-dollar-sign"></i> {{ $item->regular_prize }}</span></div> @endif @if ( $item->end_date ) 
 										<div class="product-name mb-2"><span>End Bid : {{ $item->end_date }}</span></div> @endif <a href="#"
 										class="btn btn-success text-center" target="_blank" rel="noopener noreferrer">Bid Now</a>
 								</div>

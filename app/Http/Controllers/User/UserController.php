@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -106,6 +107,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->username = $request->username;
+        $user->slug = Str::slug($request->username, '-') . rand(000000001, 999999999);
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->phone = $request->phone;

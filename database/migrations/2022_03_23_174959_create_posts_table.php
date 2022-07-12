@@ -33,7 +33,7 @@ return new class extends Migration
             $table->integer('count_comment')->unsigned()->default(0);
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
-            $table->string('bit_status')->default('0');
+            $table->string('bit_status')->default('1');
             $table->timestamp('publish_at')->nullable();
             $table->timestamps();
         });

@@ -40,22 +40,25 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     //show buyer login form
-    public function buyerloginshow(){
+    public function buyerloginshow()
+    {
         return view('auth.login');
     }
     //show sellerl ogin form
-    public function sellerloginshow(){
+    public function sellerloginshow()
+    {
         return view('auth.sellerlogin');
     }
 
-     //login function
-     public function buyerloginsubmit(Request $request){
+    //login function
+    public function buyerloginsubmit(Request $request)
+    {
         // validate data
 
-        $this->validate($request,[
+        $this->validate($request, [
             'email' => 'required|email|max:100',
             'password' => 'required|max:16|min:8',
-        ],[
+        ], [
             'email.required' => 'Please enter an email address.',
             'password.required' => 'Please enter a current password.',
         ]);
@@ -64,21 +67,22 @@ class LoginController extends Controller
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // Authentication passed...
             Session()->flash('success', 'LogIn Successfully.!');
-            return redirect()->intended(route('buyer.buyerDashboard'));
-        }else{
+            return redirect()->intended(route('buyer.home'));
+        } else {
             Session()->flash('error', 'LogIn Failed.! Please Correct Email and Password.');
             return back();
         }
     }
 
     //login function
-    public function sellerloginsubmit(Request $request){
+    public function sellerloginsubmit(Request $request)
+    {
         // validate data
 
-        $this->validate($request,[
+        $this->validate($request, [
             'email' => 'required|email|max:100',
             'password' => 'required|max:16|min:8',
-        ],[
+        ], [
             'email.required' => 'Please enter an email address.',
             'password.required' => 'Please enter a current password.',
         ]);
@@ -87,8 +91,8 @@ class LoginController extends Controller
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // Authentication passed...
             Session()->flash('success', 'LogIn Successfully.!');
-            return redirect()->intended(route('seller.sellerDashboard'));
-        }else{
+            return redirect()->intended(route('seller.home'));
+        } else {
             Session()->flash('error', 'LogIn Failed.! Please Correct Email and Password.');
             return back();
         }
@@ -96,14 +100,16 @@ class LoginController extends Controller
 
 
     //Buyer logout
-    public function buyerlogout(){
+    public function buyerlogout()
+    {
         Auth::guard('web')->logout();
-        return redirect()->route('buyer.buyerlogout');
+        return redirect()->route('front_page');
     }
 
-     //Seller logout
-     public function sellerlogout(){
+    //Seller logout
+    public function sellerlogout()
+    {
         Auth::guard('web')->logout();
-        return redirect()->route('seller.sellerloginshow');
+        return redirect()->route('front_page');
     }
 }
