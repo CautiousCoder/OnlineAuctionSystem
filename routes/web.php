@@ -122,6 +122,9 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
         Route::post('/logout', [LoginController::class, 'buyerlogout'])->name('buyerlogout');
         Route::get('/home', [FrontEndController::class, 'views'])->name('home');
 
+        //product
+        Route::get('/product/{slug}', [FrontEndController::class, 'productshow'])->name('showproduct');
+
         //profile
         Route::get('/profile', [UserController::class, 'profileview'])->name('profileviews');
         Route::get('/profile/edit', [UserController::class, 'editprofile'])->name('editprofile');

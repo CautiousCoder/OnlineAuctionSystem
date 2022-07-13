@@ -1,8 +1,8 @@
 
 @extends('layouts.app')
 
-@section('title')
-		Detail
+@section('ftitle')
+		{{ $product->title }}
 @endsection
 
 @section('content')
@@ -24,7 +24,7 @@
 
 							    <li data-thumb="{{ asset('frontend') }}/images/products/digital_18.jpg">
 							    	<img src="{{ asset('frontend') }}/images/products/digital_18.jpg" alt="product thumbnail" />
-							    </li>
+							    </li>Magni
 
 							    <li data-thumb="{{ asset('frontend') }}/images/products/digital_17.jpg">
 							    	<img src="{{ asset('frontend') }}/images/products/digital_17.jpg" alt="product thumbnail" />
@@ -66,20 +66,18 @@
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <a href="#" class="count-review">(05 review)</a>
                             </div>
-                            <h2 class="product-name">Radiant-360 R6 Wireless Omnidirectional Speaker [White]</h2>
+                            <h2 class="product-name">{{ $product->title }}</h2>
                             <div class="short-desc">
                                 <ul>
-                                    <li>7,9-inch LED-backlit, 130Gb</li>
-                                    <li>Dual-core A7 with quad-core graphics</li>
-                                    <li>FaceTime HD Camera 7.0 MP Photos</li>
+                                    {{ $product->sort_description }}
                                 </ul>
                             </div>
                             <div class="wrap-social">
                             	<a class="link-socail" href="#"><img src="{{ asset('frontend') }}/images/social-list.png" alt=""></a>
                             </div>
-                            <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                            <div class="wrap-price"><span class="product-price">${{ $product->regular_prize }}</span></div>
                             <div class="stock-info in-stock">
-                                <p class="availability">Availability: <b>In Stock</b></p>
+                                <p class="availability">Availability: <b>{{ $product->stock_status }}</b></p>
                             </div>
                             <div class="quantity">
                             	<span>Quantity:</span>
@@ -106,9 +104,7 @@
 							</div>
 							<div class="tab-contents">
 								<div class="tab-content-item active" id="description">
-									<p>Lorem ipsum dolor sit amet, an munere tibique consequat mel, congue albucius no qui, a t everti meliore erroribus sea. ro cum. Sea ne accusata voluptatibus. Ne cum falli dolor voluptua, duo ei sonet choro facilisis, labores officiis torquatos cum ei.</p>
-									<p>Cum altera mandamus in, mea verear disputationi et. Vel regione discere ut, legere expetenda ut eos. In nam nibh invenire similique. Atqui mollis ea his, ius graecis accommodare te. No eam tota nostrum eque. Est cu nibh clita. Sed an nominavi, et stituto, duo id rebum lucilius. Te eam iisque deseruisse, ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus taria . </p>
-									<p>experian soleat maluisset per. Has eu idque similique, et blandit scriptorem tatibus mea. Vis quaeque ocurreret ea.cu bus  scripserit, modus voluptaria ex per.</p>
+									{{ $product->description }}
 								</div>
 								<div class="tab-content-item " id="add_infomation">
 									<table class="shop_attributes">

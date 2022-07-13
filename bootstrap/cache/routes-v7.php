@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Eb9lf8gaKM8p13au',
+            '_route' => 'generated::Z6aahqstCSMFTqMB',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::g0D7c9jFQtryoLDf',
+            '_route' => 'generated::TB213zXJ7OlHg894',
           ),
           1 => NULL,
           2 => 
@@ -447,7 +447,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::iQC0Pyb1dEQqMmNT',
+            '_route' => 'generated::pZ28ABI5jCXSg9fi',
           ),
           1 => NULL,
           2 => 
@@ -1024,7 +1024,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))))/?$}sDu',
+      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))|buyer/product/([^/]++)(*:336)))/?$}sDu',
     ),
     3 => 
     array (
@@ -1555,7 +1555,30 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
-        2 => 
+      ),
+      336 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.showproduct',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
         array (
           0 => NULL,
           1 => NULL,
@@ -1571,7 +1594,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::Eb9lf8gaKM8p13au' => 
+    'generated::Z6aahqstCSMFTqMB' => 
     array (
       'methods' => 
       array (
@@ -1592,7 +1615,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::Eb9lf8gaKM8p13au',
+        'as' => 'generated::Z6aahqstCSMFTqMB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1717,7 +1740,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::g0D7c9jFQtryoLDf' => 
+    'generated::TB213zXJ7OlHg894' => 
     array (
       'methods' => 
       array (
@@ -1734,13 +1757,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000047e0000000000000000";}";s:4:"hash";s:44:"a7ICzU24IA1q7a9mQ+nuqqVzq70HEANQyO+PtL0sh9Y=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004b70000000000000000";}";s:4:"hash";s:44:"sKjpXmrNz3VgHZ4iNW6tzlf46bM/2FwFxhNJEVQfVLU=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::g0D7c9jFQtryoLDf',
+        'as' => 'generated::TB213zXJ7OlHg894',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1774,7 +1797,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:284:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:66:"function () {
     return \\view(\'backend.pages.admin.dashboard\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004800000000000000000";}";s:4:"hash";s:44:"xj3FjX+OyuFUkVdGSz1n6aJIniUlk/yK0QnAMUmZ1Qc=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004b90000000000000000";}";s:4:"hash";s:44:"fOxb/ugoG9NGUpqMJY6j0UnJ4NBL2n1gxVCUCTuoT4I=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -2858,7 +2881,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::iQC0Pyb1dEQqMmNT' => 
+    'generated::pZ28ABI5jCXSg9fi' => 
     array (
       'methods' => 
       array (
@@ -2879,7 +2902,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::iQC0Pyb1dEQqMmNT',
+        'as' => 'generated::pZ28ABI5jCXSg9fi',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4352,6 +4375,45 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\FrontEndController@views',
         'controller' => 'App\\Http\\Controllers\\FrontEndController@views',
         'as' => 'buyer.home',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.showproduct' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/product/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\FrontEndController@productshow',
+        'controller' => 'App\\Http\\Controllers\\FrontEndController@productshow',
+        'as' => 'buyer.showproduct',
         'namespace' => NULL,
         'prefix' => '/users/buyer',
         'where' => 

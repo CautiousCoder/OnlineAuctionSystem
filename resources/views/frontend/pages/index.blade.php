@@ -6,7 +6,7 @@
 
 @section('content')
 			<!--MAIN SLIDE-->
-			<div class="wrap-main-slide">
+			<div class="wrap-main-slide mb-2">
 				<div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
 					@foreach ($slidebid as $fst)
 					<div class="item-slide">
@@ -84,7 +84,7 @@
 								<span class="flash-item sale-label">{{ $bp->stock_status }}</span>
 							</div>
 							<div class="wrap-btn">
-								<a href="#" class="function-link">quick view</a>
+								<a href="{{ route('buyer.showproduct', ['slug' => $bp->slug]) }}" class="function-link">quick view</a>
 							</div>
 						</div>
 						<div class="product-info">

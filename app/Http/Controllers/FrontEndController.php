@@ -26,4 +26,11 @@ class FrontEndController extends Controller
         $allbid = $bidingPost->slice(2, 9);
         return view('frontend.pages.index', compact(['bidPost', 'allbid', 'fstbidigngpost', 'scdbidigngpost', 'slidebid', 'slidebid1', 'slidebid2']));
     }
+
+    //show product
+    public function productshow($slug)
+    {
+        $product = Post::with('categories', 'tags', 'user')->where(['slug' => $slug])->first();
+        return view('frontend.pages.detail', compact('product'));
+    }
 }
