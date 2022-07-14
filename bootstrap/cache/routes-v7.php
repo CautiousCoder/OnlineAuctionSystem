@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Z6aahqstCSMFTqMB',
+            '_route' => 'generated::I3ziPRb7VpH348Tu',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::TB213zXJ7OlHg894',
+            '_route' => 'generated::O5goENLRP838MIUc',
           ),
           1 => NULL,
           2 => 
@@ -447,7 +447,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::pZ28ABI5jCXSg9fi',
+            '_route' => 'generated::eF2v9PLjHPbqBig7',
           ),
           1 => NULL,
           2 => 
@@ -1024,7 +1024,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))|buyer/product/([^/]++)(*:336)))/?$}sDu',
+      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))|buyer/(?|product/([^/]++)(*:339)|category/([^/]++)(*:364))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1556,13 +1556,36 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      336 => 
+      339 => 
       array (
         0 => 
         array (
           0 => 
           array (
             '_route' => 'buyer.showproduct',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      364 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.showcategory',
           ),
           1 => 
           array (
@@ -1594,7 +1617,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::Z6aahqstCSMFTqMB' => 
+    'generated::I3ziPRb7VpH348Tu' => 
     array (
       'methods' => 
       array (
@@ -1615,7 +1638,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::Z6aahqstCSMFTqMB',
+        'as' => 'generated::I3ziPRb7VpH348Tu',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1740,7 +1763,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::TB213zXJ7OlHg894' => 
+    'generated::O5goENLRP838MIUc' => 
     array (
       'methods' => 
       array (
@@ -1757,13 +1780,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004b70000000000000000";}";s:4:"hash";s:44:"sKjpXmrNz3VgHZ4iNW6tzlf46bM/2FwFxhNJEVQfVLU=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000047e0000000000000000";}";s:4:"hash";s:44:"a7ICzU24IA1q7a9mQ+nuqqVzq70HEANQyO+PtL0sh9Y=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::TB213zXJ7OlHg894',
+        'as' => 'generated::O5goENLRP838MIUc',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1797,7 +1820,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:284:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:66:"function () {
     return \\view(\'backend.pages.admin.dashboard\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004b90000000000000000";}";s:4:"hash";s:44:"fOxb/ugoG9NGUpqMJY6j0UnJ4NBL2n1gxVCUCTuoT4I=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004800000000000000000";}";s:4:"hash";s:44:"xj3FjX+OyuFUkVdGSz1n6aJIniUlk/yK0QnAMUmZ1Qc=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -2881,7 +2904,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::pZ28ABI5jCXSg9fi' => 
+    'generated::eF2v9PLjHPbqBig7' => 
     array (
       'methods' => 
       array (
@@ -2902,7 +2925,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::pZ28ABI5jCXSg9fi',
+        'as' => 'generated::eF2v9PLjHPbqBig7',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4414,6 +4437,45 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\FrontEndController@productshow',
         'controller' => 'App\\Http\\Controllers\\FrontEndController@productshow',
         'as' => 'buyer.showproduct',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.showcategory' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/category/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\FrontEndController@showcategory',
+        'controller' => 'App\\Http\\Controllers\\FrontEndController@showcategory',
+        'as' => 'buyer.showcategory',
         'namespace' => NULL,
         'prefix' => '/users/buyer',
         'where' => 

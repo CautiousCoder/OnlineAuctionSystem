@@ -160,7 +160,7 @@ class PostController extends Controller
         $posts->categories()->sync($request->categories_id);
         $posts->tags()->sync($request->tags);
         Session()->flash('success', 'Post Updated Successfully.!');
-        return redirect()->back();
+        return redirect()->route('seller.post.index');
     }
 
     /**

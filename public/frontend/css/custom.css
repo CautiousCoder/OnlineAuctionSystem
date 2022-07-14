@@ -15,3 +15,6 @@
 .centerbox h2 {
   font-size: 48px;
 }
+.banner-item:hover{
+  background: rgba(0, 0, 0, 0.192);
+}

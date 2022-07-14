@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $categories = Category::take(5)->get();
+        $categories = Category::orderBy('created_at', 'DESC')->with('posts')->take(5)->get();
         view::share('categories', $categories);
     }
 }

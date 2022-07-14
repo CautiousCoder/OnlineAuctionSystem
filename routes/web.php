@@ -124,6 +124,7 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
 
         //product
         Route::get('/product/{slug}', [FrontEndController::class, 'productshow'])->name('showproduct');
+        Route::get('/category/{slug}', [FrontEndController::class, 'showcategory'])->name('showcategory');
 
         //profile
         Route::get('/profile', [UserController::class, 'profileview'])->name('profileviews');
