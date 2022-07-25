@@ -40,6 +40,7 @@ return array(
     'App\\Mail\\mailTemplate' => $baseDir . '/app/Mail/mailTemplate.php',
     'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Models\\Balance' => $baseDir . '/app/Models/Balance.php',
+    'App\\Models\\Bid' => $baseDir . '/app/Models/Bid.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Post' => $baseDir . '/app/Models/Post.php',
     'App\\Models\\Tag' => $baseDir . '/app/Models/Tag.php',

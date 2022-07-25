@@ -556,6 +556,7 @@ class ComposerStaticInitcbacd005ce0f6769a9830c434233150e
         'App\\Mail\\mailTemplate' => __DIR__ . '/../..' . '/app/Mail/mailTemplate.php',
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Balance' => __DIR__ . '/../..' . '/app/Models/Balance.php',
+        'App\\Models\\Bid' => __DIR__ . '/../..' . '/app/Models/Bid.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\Tag' => __DIR__ . '/../..' . '/app/Models/Tag.php',
