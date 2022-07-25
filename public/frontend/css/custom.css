@@ -15,6 +15,25 @@
 .centerbox h2 {
   font-size: 48px;
 }
-.banner-item:hover{
+.dfix {
+  overflow: hidden;
+}
+.banner-item1 {
+  padding: 20px;
+  text-align: center;
+  transition: 500ms;
+}
+.banner-item1:hover{
   background: rgba(0, 0, 0, 0.192);
+  transform: scale(1.2);
+}
+.carousel-caption {
+    bottom: 6.25rem;
+    text-align: left !important;
+}
+.product-style-2 {
+    padding: 19px 0px 0px 0px !important;
+}
+.product-info {
+  padding: 15px 8px;
 }

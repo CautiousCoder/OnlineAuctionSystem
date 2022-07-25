@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div>
 	<div class="row">
 		<div class="topbar-menu-area">
 			<div class="container">
