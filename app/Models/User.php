@@ -55,6 +55,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(profile::class, 'user_id');
     }
+
+    public function balance()
+    {
+        return $this->hasOne(Balance::class, 'user_id');
+    }
     //Find permission group name
     public static function getPermissionNames()
     {
