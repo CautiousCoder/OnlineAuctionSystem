@@ -24,7 +24,7 @@
   transition: 500ms;
 }
 .banner-item1:hover{
-  background: rgba(0, 0, 0, 0.192);
+  background: rgba(0, 0, 0, 0.12);
   transform: scale(1.2);
 }
 .carousel-caption {
@@ -37,3 +37,21 @@
 .product-info {
   padding: 15px 8px;
 }
+.product-style-2 {
+  position: relative;
+}
+.popup {
+  position: absolute;
+  bottom: 0%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  transform: translate(0%,45%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.4s, bottom 0.4s;
+}
+.open-popup {
+  bottom: 60%;
+  transform: translate(0%,0%) scale(1);
+}
+

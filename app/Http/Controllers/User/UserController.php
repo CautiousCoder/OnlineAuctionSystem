@@ -23,6 +23,7 @@ class UserController extends Controller
     public function profileview()
     {
         $user = User::find(Auth::guard('web')->user()->id);
+        //dd($user->balance());
         return view('profile.sellerprofile', compact(['user']));
     }
     public function editprofile()

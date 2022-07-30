@@ -191,7 +191,7 @@
 							<div class="tab-content-item active" id="digital_1a">
 								<div class="row mx-2">
 									@foreach ($allbidpost as $bidpost)
-									<div class="col-3 my-2">
+									<div class="col-4 my-2">
 										<div class="product product-style-2 equal-elem" style="box-shadow: 1px 2px 5px">
 											<div class="product-thumnail">
 												<a href="{{ route('buyer.showproduct', ['slug' => $bidpost->slug]) }}" title="{{ $bidpost->title }}">
@@ -206,8 +206,44 @@
 											</div>
 											<div class="product-info bg-secondary text-white">
 												<a href="{{ route('buyer.showproduct', ['slug' => $bidpost->slug]) }}" class="product-name"><span class="text-white" style="font-size: 16px">{{ $bidpost->title }}</span></a>
-												<div class="wrap-price"><span class="product-price text-white"><b>Prize : </b>${{ $bidpost->regular_prize }}</span></div>
-												<a href="#" class="btn btn-success text-white">Bid Now</a>
+												
+												{{-- <div class="popup" id="popup">
+													<div class="card card-primary">
+														<div class="card-header text-center">
+															<h3 class="card-title my-2 text-black" style="font-weight: 700">ON BID</h3>
+															<span class="float-right" style="font-size: 24px">X</span>
+														</div>
+														<form>
+															<div class="card-body">
+																<div class="form-group" style="margin-top: 0px !important;">
+																	<h2 class="text-black" style="font-size: 14px; margin: 0px !important"><span style="font-weight: 700">CURRENT BID</span> <span style="font-size: 32px; margin-left:20px; color:black;">${{ $bidpost->regular_prize }}</span></h2>
+																</div>
+																<div class="form-group">
+																	<input type="number" min="{{ $bidpost->regular_prize }}+10" class="form-control" id="inputbid" placeholder="Enter Your Amount">
+																</div>
+															</div>
+
+															<div class="card-footer text-center">
+																<button type="submit" class="btn btn-primary my-3">Submit</button>
+															</div>
+														</form>
+													</div>
+												</div>  --}}
+												<div class="card card-primary bg-info p-3 mt-2">
+														<form>
+															<div class="card-body pb-0">
+																<div class="form-group">
+																	<input type="number" min="{{ $bidpost->regular_prize }}+10" class="form-control" id="inputbid" placeholder="Enter Your Amount">
+																</div>
+															</div>
+
+															<div class="btn-bid d-flex justify-content-between my-2">
+																<b class="wrap-price"><span style="font-size: 22px" class="product-price text-black">Current Prize : ${{ $bidpost->regular_prize }}</span></b>
+																<button type="submit" class="btn btn-success text-white">Bid Now</button>
+															</div>
+														</form>
+													</div>
+												
 											</div>
 										</div>
 									</div>
@@ -799,5 +835,12 @@
 	<script src="{{ asset('frontend') }}/js/jquery.countdown.min.js"></script>
 	<script src="{{ asset('frontend') }}/js/jquery.sticky.js"></script>
 	<script src="{{ asset('frontend') }}/js/functions.js"></script>
+	<script>
+		let poppup = document.getElementById('popup');
+			function openPopUp48() {
+				//poppup.css('display':'none');
+				document.querySelector(".popup").css('display':'none');
+			}
+	</script>
 @endsection
 

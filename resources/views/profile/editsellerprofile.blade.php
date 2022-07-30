@@ -1,4 +1,4 @@
-@extends('backend.layouts.layout')
+@extends('backend.layouts.balancelayout')
 <!-- Title (Page title) --> 
 @section('title') 
   Profile - {{ Auth::guard('web')->user()->username }}

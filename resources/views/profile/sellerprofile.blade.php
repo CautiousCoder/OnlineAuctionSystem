@@ -1,4 +1,4 @@
-@extends('backend.layouts.layout')
+@extends('backend.layouts.balancelayout')
 <!-- Title (Page title) --> 
 @section('title') 
   Profile - {{ Auth::guard('web')->user()->username }}
@@ -9,16 +9,22 @@
 <div class="content-header">
   <section style="background-color: #eee;">
     <div class="container py-5">
-      <div class="row ">
-        <div class="col" style="margin-top: -30px">
-          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-            <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="{{ route('seller.sellerDashboard') }}">Dashboard</a></li>
-              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
-              <div class="float-right d-block ml-3"><a href="{{ route('seller.editprofile') }}" role="button" class="btn btn-success btn-sm">Edit Profile</a></div>
-            </ol>
-          </nav>
-        </div>
+      <div class="col" style="margin-top: -30px">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <div class="row">
+            <div class="col-md-6">
+              <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{{ route('buyer.buyerDashboard') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+              </ol>
+            </div>
+            <div class="col-md-6">
+              <ol class="breadcrumb mb-0 float-right">
+                <li class="breadcrumb-item"><a style="border-bottom: 2px solid #000;padding:5px 8px;" href="{{ route('buyer.buyerDashboard') }}">${{ $user->balance->total_bal ?? 'None' }}</a></li>
+              </ol>
+            </div>
+          </div>
+        </nav>
       </div>
       <div class="row">
         <div class="col-lg-4">

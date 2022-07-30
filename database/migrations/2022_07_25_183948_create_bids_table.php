@@ -18,7 +18,13 @@ return new class extends Migration
             $table->foreignId('post_id')->constrained('posts')->cascadeOnDelete();
             $table->string('bid_id')->unique();
             $table->integer('bit_status')->default(0);
-            $table->string('winner')->nullable();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->timestamps();
+        });
+
+        Schema::create('bid_user', function (Blueprint $table) {
+            $table->increments('id');
+            $table->foreignId('bid_id')->constrained('bids')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });
@@ -32,5 +38,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('bids');
+        Schema::dropIfExists('bid_user');
     }
 };

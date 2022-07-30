@@ -130,5 +130,8 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
         Route::get('/profile', [UserController::class, 'profileview'])->name('profileviews');
         Route::get('/profile/edit', [UserController::class, 'editprofile'])->name('editprofile');
         Route::post('/update/profile', [UserController::class, 'storeprofile'])->name('storeprofile');
+
+        //balance
+        Route::get('/profile/add-balance', [UserController::class, 'addbalance'])->name('addbalance');
     });
 });
