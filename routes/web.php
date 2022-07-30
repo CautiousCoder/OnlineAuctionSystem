@@ -133,5 +133,6 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
 
         //balance
         Route::get('/profile/add-balance', [UserController::class, 'addbalance'])->name('addbalance');
+        Route::post('/profile/balance-add', [UserController::class, 'balancestore'])->name('balancestore');
     });
 });

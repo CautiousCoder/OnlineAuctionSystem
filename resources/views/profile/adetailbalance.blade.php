@@ -64,34 +64,47 @@
           </div>
         </div>
         <div class="col-lg-8">
-            <div class="card card-info">
+          <div class="card card-info">
             <div class="card-header">
-            <h3 class="card-title">Add Balance</h3>
+              <h3 class="card-title">Balance Details</h3>
             </div>
-            <form action="{{ route('buyer.balancestore') }}" method="POST">
-              @csrf
-              <div class="card-body">
-                @include('backend.inc.error')
-              <div class="form-group">
-              <label>Select Your Payment Method</label>
-                <select class="form-control" disabled>
-                  <option>BKash</option>
-                  <option>Rocket</option>
-                  <option>Nogot</option>
-                </select>
-              </div>
-              <label class="d-block">Enter Amount</label>
-              <div class="input-group mb-3">
-                <input type="number" name="new_bal" class="form-control" placeholder="10 (minimum)">
-                <div class="input-group-append">
-                  <span class="input-group-text">.00</span>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Balance</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{ $user->balance->new_bal ?? 'None' }}</p>
                 </div>
               </div>
-            </div>
-            <div class="card-footer mb-2">
-              <button type="submit" class="btn btn-lg btn-primary m-auto">Submit</button>
-            </div>
-            </form>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">TnxID</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{ $user->balance->tnxid ?? 'None' }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Status</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{ $user->balance->tnx_status ?? 'None' }}</p>
+                </div>
+              </div>
+              <hr>
+              {{-- <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Description</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{ $user->balance->des ?? 'None' }}</p>
+                </div>
+              </div>
+              <hr> --}}
             </div>
           </div>
         </div>

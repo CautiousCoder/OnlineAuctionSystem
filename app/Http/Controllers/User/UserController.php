@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Balance;
 use App\Models\profile;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -30,6 +31,45 @@ class UserController extends Controller
     {
         $user = User::find(Auth::guard('web')->user()->id);
         return view('profile.editsellerprofile', compact('user'));
+    }
+
+    public function addbalance()
+    {
+        $user = User::find(Auth::guard('web')->user()->id);
+        return view('profile.addbalance', compact('user'));
+    }
+
+    public function balancestore(Request $request)
+    {
+        //dd($request->all());
+        $user = User::find(Auth::guard('web')->user()->id);
+        $addbal = Balance::where('user_id', Auth::guard('web')->user()->id)->first();
+        $total_balance = $user->balance->total_bal;
+        if (!$addbal) {
+            $this->validate($request, [
+                'new_bal' => 'required|numeric|min:10|unique:balances,new_bal',
+            ], [
+                'new_bal.required' => 'This feild must be required',
+                'new_bal.min' => 'A minimum Deposit of 10 is required.',
+            ]);
+            $balance = new Balance();
+            $balance->user_id = Auth::guard('web')->user()->id;
+            $balance->old_bal = $total_balance;
+            $balance->new_bal = $request->new_bal;
+            $balance->total_bal = $balance->new_bal + $total_balance;
+            $balance->tnx_status = 'Pending';
+            $balance->tnxid = 'TnxID' . rand(00001, 99999);
+            //dd($request->all());
+            $balance->save();
+        } else {
+            $addbal->old_bal = $total_balance;
+            $addbal->new_bal = $request->new_bal;
+            $addbal->total_bal = $addbal->new_bal + $total_balance;
+            $addbal->tnx_status = 'Pending';
+            $addbal->tnxid = 'TnxID' . rand(00001, 99999);
+            $addbal->save();
+        }
+        return redirect()->route('buyer.addbalance');
     }
     public function storeprofile(Request $request)
     {

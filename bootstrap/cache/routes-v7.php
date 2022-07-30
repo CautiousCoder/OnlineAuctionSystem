@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::I3ziPRb7VpH348Tu',
+            '_route' => 'generated::mIp69trQe6PvIWwC',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::O5goENLRP838MIUc',
+            '_route' => 'generated::wF476K6g2ueV6hTh',
           ),
           1 => NULL,
           2 => 
@@ -447,7 +447,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::eF2v9PLjHPbqBig7',
+            '_route' => 'generated::tJsPfpUtctqnDf7C',
           ),
           1 => NULL,
           2 => 
@@ -1009,6 +1009,45 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'buyer.storeprofile',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/profile/add-balance' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.addbalance',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/profile/balance-add' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.balancestore',
           ),
           1 => NULL,
           2 => 
@@ -1617,7 +1656,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::I3ziPRb7VpH348Tu' => 
+    'generated::mIp69trQe6PvIWwC' => 
     array (
       'methods' => 
       array (
@@ -1638,7 +1677,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::I3ziPRb7VpH348Tu',
+        'as' => 'generated::mIp69trQe6PvIWwC',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1763,7 +1802,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::O5goENLRP838MIUc' => 
+    'generated::wF476K6g2ueV6hTh' => 
     array (
       'methods' => 
       array (
@@ -1780,13 +1819,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000000000047e0000000000000000";}";s:4:"hash";s:44:"a7ICzU24IA1q7a9mQ+nuqqVzq70HEANQyO+PtL0sh9Y=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000005f80000000000000000";}";s:4:"hash";s:44:"645hm550aBAVwaKz+lPCcwZJhxrJ/uwyFZEZVEmLQhY=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::O5goENLRP838MIUc',
+        'as' => 'generated::wF476K6g2ueV6hTh',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1820,7 +1859,7 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:284:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:66:"function () {
     return \\view(\'backend.pages.admin.dashboard\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004800000000000000000";}";s:4:"hash";s:44:"xj3FjX+OyuFUkVdGSz1n6aJIniUlk/yK0QnAMUmZ1Qc=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000005fa0000000000000000";}";s:4:"hash";s:44:"RMb8pYjfGbyuy6wdIxeldt7MxTGMcfAqi36PtTzQI50=";}}',
         'namespace' => NULL,
         'prefix' => '',
         'where' => 
@@ -2904,7 +2943,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::eF2v9PLjHPbqBig7' => 
+    'generated::tJsPfpUtctqnDf7C' => 
     array (
       'methods' => 
       array (
@@ -2925,7 +2964,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::eF2v9PLjHPbqBig7',
+        'as' => 'generated::tJsPfpUtctqnDf7C',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4592,6 +4631,83 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@storeprofile',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@storeprofile',
         'as' => 'buyer.storeprofile',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.addbalance' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/profile/add-balance',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@addbalance',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@addbalance',
+        'as' => 'buyer.addbalance',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.balancestore' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/buyer/profile/balance-add',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\UserController@balancestore',
+        'controller' => 'App\\Http\\Controllers\\User\\UserController@balancestore',
+        'as' => 'buyer.balancestore',
         'namespace' => NULL,
         'prefix' => '/users/buyer',
         'where' => 

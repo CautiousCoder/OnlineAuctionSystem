@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-6">
               <ol class="breadcrumb mb-0 float-right">
-                <li class="breadcrumb-item"><a style="border-bottom: 2px solid #000;padding:5px 8px;" href="{{ route('buyer.buyerDashboard') }}">${{ $user->balance->total_bal ?? 'None' }}</a></li>
+                <li class="breadcrumb-item"><a style="border-bottom: 2px solid #000;padding:5px 8px;" href="{{ route('buyer.addbalance') }}">${{ $user->balance->total_bal ?? 'None' }}</a></li>
               </ol>
             </div>
           </div>
