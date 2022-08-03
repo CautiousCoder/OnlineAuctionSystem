@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BackEnd\RoleController;
 use App\Http\Controllers\BackEnd\Auth\AdminLoginController;
 use App\Http\Controllers\BackEnd\Auth\AdminResetPasswordController;
+use App\Http\Controllers\BidController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
@@ -134,5 +135,9 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
         //balance
         Route::get('/profile/add-balance', [UserController::class, 'addbalance'])->name('addbalance');
         Route::post('/profile/balance-add', [UserController::class, 'balancestore'])->name('balancestore');
+
+        //Dids
+        //Route::get('/profile/add-balance', [BidController::class, 'addbalance'])->name('addbalance');
+        Route::post('/online-biding/{slug}', [BidController::class, 'bid'])->name('bidstore');
     });
 });

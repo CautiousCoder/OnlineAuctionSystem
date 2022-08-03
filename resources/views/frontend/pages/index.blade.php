@@ -206,7 +206,6 @@
 											</div>
 											<div class="product-info bg-secondary text-white">
 												<a href="{{ route('buyer.showproduct', ['slug' => $bidpost->slug]) }}" class="product-name"><span class="text-white" style="font-size: 16px">{{ $bidpost->title }}</span></a>
-												
 												{{-- <div class="popup" id="popup">
 													<div class="card card-primary">
 														<div class="card-header text-center">
@@ -230,20 +229,19 @@
 													</div>
 												</div>  --}}
 												<div class="card card-primary bg-info p-3 mt-2">
-														<form>
-															<div class="card-body pb-0">
-																<div class="form-group">
-																	<input type="number" min="{{ $bidpost->regular_prize }}+10" class="form-control" id="inputbid" placeholder="Enter Your Amount">
-																</div>
+													<form action="{{ route('buyer.bidstore', ['slug' => $bidpost->slug]) }}" method="POST">
+        										@csrf
+														<div class="card-body pb-0">
+															<div class="form-group">
+																<input type="number" min="{{ $bidpost->regular_prize }}+10" class="form-control" id="inputbid{{ $bidpost->id }}" name="regular_prize" placeholder="Enter Your Amount">
 															</div>
-
-															<div class="btn-bid d-flex justify-content-between my-2">
-																<b class="wrap-price"><span style="font-size: 22px" class="product-price text-black">Current Prize : ${{ $bidpost->regular_prize }}</span></b>
-																<button type="submit" class="btn btn-success text-white">Bid Now</button>
-															</div>
-														</form>
-													</div>
-												
+														</div>
+														<div class="btn-bid d-flex justify-content-between my-2">
+															<b class="wrap-price"><span style="font-size: 22px" class="product-price text-black">Current Prize : ${{ $bidpost->regular_prize }}</span></b>
+															<button type="submit" class="btn btn-success text-white">Bid Now</button>
+														</div>
+													</form>
+												</div>
 											</div>
 										</div>
 									</div>

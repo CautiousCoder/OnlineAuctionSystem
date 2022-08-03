@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::mIp69trQe6PvIWwC',
+            '_route' => 'generated::UVpLMTXMSKkrHwPx',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::wF476K6g2ueV6hTh',
+            '_route' => 'generated::HRDfpcBadE8QDYvE',
           ),
           1 => NULL,
           2 => 
@@ -447,7 +447,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::tJsPfpUtctqnDf7C',
+            '_route' => 'generated::s0FinhLOV8ZUtpSk',
           ),
           1 => NULL,
           2 => 
@@ -1063,7 +1063,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))|buyer/(?|product/([^/]++)(*:339)|category/([^/]++)(*:364))))/?$}sDu',
+      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))|buyer/(?|product/([^/]++)(*:339)|category/([^/]++)(*:364)|online\\-biding/([^/]++)(*:395))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1640,6 +1640,28 @@ app('router')->setCompiledRoutes(
           5 => true,
           6 => NULL,
         ),
+      ),
+      395 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.bidstore',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
         1 => 
         array (
           0 => NULL,
@@ -1656,7 +1678,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::mIp69trQe6PvIWwC' => 
+    'generated::UVpLMTXMSKkrHwPx' => 
     array (
       'methods' => 
       array (
@@ -1677,7 +1699,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::mIp69trQe6PvIWwC',
+        'as' => 'generated::UVpLMTXMSKkrHwPx',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1802,7 +1824,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::wF476K6g2ueV6hTh' => 
+    'generated::HRDfpcBadE8QDYvE' => 
     array (
       'methods' => 
       array (
@@ -1825,7 +1847,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::wF476K6g2ueV6hTh',
+        'as' => 'generated::HRDfpcBadE8QDYvE',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2943,7 +2965,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::tJsPfpUtctqnDf7C' => 
+    'generated::s0FinhLOV8ZUtpSk' => 
     array (
       'methods' => 
       array (
@@ -2964,7 +2986,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::tJsPfpUtctqnDf7C',
+        'as' => 'generated::s0FinhLOV8ZUtpSk',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4708,6 +4730,44 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\User\\UserController@balancestore',
         'controller' => 'App\\Http\\Controllers\\User\\UserController@balancestore',
         'as' => 'buyer.balancestore',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.bidstore' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'users/buyer/online-biding/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\BidController@bid',
+        'controller' => 'App\\Http\\Controllers\\BidController@bid',
+        'as' => 'buyer.bidstore',
         'namespace' => NULL,
         'prefix' => '/users/buyer',
         'where' => 

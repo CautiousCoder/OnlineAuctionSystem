@@ -41,17 +41,18 @@ class UserController extends Controller
 
     public function balancestore(Request $request)
     {
+        $this->validate($request, [
+            'new_bal' => 'required|numeric|min:10|unique:balances,new_bal',
+        ], [
+            'new_bal.required' => 'This feild must be required',
+            'new_bal.min' => 'A minimum Deposit of 10 is required.',
+        ]);
+
         //dd($request->all());
         $user = User::find(Auth::guard('web')->user()->id);
         $addbal = Balance::where('user_id', Auth::guard('web')->user()->id)->first();
         $total_balance = $user->balance->total_bal;
         if (!$addbal) {
-            $this->validate($request, [
-                'new_bal' => 'required|numeric|min:10|unique:balances,new_bal',
-            ], [
-                'new_bal.required' => 'This feild must be required',
-                'new_bal.min' => 'A minimum Deposit of 10 is required.',
-            ]);
             $balance = new Balance();
             $balance->user_id = Auth::guard('web')->user()->id;
             $balance->old_bal = $total_balance;
