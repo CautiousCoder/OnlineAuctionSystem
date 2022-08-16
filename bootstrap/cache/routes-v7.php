@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::UVpLMTXMSKkrHwPx',
+            '_route' => 'generated::NtNUZgNoNgaWUK5X',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::HRDfpcBadE8QDYvE',
+            '_route' => 'generated::2lMj5VFnPymXtgik',
           ),
           1 => NULL,
           2 => 
@@ -447,7 +447,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::s0FinhLOV8ZUtpSk',
+            '_route' => 'generated::8NHH0Fgzl6jFsTHC',
           ),
           1 => NULL,
           2 => 
@@ -962,6 +962,66 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/users/buyer/shop' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.shop',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/cart' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.cart',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/users/buyer/checkout' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.checkout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/users/buyer/profile' => 
       array (
         0 => 
@@ -1063,7 +1123,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))|buyer/(?|product/([^/]++)(*:339)|category/([^/]++)(*:364)|online\\-biding/([^/]++)(*:395))))/?$}sDu',
+      0 => '{^(?|/users/(?|admins/(?|role/([^/]++)(?|(*:43)|/edit(*:55)|(*:62))|user/([^/]++)(?|(*:86)|/edit(*:98)|(*:105))|admin/([^/]++)(?|(*:131)|/edit(*:144)|(*:152)))|seller/(?|category/([^/]++)(?|(*:192)|/edit(*:205)|(*:213))|tag/([^/]++)(?|(*:237)|/edit(*:250)|(*:258))|post/([^/]++)(?|(*:283)|/edit(*:296)|(*:304)))|buyer/(?|product/([^/]++)(*:339)|category/([^/]++)(*:364)|bid\\-category/([^/]++)(*:394)|online\\-biding/([^/]++)(*:425))))/?$}sDu',
     ),
     3 => 
     array (
@@ -1641,7 +1701,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      395 => 
+      394 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'buyer.bidcategory',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      425 => 
       array (
         0 => 
         array (
@@ -1678,7 +1761,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::UVpLMTXMSKkrHwPx' => 
+    'generated::NtNUZgNoNgaWUK5X' => 
     array (
       'methods' => 
       array (
@@ -1699,7 +1782,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::UVpLMTXMSKkrHwPx',
+        'as' => 'generated::NtNUZgNoNgaWUK5X',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1824,7 +1907,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::HRDfpcBadE8QDYvE' => 
+    'generated::2lMj5VFnPymXtgik' => 
     array (
       'methods' => 
       array (
@@ -1847,7 +1930,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::HRDfpcBadE8QDYvE',
+        'as' => 'generated::2lMj5VFnPymXtgik',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2965,7 +3048,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::s0FinhLOV8ZUtpSk' => 
+    'generated::8NHH0Fgzl6jFsTHC' => 
     array (
       'methods' => 
       array (
@@ -2986,7 +3069,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::s0FinhLOV8ZUtpSk',
+        'as' => 'generated::8NHH0Fgzl6jFsTHC',
       ),
       'fallback' => false,
       'defaults' => 
@@ -4537,6 +4620,162 @@ app('router')->setCompiledRoutes(
         'uses' => 'App\\Http\\Controllers\\FrontEndController@showcategory',
         'controller' => 'App\\Http\\Controllers\\FrontEndController@showcategory',
         'as' => 'buyer.showcategory',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.bidcategory' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/bid-category/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\FrontEndController@bidcategory',
+        'controller' => 'App\\Http\\Controllers\\FrontEndController@bidcategory',
+        'as' => 'buyer.bidcategory',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.shop' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/shop',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\FrontEndController@shop',
+        'controller' => 'App\\Http\\Controllers\\FrontEndController@shop',
+        'as' => 'buyer.shop',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.cart' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/cart',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\FrontEndController@cart',
+        'controller' => 'App\\Http\\Controllers\\FrontEndController@cart',
+        'as' => 'buyer.cart',
+        'namespace' => NULL,
+        'prefix' => '/users/buyer',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'buyer.checkout' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'users/buyer/checkout',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'role:Buyer',
+          2 => 'auth:web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\FrontEndController@checkout',
+        'controller' => 'App\\Http\\Controllers\\FrontEndController@checkout',
+        'as' => 'buyer.checkout',
         'namespace' => NULL,
         'prefix' => '/users/buyer',
         'where' => 

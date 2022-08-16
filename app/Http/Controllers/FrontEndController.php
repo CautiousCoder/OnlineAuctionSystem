@@ -63,4 +63,48 @@ class FrontEndController extends Controller
             return redirect()->route('buyer.home');
         }
     }
+
+    //show product
+    public function bidcategory($slug)
+    {
+        $bidproduct = Post::with('categories', 'tags', 'user')->where(['slug' => $slug])->first();
+        foreach ($bidproduct->categories as $cat) {
+            $cslug[] = $cat->slug;
+        }
+
+        $category = Category::with('posts')->where(['slug' => $cslug])->first();
+        $category1 = Category::all();
+        //dd($category);
+        if ($category) {
+            $products = $category->posts()->orderBy('created_at', 'desc')->paginate(6);
+            return view('frontend.pages.bidcat', compact(['bidproduct', 'products']));
+        } else {
+            $products = $category1->posts()->orderBy('created_at', 'desc')->paginate(6);
+            return view('frontend.pages.bidcat', compact(['bidproduct', 'products']));
+        }
+        //return view('frontend.pages.bidcat', compact('product'));
+    }
+
+    //checkout
+    public function shop()
+    {
+        return view('frontend.pages.shop');
+    }
+
+    //checkout
+    public function cart()
+    {
+        return view('frontend.pages.cart');
+    }
+
+    //checkout
+    public function checkout()
+    {
+        return view('frontend.pages.checkout');
+    }
+    public function startbid($id)
+    {
+        $bidPost = Post::where(['id' => $id])->get()->first();
+        dd($bidPost);
+    }
 }

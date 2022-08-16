@@ -126,6 +126,12 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
         //product
         Route::get('/product/{slug}', [FrontEndController::class, 'productshow'])->name('showproduct');
         Route::get('/category/{slug}', [FrontEndController::class, 'showcategory'])->name('showcategory');
+        Route::get('/bid-category/{slug}', [FrontEndController::class, 'bidcategory'])->name('bidcategory');
+
+        //Shop
+        Route::get('/shop', [FrontEndController::class, 'shop'])->name('shop');
+        Route::get('/cart', [FrontEndController::class, 'cart'])->name('cart');
+        Route::get('/checkout', [FrontEndController::class, 'checkout'])->name('checkout');
 
         //profile
         Route::get('/profile', [UserController::class, 'profileview'])->name('profileviews');
@@ -136,7 +142,7 @@ Route::prefix('users/buyer')->name('buyer.')->group(function () {
         Route::get('/profile/add-balance', [UserController::class, 'addbalance'])->name('addbalance');
         Route::post('/profile/balance-add', [UserController::class, 'balancestore'])->name('balancestore');
 
-        //Dids
+        //Bids
         //Route::get('/profile/add-balance', [BidController::class, 'addbalance'])->name('addbalance');
         Route::post('/online-biding/{slug}', [BidController::class, 'bid'])->name('bidstore');
     });
