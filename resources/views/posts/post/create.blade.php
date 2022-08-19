@@ -103,15 +103,15 @@
                   </div>
                   </div>
                 </div>
-                <div class="form-group">
-                <label>Start Date</label>
+                {{-- <div class="form-group">
+                  <label>Start Date</label>
                   <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
                   <input type="text" name="start_date" class="form-control datetimepicker-input" placeholder="yyyy-mm-dd" data-target="#reservationdatetime">
                   <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
                   <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                   </div>
                   </div>
-                </div>
+                </div> --}}
                 <div class="form-group">
                   <label>End Date</label>
                     <div class="input-group date" id="reservationdatee" data-target-input="nearest">
@@ -175,6 +175,15 @@
                     <input type="file" name="image" class="custom-file-input" value="{{ old('image') }}"
                       id="customFile">
                     <label class="custom-file-label" for="customFile">Choose file</label>
+                  </div>
+                </div>
+                <div class="card pb-3 pt-2 px-2">
+                  <div class="form-group">
+                    <label class="text-black" style="color: black !important" for="multiplee">Image Gallery</label>
+                    <div class="custom-file">
+                      <input type="file" name="images[]" accept="image/*" class="custom-file-input" value="{{ old('image') }}" id="customFile1" multiple>
+                      <label class="custom-file-label" for="customFile1">Choose Multiple file</label>
+                    </div>
                   </div>
                 </div>
               </div>

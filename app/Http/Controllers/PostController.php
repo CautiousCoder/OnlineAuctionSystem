@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\CategoryController;
+use App\Models\Image;
 use App\Models\Tag;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Nette\Utils\Random;
 
 class PostController extends Controller
 {
@@ -47,8 +49,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //dd($request->all());
+        //validate data
         $this->validate($request, [
             'title' => 'required|unique:posts,title',
             'image' => 'image',
@@ -85,7 +86,7 @@ class PostController extends Controller
             $file->move('storage/post/', $filename);
             $post->image = '/storage/post/' . $filename;
         } else {
-            $post->image = 'noImage.jpg';
+            $post->image = 'No Image Found.';
         }
 
         $post->save();
@@ -93,6 +94,20 @@ class PostController extends Controller
         $posts = Post::firstOrNew(['title' => $post->title]);
         $posts->categories()->attach($request->categories_id);
         $posts->tags()->attach($request->tags);
+
+        //multiple images
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
+                $extension = $img->getClientOriginalExtension();
+                $filename = time() . rand(1, 1000) . '.' . $extension;
+                $img->move('storage/posts/', $filename);
+                //Create Images
+                $postImg = new Image();
+                $postImg->post_id = $posts->id;
+                $postImg->images = '/storage/posts/' . $filename;
+                $postImg->save();
+            }
+        }
 
         Session()->flash('success', 'Post Created Successfully.!');
         return redirect()->route('seller.post.index');
@@ -143,7 +158,14 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug = Str::slug($request->title, '-');
         $post->description = $request->description;
-        $post->user_id = 1;
+        $post->sort_description = $request->sort_description;
+        $post->post_status = $request->post_status;
+        $post->SKU = $request->SKU;
+        $post->regular_prize = $request->regular_prize;
+        $post->sale_prize = $request->sale_prize;
+        $post->base_prize = $request->regular_prize;
+        $post->start_date = $request->start_date;
+        $post->end_date = $request->end_date;
         $post->publish_at = Carbon::now();
 
         if ($request->hasFile('image')) {
@@ -159,6 +181,20 @@ class PostController extends Controller
         $posts = Post::firstOrNew(['title' => $post->title]);
         $posts->categories()->sync($request->categories_id);
         $posts->tags()->sync($request->tags);
+
+        //multiple images
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
+                $extension = $img->getClientOriginalExtension();
+                $filename = time() . rand(1, 1000) . '.' . $extension;
+                $img->move('storage/posts/', $filename);
+                //Create Images
+                $postImg = new Image();
+                $postImg->post_id = $posts->id;
+                $postImg->images = '/storage/posts/' . $filename;
+                $postImg->save();
+            }
+        }
         Session()->flash('success', 'Post Updated Successfully.!');
         return redirect()->route('seller.post.index');
     }

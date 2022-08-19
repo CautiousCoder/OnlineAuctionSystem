@@ -38,7 +38,21 @@ class FrontEndController extends Controller
     public function productshow($slug)
     {
         $product = Post::with('categories', 'tags', 'user')->where(['slug' => $slug])->first();
-        return view('frontend.pages.detail', compact('product'));
+        $cslu[] = null;
+        foreach ($product->categories as $cat) {
+            $cslu[] = $cat->slug;
+        }
+
+        $category = Category::with('posts')->where(['slug' => $cslu])->first();
+        $category1 = Category::with('posts')->first();
+
+        if ($category) {
+            $products = $category->posts()->orderBy('created_at', 'desc')->paginate(6);
+            return view('frontend.pages.detail', compact(['product', 'products']));
+        } else {
+            $products = $category1->posts()->orderBy('created_at', 'desc')->paginate(6);
+            return view('frontend.pages.detail', compact(['product', 'products']));
+        }
     }
 
     //category
@@ -73,8 +87,8 @@ class FrontEndController extends Controller
         }
 
         $category = Category::with('posts')->where(['slug' => $cslug])->first();
-        $category1 = Category::all();
-        //dd($category);
+        $category1 = Category::with('posts')->first();
+        //dd($category1->posts());
         if ($category) {
             $products = $category->posts()->orderBy('created_at', 'desc')->paginate(6);
             return view('frontend.pages.bidcat', compact(['bidproduct', 'products']));

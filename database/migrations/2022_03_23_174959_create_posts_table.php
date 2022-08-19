@@ -27,7 +27,6 @@ return new class extends Migration
             $table->integer('stock')->default(0);
             $table->enum('stock_status', ['instock', 'outofstock']);
             $table->string('image')->nullable();
-            $table->string('images')->nullable();
             $table->string('post_type')->default("post");
             $table->string('post_status')->default("publish");
             $table->integer('count_comment')->unsigned()->default(0);

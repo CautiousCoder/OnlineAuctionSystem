@@ -11,7 +11,7 @@ class Post extends Model
     protected $guarded = [];
     protected $dates = ['publish_at'];
     protected $table = 'posts';
-    
+
     protected $fillable = [
         'category_id',
         'post_id',
@@ -19,18 +19,26 @@ class Post extends Model
     ];
 
     public $incrementing = false;
-    
-  
-    public function user(){
+
+
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
     //category relation
-    public function categories(){
+    public function categories()
+    {
         return $this->belongsToMany(Category::class);
     }
-    public function tags(){
+    public function tags()
+    {
         return $this->belongsToMany(Tag::class);
     }
 
+    //Multiple images
+    public function img()
+    {
+        return $this->hasOne(Balance::class, 'post_id');
+    }
 }

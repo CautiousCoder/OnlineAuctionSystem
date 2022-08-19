@@ -128,15 +128,15 @@
 
 			<!--Product Categories-->
 			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Product Categories</h3>
-				<div class="wrap-top-banner">
+				<h3 class="title-box" style="padding: 30px 20px !important; font-size:28px;">Product Categories</h3>
+				{{-- <div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
 						<figure><img src="{{ asset('frontend') }}/images/fashion-accesories-banner.jpg" width="1170" height="240" alt=""></figure>
 					</a>
-				</div>
+				</div> --}}
 				<div class="wrap-products">
 					<div class="wrap-product-tab tab-style-1">
-						<div class="tab-control">
+						<div class="tab-control text-center">
 							@foreach ($categories as $cat)
 									<a href="{{ route('buyer.showcategory', ['slug' => $cat->slug]) }}" class="btn btn-primary mx-1 my-4">{{ $cat->name }}</a>
 							{{-- <a href="#fashion_1a" class="tab-control-item active">Smartphone</a> --}}
@@ -256,7 +256,7 @@
 
 			<!--Latest Products-->
 			<div class="wrap-show-advance-info-box style-1">
-				<h3 class="title-box">Latest Products</h3>
+				<h3 class="title-box"  style="padding: 30px 20px !important; font-size:28px;">Latest Products</h3>
 				{{-- <div class="wrap-top-banner">
 					<a href="#" class="link-banner banner-effect-2">
 						<figure><img src="{{ asset('frontend') }}/images/digital-electronic-banner.jpg" width="1170" height="240" alt=""></figure>

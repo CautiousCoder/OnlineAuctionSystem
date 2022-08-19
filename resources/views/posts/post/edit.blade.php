@@ -171,6 +171,15 @@
 										</div>
 									</div>
 								</div>
+								<div class="card pb-3 pt-2 px-2">
+                  <div class="form-group">
+                    <label class="text-black" style="color: black !important" for="multiplee">Image Gallery</label>
+                    <div class="custom-file">
+                      <input type="file" name="images[]" accept="image/*" class="custom-file-input" value="{{ old('image') }}" id="customFile1" multiple>
+                      <label class="custom-file-label" for="customFile1">Choose Multiple file</label>
+                    </div>
+                  </div>
+                </div>
 							</div>
 						</div>
 					</div>
