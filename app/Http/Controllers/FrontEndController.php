@@ -21,7 +21,7 @@ class FrontEndController extends Controller
         $slidebid = $bidPost->slice(0, 1);
         $slidebid1 = $bidPost->slice(1, 1);
         $slidebid2 = $bidPost->slice(2, 1);
-        $allbidpost = $bidPost->slice(0, 6);
+        $allbidpost = $bidPost->slice(0, 9);
         // dd($slidebid);
         $bidingPost = Post::where('bit_status', 1)->take(11)->get();
         $fstbidigngpost = $bidingPost->slice(0, 1);
@@ -39,7 +39,7 @@ class FrontEndController extends Controller
     public function productshow($slug)
     {
         $product = Post::with('categories', 'tags', 'user')->where(['slug' => $slug])->first();
-        // $images = $product->img;
+        $images = $product->img;
         // dd($images);
         $cslu[] = null;
         foreach ($product->categories as $cat) {
@@ -51,10 +51,10 @@ class FrontEndController extends Controller
 
         if ($category) {
             $products = $category->posts()->orderBy('created_at', 'desc')->paginate(6);
-            return view('frontend.pages.detail', compact(['product', 'products']));
+            return view('frontend.pages.detail', compact(['product', 'products', 'images']));
         } else {
             $products = $category1->posts()->orderBy('created_at', 'desc')->paginate(6);
-            return view('frontend.pages.detail', compact(['product', 'products']));
+            return view('frontend.pages.detail', compact(['product', 'products', 'images']));
         }
     }
 

@@ -16,11 +16,16 @@
 				<div class="detail-media">
 					<div class="product-gallery">
 						<ul class="slides">
-							
-							@if (!empty($product->img->post_id))
-									@foreach ($product->img as $imggallery)
+							@php
+									$pid = -1;
+									foreach($images as $idi)
+										$pid = $idi->post_id
+									
+							@endphp
+							@if ($pid >= 0)
+									@foreach ($images as $imggallery)
 									<li data-thumb="{{ $imggallery->images }}">
-										<img src="{{ $imggallery->images }}" />
+										<img style="max-height: 500px" src="{{ $imggallery->images }}" />
 									</li>
 									@endforeach
 							@else
@@ -45,12 +50,12 @@
 						<a href="#" class="count-review">(05 review)</a>
 					</div>
 					<h2 class="product-name">{{ $product->title }}</h2>
-					<div class="short-desc">
-						<ul> {{ $product->sort_description }} </ul>
+					<div class="short-desc pb-4">
+						<ul> {!! $product->sort_description !!} </ul>
 					</div>
-					<div class="wrap-social">
+					{{-- <div class="wrap-social">
 						<a class="link-socail" href="#"><img src="{{ asset('frontend') }}/images/social-list.png" alt=""></a>
-					</div>
+					</div> --}}
 					<div class="stock-info in-stock">
 						@if ($product->bit_status == 1)
 								<p class="availability">Status: <b>Bid Running</b></p>
@@ -78,7 +83,7 @@
 							</div>
 						</div>
 						<div class="wrap-butons">
-							<button type="submit" class="add-to-cart d-block">Bid Now</button>
+							<button type="submit" class="add-to-cart">Submit</button>
 							<div class="wrap-btn">
 								<a href="#" class="btn btn-compare">Add Compare</a>
 								<a href="#" class="btn btn-wishlist">Add Wishlist</a>
@@ -96,7 +101,7 @@
 						<a href="#review" class="tab-control-item">Reviews</a>
 					</div>
 					<div class="tab-contents">
-						<div class="tab-content-item active" id="description"> {{ $product->description }} </div>
+						<div class="tab-content-item active" id="description"> {!! $product->description !!} </div>
 						<div class="tab-content-item " id="add_infomation">
 							<table class="shop_attributes">
 								<tbody>

@@ -60,6 +60,12 @@
 .wrap-product-detail .detail-info .wrap-butons {
     display: block !important;
     padding-top: 0px !important;
-    margin-left: 10px !important;
+    margin-left: 35px !important;
+}
+.wrap-product-detail .detail-info .wrap-butons .add-to-cart {
+    width: 100%;
+}
+.flex-viewport {
+    max-height: 570px !important;
 }
 
