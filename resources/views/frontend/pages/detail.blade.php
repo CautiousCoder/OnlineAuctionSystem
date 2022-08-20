@@ -16,29 +16,22 @@
 				<div class="detail-media">
 					<div class="product-gallery">
 						<ul class="slides">
-							<li data-thumb="{{ asset('frontend') }}/images/products/digital_18.jpg">
-								<img src="{{ asset('frontend') }}/images/products/digital_18.jpg" alt="product thumbnail" />
-							</li>Magni <li data-thumb="{{ asset('frontend') }}/images/products/digital_17.jpg">
+							
+							@if (!empty($product->img->post_id))
+									@foreach ($product->img as $imggallery)
+									<li data-thumb="{{ $imggallery->images }}">
+										<img src="{{ $imggallery->images }}" />
+									</li>
+									@endforeach
+							@else
+									<li data-thumb="{{ $product->image }}">
+										<img src="{{ $product->image }}" alt="product thumbnail" />
+									</li>
+							@endif
+
+							{{-- <li data-thumb="{{ asset('frontend') }}/images/products/digital_17.jpg">
 								<img src="{{ asset('frontend') }}/images/products/digital_17.jpg" alt="product thumbnail" />
-							</li>
-							<li data-thumb="{{ asset('frontend') }}/images/products/digital_15.jpg">
-								<img src="{{ asset('frontend') }}/images/products/digital_15.jpg" alt="product thumbnail" />
-							</li>
-							<li data-thumb="{{ asset('frontend') }}/images/products/digital_02.jpg">
-								<img src="{{ asset('frontend') }}/images/products/digital_02.jpg" alt="product thumbnail" />
-							</li>
-							<li data-thumb="{{ asset('frontend') }}/images/products/digital_08.jpg">
-								<img src="{{ asset('frontend') }}/images/products/digital_08.jpg" alt="product thumbnail" />
-							</li>
-							<li data-thumb="{{ asset('frontend') }}/images/products/digital_10.jpg">
-								<img src="{{ asset('frontend') }}/images/products/digital_10.jpg" alt="product thumbnail" />
-							</li>
-							<li data-thumb="{{ asset('frontend') }}/images/products/digital_12.jpg">
-								<img src="{{ asset('frontend') }}/images/products/digital_12.jpg" alt="product thumbnail" />
-							</li>
-							<li data-thumb="{{ asset('frontend') }}/images/products/digital_14.jpg">
-								<img src="{{ asset('frontend') }}/images/products/digital_14.jpg" alt="product thumbnail" />
-							</li>
+							</li> --}}
 						</ul>
 					</div>
 				</div>
@@ -58,10 +51,16 @@
 					<div class="wrap-social">
 						<a class="link-socail" href="#"><img src="{{ asset('frontend') }}/images/social-list.png" alt=""></a>
 					</div>
-					<div class="wrap-price"><span class="product-price">${{ $product->regular_prize }}</span></div>
 					<div class="stock-info in-stock">
-						<p class="availability">Status: <b>{{ $product->stock_status }}</b></p>
-					</div> {{-- <div class="quantity">
+						@if ($product->bit_status == 1)
+								<p class="availability">Status: <b>Bid Running</b></p>
+						@else
+							<p class="availability">Status: <b>Bid Ended</b></p>
+						@endif
+					</div> 
+					<div class="wrap-price"><span class="product-price"><b>Current Prize:</b> ${{ $product->regular_prize }}</span></div>
+					
+					{{-- <div class="quantity">
 						<span>Quantity:</span>
 						<div class="quantity-input">
 							<input type="text" name="product-quatity" value="1" data-max="120" pattern="[0-9]*">
@@ -79,7 +78,7 @@
 							</div>
 						</div>
 						<div class="wrap-butons">
-							<button type="submit" class="btn add-to-cart d-block">Bid Now</button>
+							<button type="submit" class="add-to-cart d-block">Bid Now</button>
 							<div class="wrap-btn">
 								<a href="#" class="btn btn-compare">Add Compare</a>
 								<a href="#" class="btn btn-wishlist">Add Wishlist</a>

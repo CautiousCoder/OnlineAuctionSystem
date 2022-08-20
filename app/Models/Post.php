@@ -39,6 +39,6 @@ class Post extends Model
     //Multiple images
     public function img()
     {
-        return $this->hasOne(Balance::class, 'post_id');
+        return $this->hasMany(Image::class, 'post_id');
     }
 }

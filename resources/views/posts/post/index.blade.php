@@ -53,9 +53,9 @@
         <thead>
           <tr>
             <th>No.</th>
-            <th>Name</th>
+            <th style="max-width: 200px !important">Name</th>
             <th>Image</th>
-            <th>Description</th>
+            <th style="max-width: 400px !important">Description</th>
             <th>Category</th>
             <th>Author</th>
           </tr>
@@ -65,7 +65,7 @@
           @foreach ($posts as $post)
           <tr>
             <td style="max-width: 7px">{{ $loop->index+1 }}.</td>
-            <td style="max-width: 200px;">
+            <td style="max-width: 200px !important">
               <div class="name">{{ $post->title }}</div>
               <div class="action d-flex pt-2">
                   <a href="{{ route('seller.post.edit',[$post->id]) }}" class="btn btn-sm btn-info mr-1"><i
@@ -80,7 +80,7 @@
               </div>
             </td>
             <td><div class="img"><img style="max-height: 80px; max-width:100px;" src="{{ $post->image }}" alt="Loading..."></div></td>
-            <td>{!! Str::words($post->description, 10, '<a class="btn btn-info btn-sm text-white ml-2" href="#">Read More</a>') !!}</td>
+            <td style="max-width: 400px !important">{!! Str::words($post->description, 16, '<a class="btn btn-info btn-sm text-white ml-2" href="#">Show Here</a>') !!}</td>
             <td> @foreach ($post->categories as $cat)
                 <span class="badge bg-dark">{{ $cat->name }}</span>
             @endforeach </td>

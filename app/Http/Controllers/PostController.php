@@ -24,7 +24,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::orderBy('created_at', 'DESC')->paginate(20);
+        $posts = Post::orderBy('created_at', 'DESC')->where('user_id', Auth::guard('web')->user()->id)->paginate(20);
         return view('posts.post.index', compact('posts'));
     }
 

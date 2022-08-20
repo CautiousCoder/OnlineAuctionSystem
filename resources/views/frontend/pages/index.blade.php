@@ -272,7 +272,7 @@
 										<div class="product product-style-2 equal-elem" style="box-shadow: 1px 2px 5px">
 											<div class="product-thumnail">
 												<a href="{{ route('buyer.showproduct', ['slug' => $bidpost->slug]) }}" title="{{ $bidpost->title }}">
-													<figure><img src="{{ $bidpost->image }}" width="800" height="800" alt="{{ $bidpost->title }}"></figure>
+													<figure><img style="max-height: 262px !important" src="{{ $bidpost->image }}" width="800" max-height="800" alt="{{ $bidpost->title }}"></figure>
 												</a>
 												<div class="group-flash">
 													<span class="flash-item new-label">new</span>

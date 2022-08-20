@@ -54,4 +54,12 @@
   bottom: 60%;
   transform: translate(0%,0%) scale(1);
 }
+.wrap-product-detail .detail-info .wrap-price {
+    margin-top: -5px !important;
+}
+.wrap-product-detail .detail-info .wrap-butons {
+    display: block !important;
+    padding-top: 0px !important;
+    margin-left: 10px !important;
+}
 
