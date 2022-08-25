@@ -306,7 +306,8 @@
 					<div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false"
 						data-nav="true" data-dots="false"
 						data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}'>
-						@foreach ($products as $post) <div class="product product-style-2 equal-elem ">
+						@foreach ($products as $post) 
+						<div class="product product-style-2 equal-elem bbox">
 							<div class="product-thumnail">
 								<a href="{{ route('buyer.showproduct', ['slug' => $post->slug]) }}" title="{{ $post->title }}">
 									<figure><img src="{{ $post->image }}" width="800" height="800"
@@ -327,7 +328,7 @@
 								<div class="wrap-price"><span class="product-price">${{ $post->regular_prize }}</span></div> 
 								@if($post->end_date) <h5>{{ $post->end_date }}</h5> @endif 
 								<a href="{{ route('buyer.bidcategory', ['slug' => $post->slug]) }}" class="btn btn-success text-center"
-									target="_blank" rel="noopener noreferrer">Bid Now</a>
+									target="_self" rel="noopener noreferrer">Bid Now</a>
 							</div>
 						</div> @endforeach {{-- <div class="product product-style-2 equal-elem ">
 							<div class="product-thumnail">

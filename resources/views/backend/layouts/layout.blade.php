@@ -60,9 +60,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
    <!-- Additional script link here -->
   @yield('scriptArea')
 
-    @if(Session::has('success'))
-    toastr.success("{{ Session::has('success') }}");
-    @endif
+    <script>
+      @if(Session::has('success'))
+        toastr.success("{{ Session('success') }}");
+      @endif
+    </script>
 </body>
 
 </html>
