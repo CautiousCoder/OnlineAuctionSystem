@@ -107,7 +107,7 @@
 							@if ($it->end_date)
 									<h5>{{ $it->end_date }}</h5>
 							@endif
-							<a href="#" class="btn btn-success">Bid Now</a>
+							<a href="{{ route('buyer.showproduct', ['slug' => $it->slug]) }}" class="btn btn-success">Bid Now</a>
 						</div>
 				@endforeach
 					</div>
@@ -119,7 +119,7 @@
 							@if ($it1->end_date)
 									<h5>{{ $it1->end_date }}</h5>
 							@endif
-							<a href="#" class="btn btn-success float-left">Bid Now</a>
+							<a href="{{ route('buyer.showproduct', ['slug' => $it1->slug]) }}" class="btn btn-success float-left">Bid Now</a>
 						</div>
 						@endforeach
 					</div>
@@ -166,7 +166,7 @@
 											@if ($post->end_date)
 												<h5>{{ $post->end_date }}</h5>
 											@endif
-											<a href="{{ route('buyer.bidcategory', ['slug' => $post->slug]) }}" class="btn btn-success text-center" target="_blank" rel="noopener noreferrer">Bid Now</a>
+											<a href="{{ route('buyer.bidcategory', ['slug' => $post->slug]) }}" class="btn btn-sm btn-success text-center" target="_self" rel="noopener noreferrer">Bid Now</a>
 										</div>
 									</div>
 									@endforeach	
@@ -271,7 +271,7 @@
 									<div class="col-4 my-2">
 										<div class="product product-style-2 equal-elem" style="box-shadow: 1px 2px 5px">
 											<div class="product-thumnail">
-												<a href="{{ route('buyer.showproduct', ['slug' => $bidpost->slug]) }}" title="{{ $bidpost->title }}">
+												<a class="py-2" href="{{ route('buyer.showproduct', ['slug' => $bidpost->slug]) }}" title="{{ $bidpost->title }}">
 													<figure><img style="max-height: 262px !important" src="{{ $bidpost->image }}" width="800" max-height="800" alt="{{ $bidpost->title }}"></figure>
 												</a>
 												<div class="group-flash">
@@ -281,7 +281,7 @@
 													<a href="{{ route('buyer.showproduct', ['slug' => $bidpost->slug]) }}" class="function-link">quick view</a>
 												</div>
 											</div>
-											<div class="product-info bg-secondary text-white">
+											<div class="product-info bg-primary text-white">
 												<a href="{{ route('buyer.showproduct', ['slug' => $bidpost->slug]) }}" class="product-name"><span class="text-white" style="font-size: 16px">{{ $bidpost->title }}</span></a>
 												{{-- <div class="popup" id="popup">
 													<div class="card card-primary">
@@ -316,7 +316,7 @@
 														<div class="btn-bid d-flex justify-content-between mstartbidy-2">
 															<b class="wrap-price"><span style="font-size: 22px" class="product-price text-black">Current Prize : ${{ $bidpost->regular_prize }}</span></b>
 															
-															<button type="submit" class="btn btn-success text-white">Bid Now</button>
+															<button type="submit" class="btn btn-sm btn-primary text-white">Submit</button>
 														</div>
 													</form>
 												</div>

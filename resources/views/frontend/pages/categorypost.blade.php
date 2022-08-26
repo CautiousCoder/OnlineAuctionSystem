@@ -6,56 +6,6 @@
 
 @section('content')
 
-	<div id="carouselExampleCaptions" class="carousel slide mb-3" data-bs-ride="carousel">
-		<div class="carousel-indicators d-none">
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-		</div>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-			@foreach ($slidebid as $fst)
-				<img src="{{ $fst->image }}" class="d-block w-100" style="max-height: 480px" alt="Slide-01">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>{{ $fst->title }}</h3>
-					<p class="subtitle">{{ $fst->sort_description }}</p>
-					<p class="sale-info">Price: <span class="price">${{ $fst->regular_prize }}</span></p>
-					<a href="#" class="btn btn-primary">Bid Now</a>
-				</div>
-				@endforeach
-			</div>
-			<div class="carousel-item">
-				@foreach ($slidebid1 as $snd)
-				<img src="{{ $snd->image }}" class="d-block w-100" style="max-height: 480px" alt="Slide-02">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>{{ $snd->title }}</h3>
-					<p class="subtitle">{{ $snd->sort_description }}</p>
-					<p class="sale-info">Price: <span class="price">${{ $snd->regular_prize }}</span></p>
-					<a href="#" class="btn btn-success">Bid Now</a>
-				</div>
-				@endforeach
-			</div>
-			<div class="carousel-item">
-				@foreach ($slidebid2 as $trd)
-				<img src="{{ $trd->image }}" class="d-block w-100" style="max-height: 480px" alt="Slid3-03">
-				<div class="carousel-caption d-none d-md-block">
-					<h3>{{ $trd->title }}</h3>
-					<p class="subtitle">{{ $trd->sort_description }}</p>
-					<p class="sale-info">Price: <span class="price">${{ $trd->regular_prize }}</span></p>
-					<a href="#" class="btn btn-info">Bid Now</a>
-				</div>
-				@endforeach
-			</div>
-		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon d-none" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-			<span class="carousel-control-next-icon d-none" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
-	</div>
 
 		<div class="container">
 			<!--BANNER-->
@@ -269,7 +219,7 @@
 			<!--On Sale-->
 			<div class="wrap-show-advance-info-box style-1 has-countdown">
 				<h3 class="title-box">On Biding</h3>
-				<div class="wrap-countdown mercado-countdown" data-expire="2020/12/12 12:34:56"></div>
+				{{-- <div class="wrap-countdown mercado-countdown" data-expire="2020/12/12 12:34:56"></div> --}}
 				<div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"4"},"1200":{"items":"5"}}'>
 
 					@foreach ($allbid as $bp)
@@ -296,7 +246,7 @@
 					</div>
 					@endforeach
 
-					<div class="product product-style-2 equal-elem ">
+					{{-- <div class="product product-style-2 equal-elem ">
 						<div class="product-thumnail">
 							<a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
 								<figure><img src="{{ asset('frontend') }}/images/products/kidtoy_05.jpg" width="800" height="800" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
@@ -312,7 +262,7 @@
 							<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
 							<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
 						</div>
-					</div>
+					</div> --}}
 
 				</div>
 			</div>

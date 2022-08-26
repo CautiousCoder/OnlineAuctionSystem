@@ -1,6 +1,6 @@
 <div>
 	<div class="row">
-		<div class="topbar-menu-area">
+		{{-- <div class="topbar-menu-area">
 			<div class="container">
 				<div class="topbar-menu left-menu">
 					<ul>
@@ -46,7 +46,7 @@
 					</ul>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 		<div class="container">
 			<div class="mid-section main-info-area">
 				<div class="wrap-logo-top left-section">
@@ -114,7 +114,7 @@
 			</div>
 		</div>
 		<div class="nav-section header-sticky">
-			<div class="header-nav-section">
+			{{-- <div class="header-nav-section">
 				<div class="container">
 					<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info">
 						<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span
@@ -129,7 +129,7 @@
 								class="nav-label hot-label">hot</span></li>
 					</ul>
 				</div>
-			</div>
+			</div> --}}
 			<div class="p-3 bg-dark text-white">
 				<div class="container-fluid">
 					<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -140,7 +140,7 @@
 						</a>
 						<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 							<li class="nav-item">
-								<a class="nav-link text-white active" aria-current="page" href="#">Home</a>
+								<a class="nav-link text-white active" aria-current="page" href="{{ route('buyer.home') }}">Home</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link text-white" href="#">Link</a>

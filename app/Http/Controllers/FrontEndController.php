@@ -22,17 +22,6 @@ class FrontEndController extends Controller
         //
         $currentDate = Carbon::now();
         $bidPost = Post::orderBy('created_at', 'DESC')->paginate(9);
-        // foreach ($bidPost as $bidvalue) {
-        //     if ($currentDate->toDateString() >= $bidvalue->start_date  && $currentDate->toDateString() <= $bidvalue->end_date) {
-        //         $bidstatus = Post::where(['start_date' => $bidvalue->start_date])->first();
-        //         $bidstatus->bit_status = 1;
-        //         $bidstatus->save();
-        //     } else {
-        //         $bidstatus = Post::where(['start_date' => $bidvalue->start_date])->first();
-        //         $bidstatus->bit_status = 0;
-        //         $bidstatus->save();
-        //     }
-        // }
         $slidebid = $bidPost->slice(0, 1);
         $slidebid1 = $bidPost->slice(1, 1);
         $slidebid2 = $bidPost->slice(2, 1);
@@ -100,6 +89,8 @@ class FrontEndController extends Controller
     public function bidcategory($slug)
     {
         $bidproduct = Post::with('categories', 'tags', 'user')->where(['slug' => $slug])->first();
+        $images = $bidproduct->img;
+
         foreach ($bidproduct->categories as $cat) {
             $cslug[] = $cat->slug;
         }
@@ -109,10 +100,10 @@ class FrontEndController extends Controller
         //dd($category1->posts());
         if ($category) {
             $products = $category->posts()->orderBy('created_at', 'desc')->paginate(6);
-            return view('frontend.pages.bidcat', compact(['bidproduct', 'products']));
+            return view('frontend.pages.bidcat', compact(['bidproduct', 'products', 'images']));
         } else {
             $products = $category1->posts()->orderBy('created_at', 'desc')->paginate(6);
-            return view('frontend.pages.bidcat', compact(['bidproduct', 'products']));
+            return view('frontend.pages.bidcat', compact(['bidproduct', 'products', 'images']));
         }
         //return view('frontend.pages.bidcat', compact('product'));
     }
