@@ -261,6 +261,9 @@
       @if(Session::has('success'))
         toastr.success("{{ Session('success') }}");
       @endif
+			@if(Session::has('error'))
+        toastr.warning("{{ Session('error') }}");
+      @endif
     </script>
 
 

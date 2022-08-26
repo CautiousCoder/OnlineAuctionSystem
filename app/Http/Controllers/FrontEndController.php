@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Image;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class FrontEndController extends Controller
 {
@@ -15,9 +16,23 @@ class FrontEndController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function views()
     {
+        //
+        $currentDate = Carbon::now();
         $bidPost = Post::orderBy('created_at', 'DESC')->paginate(9);
+        // foreach ($bidPost as $bidvalue) {
+        //     if ($currentDate->toDateString() >= $bidvalue->start_date  && $currentDate->toDateString() <= $bidvalue->end_date) {
+        //         $bidstatus = Post::where(['start_date' => $bidvalue->start_date])->first();
+        //         $bidstatus->bit_status = 1;
+        //         $bidstatus->save();
+        //     } else {
+        //         $bidstatus = Post::where(['start_date' => $bidvalue->start_date])->first();
+        //         $bidstatus->bit_status = 0;
+        //         $bidstatus->save();
+        //     }
+        // }
         $slidebid = $bidPost->slice(0, 1);
         $slidebid1 = $bidPost->slice(1, 1);
         $slidebid2 = $bidPost->slice(2, 1);
@@ -75,7 +90,7 @@ class FrontEndController extends Controller
         $category = Category::with('posts')->where(['slug' => $slug])->first();
         if ($category) {
             $products = $category->posts()->orderBy('created_at', 'desc')->paginate(6);
-            return view('frontend.pages.index', compact(['allbidpost', 'allbid', 'fstbidigngpost', 'scdbidigngpost', 'slidebid', 'slidebid1', 'slidebid2', 'products']));
+            return view('frontend.pages.categorypost', compact(['allbidpost', 'allbid', 'fstbidigngpost', 'scdbidigngpost', 'slidebid', 'slidebid1', 'slidebid2', 'products']));
         } else {
             return redirect()->route('buyer.home');
         }
@@ -118,10 +133,5 @@ class FrontEndController extends Controller
     public function checkout()
     {
         return view('frontend.pages.checkout');
-    }
-    public function startbid($id)
-    {
-        $bidPost = Post::where(['id' => $id])->get()->first();
-        dd($bidPost);
     }
 }

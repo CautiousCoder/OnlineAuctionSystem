@@ -356,7 +356,8 @@
 	</div>
 	<!--end row-->
 </div>
-<!--end container--> @endsection @section('frontStyle')
+<!--end container--> @endsection
+@section('frontStyle')
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend') }}/images/favicon.ico">
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext"

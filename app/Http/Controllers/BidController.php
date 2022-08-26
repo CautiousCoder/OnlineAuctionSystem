@@ -6,6 +6,7 @@ use App\Models\Bid;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class BidController extends Controller
@@ -34,14 +35,15 @@ class BidController extends Controller
         $userbit = Bid::where('user_id', Auth::guard('web')->user()->id)->first();
         $product = Post::with('categories', 'tags', 'user')->where(['slug' => $slug])->first();
         if (empty($user->balance)) {
-            Session()->flash('success', '<h2>Please Add your balance</h2>');
+            Session()->flash('error', 'Insufficient Balance! Please Add your balance');
             return back();
         }
         $reg_balance = $product->regular_prize;
         $total_balance = $user->balance->total_bal;
-        dd($total_balance);
+        $time = Carbon::now();
+        dd($time->toDateString());
         if ($request->regular_prize <  $reg_balance + 9) {
-            Session()->flash('success', 'Required Balance is $' . $reg_balance + 10);
+            Session()->flash('error', 'Required Minimun Balance is $' . $reg_balance + 10);
         } else {
 
             $this->validate($request, [

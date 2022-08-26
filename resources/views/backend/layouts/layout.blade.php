@@ -64,6 +64,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       @if(Session::has('success'))
         toastr.success("{{ Session('success') }}");
       @endif
+      @if(Session::has('error'))
+        toastr.warning("{{ Session('error') }}");
+      @endif
     </script>
 </body>
 

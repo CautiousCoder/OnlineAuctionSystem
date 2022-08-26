@@ -51,7 +51,7 @@ class UserController extends Controller
         //dd($request->all());
         $user = User::find(Auth::guard('web')->user()->id);
         $addbal = Balance::where('user_id', Auth::guard('web')->user()->id)->first();
-        $total_balance = $user->balance->total_bal;
+        $total_balance = $user->balance->total_bal ?? 0;
         if (!$addbal) {
             $balance = new Balance();
             $balance->user_id = Auth::guard('web')->user()->id;
